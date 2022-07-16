@@ -3,21 +3,7 @@
 	<Events>
 		<WorkUnit Name="Default Work Unit" ID="{5C0D628B-28DE-4773-8CF6-40CE9F0C174E}" PersistMode="Standalone">
 			<ChildrenList>
-				<Folder Name="Default" ID="{A8C23764-2068-4552-9B5A-3A90943F876F}" ShortID="808369665">
-					<ChildrenList>
-						<Event Name="Test" ID="{C4681CF2-0BB3-4549-8BF2-FE56A7090EE3}">
-							<ChildrenList>
-								<Action Name="" ID="{0070D893-EB55-48FB-A023-5F3D0BF4B29D}" ShortID="529227001">
-									<ReferenceList>
-										<Reference Name="Target">
-											<ObjectRef Name="BT INSTRUMENT Bird Pipe Chirp" ID="{5D483747-4BC7-4CE8-8FA0-D90D0450FADE}" WorkUnitID="{EAE746EE-662B-46C3-B33F-E08F3685CD80}"/>
-										</Reference>
-									</ReferenceList>
-								</Action>
-							</ChildrenList>
-						</Event>
-					</ChildrenList>
-				</Folder>
+				<Folder Name="Default" ID="{A8C23764-2068-4552-9B5A-3A90943F876F}" ShortID="808369665"/>
 			</ChildrenList>
 		</WorkUnit>
 	</Events>
