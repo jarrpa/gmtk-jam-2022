@@ -9,6 +9,10 @@ public class GameManager : MonoBehaviour
         print("GameManager Awake");
         UnityEngine.SceneManagement.SceneManager.LoadScene("SebastianScene2");
         // if user presses the escape key change scene to SebastianScene2
-        
+    }
+    void Update() {
+        if (Input.GetKeyDown(KeyCode.Escape)) {
+            print("GameManager Update");
+        }
     }
 }
