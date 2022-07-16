@@ -20,7 +20,7 @@ public class GameManager : MonoBehaviour
     }
     void Update() {
         if (Input.GetKeyDown(KeyCode.Space)) {
-            UnityEngine.SceneManagement.SceneManager.LoadScene("SebastianScene2");
+            UnityEngine.SceneManagement.SceneManager.LoadScene("Map1");
         }
     }
 }
