@@ -2,23 +2,38 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-[RequireComponent(typeof(PlayerMovement))]
 public class PlayerCollisionManager : MonoBehaviour
 {
-    private MovementState movementState;
-    private PlayerMovement playerMovement;
-
+    private Health health;
+    private DamageAmount hitDamageAmount;
+    private float hitDamageValue;
     private void Start()
     {
-        playerMovement = GetComponent<PlayerMovement>();
+        health = GetComponent<Health>();
     }
-
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.CompareTag("Wall"))
+        if (collision.gameObject.CompareTag("PlayerProjectile"))
         {
-            movementState = MovementState.Idle;
-            Debug.Log("Player has collided, the movement state is: " + movementState);
+            hitDamageAmount = collision.gameObject.GetComponent<DamageAmount>();
+            hitDamageValue = hitDamageAmount.GetDamageAmount();
+            health.TakeDamage(hitDamageValue);
+            Destroy(collision.gameObject);
+            Debug.Log("Enemy took " + hitDamageValue + " amount of damage");
         }
     }
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        if (collision.gameObject.CompareTag("EnemyProjectile"))
+        {
+            hitDamageAmount = collision.gameObject.GetComponent<DamageAmount>();
+            hitDamageValue = hitDamageAmount.GetDamageAmount();
+            health.TakeDamage(hitDamageValue);
+            Destroy(collision.gameObject);
+            Debug.Log("Player took " + hitDamageValue + " amount of damage");
+        }
+    }
+    
+
+  
 }

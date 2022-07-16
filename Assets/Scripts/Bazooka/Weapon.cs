@@ -9,12 +9,13 @@ public abstract class Weapon : MonoBehaviour
     // Weapon attribute
     private int damage;
     public float fireRate;
-    public float spread;
     private bool canShoot;
+    private Vector2 shootingDir;
 
     // Bullet attributes
     public float bulletSpeed = 20f;
     public Transform firePosition;
+
     public GameObject bulletPrefab;
 
     private void Start()
@@ -22,7 +23,7 @@ public abstract class Weapon : MonoBehaviour
         canShoot = true;
     }
 
-    public void Update()
+    public void FixedUpdate()
     {
         if (Input.GetButton("Fire1") && canShoot)
             StartCoroutine(FireWeapon());
@@ -36,5 +37,12 @@ public abstract class Weapon : MonoBehaviour
         Shoot();
         yield return new WaitForSeconds(fireRate);
         canShoot = true;
+    }
+    
+    protected void InstantiateBullet(Vector2 dir, Quaternion rotation)
+    {
+        GameObject bullet = Instantiate(bulletPrefab, firePosition.position, rotation);
+        Rigidbody2D rb = bullet.GetComponent<Rigidbody2D>();
+        rb.AddForce(dir * bulletSpeed, ForceMode2D.Impulse);
     }
 }

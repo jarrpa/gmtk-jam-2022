@@ -7,9 +7,8 @@ TagManager:
   - Environment
   - Interactable
   - Enemy
-  - PlayerProjectile
-  - EnemyProjectile
   - Wall
+  - AbilityTrigger
   layers:
   - Default
   - TransparentFX
@@ -19,11 +18,11 @@ TagManager:
   - UI
   - Foreground
   - Background
-  - Enemy
-  - Player
-  - PlayerProjectile
-  - EnemyProjectile
-  - Wall
+  - 
+  - 
+  - 
+  - 
+  - 
   - 
   - 
   - 
@@ -44,27 +43,6 @@ TagManager:
   - 
   - 
   m_SortingLayers:
-  - name: Background
-    uniqueID: 186802989
-    locked: 0
   - name: Default
     uniqueID: 0
-    locked: 0
-  - name: Foreground
-    uniqueID: 955790623
-    locked: 0
-  - name: Enemy
-    uniqueID: 2395749141
-    locked: 0
-  - name: Player
-    uniqueID: 2184311565
-    locked: 0
-  - name: PlayerProjectile
-    uniqueID: 1319991571
-    locked: 0
-  - name: EnemyProjectile
-    uniqueID: 2807003469
-    locked: 0
-  - name: Walls
-    uniqueID: 3801560861
     locked: 0

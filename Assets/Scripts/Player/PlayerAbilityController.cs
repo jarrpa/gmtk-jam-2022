@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -5,29 +6,28 @@ using UnityEngine;
 public class PlayerAbilityController : MonoBehaviour
 {
     // create movement abilities aswell
-    public GameObject[] weaponPrefabs;
-    public GameObject selectedWeapon;
-
-    public Transform weaponTransform;
+    public Transform[] weapons;
+    private int selectedWeapon = 0;
 
     // Start is called before the first frame update
-    void Awake()
+
+    private void Awake()
     {
-        selectedWeapon = Instantiate(weaponPrefabs[0], weaponTransform.position, Quaternion.identity);
+        ActivateWeapon(0);
     }
 
-    // Update is called once per frame
-    void Update()
+    public void ChoseCombatAbility()
     {
+        int[] choice = Die.RollDice(weapons.Length, 1);
+        ActivateWeapon(choice[0]);
+    }
+
+    private void ActivateWeapon(int index)
+    {
+        weapons[selectedWeapon].gameObject.SetActive(false);
+        selectedWeapon = index;
+        weapons[selectedWeapon].gameObject.SetActive(true);
         
     }
     
-    public void ChoseCombatAbility()
-    {
-        if (selectedWeapon != null)
-            Destroy(selectedWeapon);
-        int[] choice = Die.RollDice(weaponPrefabs.Length, 1);
-        selectedWeapon = Instantiate(weaponPrefabs[choice[0]], weaponTransform.position, Quaternion.identity);
-        selectedWeapon.transform.SetParent(transform);
-    }
 }

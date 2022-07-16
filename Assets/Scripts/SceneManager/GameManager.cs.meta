@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+<<<<<<<< HEAD:Assets/Scripts/Player/PlayerAbilityController.cs.meta
+guid: 25260c9843e7e487f87930f2f2c15b88
+========
+guid: 97e170e1f143cdb47890ed9f93b850a3
+>>>>>>>> 0ef350c (2 maps & GameManager):Assets/Scripts/SceneManager/GameManager.cs.meta
+MonoImporter:
+  externalObjects: {}
+  serializedVersion: 2
+  defaultReferences: []
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

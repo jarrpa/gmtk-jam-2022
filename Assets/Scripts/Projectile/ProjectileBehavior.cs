@@ -4,10 +4,10 @@ using UnityEngine;
 
 public class ProjectileBehavior : MonoBehaviour
 {
-    [SerializeField] private float classBulletSpeed;
-    [SerializeField] private Rigidbody2D rb;
-    [SerializeField] private float timeTillDestroy;
-    Vector2 difference;
+    [SerializeField] protected float classBulletSpeed;
+    [SerializeField] protected Rigidbody2D rb;
+    [SerializeField] protected float timeTillDestroy;
+    protected Vector2 difference;
 
     private void Start()
     {
@@ -21,22 +21,22 @@ public class ProjectileBehavior : MonoBehaviour
         }
     }
 
-    private void OnEnable()
+    virtual protected void OnEnable()
     {
         difference = (Vector2)Camera.main.ScreenToWorldPoint(Input.mousePosition) - rb.position;
         difference.Normalize();
         StartCoroutine(DestroyTimer(timeTillDestroy));
     }
-    
-    private void OnTriggerEnter2D(Collider2D collision)
+
+    private void OnCollisionEnter2D(Collision2D collision)
     {
-        if (collision.gameObject.CompareTag("Walls") || collision.gameObject.CompareTag("Obstacles"))
+        if (collision.gameObject.CompareTag("Wall"))
         {
-            gameObject.SetActive(false);
+            Destroy(this.gameObject);
         }
     }
 
-    private IEnumerator DestroyTimer(float destroyTime)
+    protected IEnumerator DestroyTimer(float destroyTime)
     {
         yield return new WaitForSeconds(destroyTime);
         Destroy(this.gameObject);

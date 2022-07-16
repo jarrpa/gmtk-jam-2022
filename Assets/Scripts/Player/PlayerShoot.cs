@@ -25,7 +25,6 @@ public class PlayerShoot : MonoBehaviour
     {
         if (Input.GetButton("Fire1"))
         {
-            Debug.Log("Mouse1 Has been pressed");
             GameObject projectile = Instantiate(projectilePrefab,fireLocation.position, fireLocation.rotation);
         }
     }

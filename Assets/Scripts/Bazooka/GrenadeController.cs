@@ -6,7 +6,7 @@ using UnityEngine;
 public class GrenadeController : BulletController
 {
     private int damage;
-    public float explosionRadius = 30f;
+    public float explosionRadius = 3f;
     public GameObject explosionEffect;
     public float timeUntilExplosion = 10f; // in seconds
     public float explosionForce = 10f;
@@ -22,8 +22,7 @@ public class GrenadeController : BulletController
     }
     void OnCollisionEnter2D(Collision2D col)
     {
-        if(col.gameObject.CompareTag("Enemy"))
-            hasExploded = true;
+        Explode();
     }
 
     public void Explode()

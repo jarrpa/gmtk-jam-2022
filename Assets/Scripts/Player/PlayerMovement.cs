@@ -2,79 +2,38 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public enum MovementState
-{
-    Idle,
-    Moving,
-
-}
-
 [RequireComponent(typeof(Rigidbody2D))]
 public class PlayerMovement : MonoBehaviour
 {
-    [SerializeField] private float playerMoveSpeed;
-    [SerializeField] private ContactFilter2D movementFilter;
-    [SerializeField] private float collisionOffset = 0.01f;
+    [SerializeField] private float moveSpeed = 5f;
     private Vector2 mousePosition;
-    private Vector2 movementDirection;
-    private MoveSpeed moveSpeed;
-    private MovementState currentState;
-    private List<RaycastHit2D> castCollisions = new List<RaycastHit2D>();
+    private Vector2 velocity;
 
-    public Rigidbody2D rigidBody;
-    public Camera playerCamera;
-    
-
+    private Rigidbody2D rb;
     private void Start()
     {
-        moveSpeed = GetComponent<MoveSpeed>();
+        rb = GetComponent<Rigidbody2D>();
     }
+    
     void Update()
     {
-        GetInputValue();
-        mousePosition = playerCamera.ScreenToWorldPoint(Input.mousePosition);
+        velocity = new Vector2(Input.GetAxisRaw("Horizontal"), Input.GetAxisRaw("Vertical")).normalized;
+        mousePosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
     }
 
     private void FixedUpdate()
     {
-        if (movementDirection != Vector2.zero)
-        {
-            bool success = TryToMovePlayer(movementDirection);
-            if (!success)
-            {
-                success = TryToMovePlayer(new Vector2(movementDirection.x, 0));
-                if (!success)
-                {
-                    success = TryToMovePlayer(new Vector2(0, movementDirection.y));
-                }
-            }
-        }
-        
-        Vector2 lookDirection = mousePosition - rigidBody.position;
+        Move();
+    }
+
+    private void Move()
+    {
+        Vector2 lookDirection = mousePosition - rb.position;
         float angle = Mathf.Atan2(lookDirection.y, lookDirection.x) * Mathf.Rad2Deg - 90f;
-        rigidBody.rotation = angle;
+        rb.rotation = angle;
+        
+        rb.MovePosition(rb.position + velocity * moveSpeed * Time.fixedDeltaTime);
     }
-
-    // receives input value each frame and puts into these two floats 
-    private void GetInputValue()
-    {
-        movementDirection.x = Input.GetAxisRaw("Horizontal");
-        movementDirection.y = Input.GetAxisRaw("Vertical");
-    }
-
-    private bool TryToMovePlayer(Vector2 direction)
-    {
-        int count = rigidBody.Cast(direction, movementFilter, castCollisions, playerMoveSpeed * Time.fixedDeltaTime + collisionOffset);
-        if (count == 0)
-        {
-            rigidBody.MovePosition(rigidBody.position + playerMoveSpeed * Time.fixedDeltaTime * direction);
-            return true;
-        }
-        else
-        {
-            return false;
-        }
-    }
-
+    
 
 }
