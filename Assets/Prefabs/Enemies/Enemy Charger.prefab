@@ -13,10 +13,8 @@ GameObject:
   - component: {fileID: 3601197527815684826}
   - component: {fileID: 3601197527815684825}
   - component: {fileID: 3601197527815684827}
-  - component: {fileID: 3601197527815684805}
   - component: {fileID: 3601197527815684804}
-  - component: {fileID: 3601197527815684806}
-  m_Layer: 8
+  m_Layer: 10
   m_Name: Enemy Charger
   m_TagString: Enemy
   m_Icon: {fileID: 0}
@@ -77,7 +75,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: -1899218155
-  m_SortingLayer: 2
+  m_SortingLayer: 0
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: 1ba4668a6cf1bee44a99a1ccc0529dc4, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -121,7 +119,7 @@ PolygonCollider2D:
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
-  m_IsTrigger: 1
+  m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
@@ -156,38 +154,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2449bbf94dd110a4baaea75c883162fc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 10
+  speed: 5
   stoppingDistance: 2
   retreatDistance: 1
   projectile: {fileID: 7826530154575317790, guid: 575ec5b5d50b2d348b299a8537ac0de7, type: 3}
   startTimeBetweenShots: 2
   player: {fileID: 0}
---- !u!61 &3601197527815684805
-BoxCollider2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3601197527815684829}
-  m_Enabled: 1
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: 0.022645235, y: -0.2846824}
-  m_SpriteTilingProperty:
-    border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 1.0033333, y: 0.985}
-    newSize: {x: 1, y: 0.5}
-    adaptiveTilingThreshold: 0.5
-    drawMode: 0
-    adaptiveTiling: 0
-  m_AutoTiling: 0
-  serializedVersion: 2
-  m_Size: {x: 0.43396807, y: 0.16330314}
-  m_EdgeRadius: 0
 --- !u!114 &3601197527815684804
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -202,15 +174,3 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   maxHealthValue: 15
   defenseValue: 5
---- !u!114 &3601197527815684806
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3601197527815684829}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c0fb14aa1bd7190488bd23cdeab735f6, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 

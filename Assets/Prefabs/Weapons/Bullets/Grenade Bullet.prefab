@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 3415060967221119802}
   - component: {fileID: 1239149235493021589}
   - component: {fileID: 419498739033092090}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Grenade Bullet
   m_TagString: PlayerProjectile
   m_Icon: {fileID: 0}
@@ -136,7 +136,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ecf2dbdde1d8c4dba9e2cbd3849f0769, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  range: 1
+  bulletSpeed: 800
+  rb: {fileID: 3415060967221119802}
+  bulletDamage: 0
+  range: 10
   explosionRadius: 3
   explosionEffect: {fileID: 4594623368557294763, guid: b5a2fe80b033e47af88570aa8e816176, type: 3}
   timeUntilExplosion: 10

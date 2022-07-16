@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: AkWwiseProjectData
   m_EditorClassIdentifier: 
   AcousticTextureWwu:
-  - PhysicalPath: Virtual Acoustics/Default Work Unit.wwu
+  - PhysicalPath: Virtual Acoustics\Default Work Unit.wwu
     PathAndIcons:
     - ElementName: Virtual Acoustics
       ObjectType: 5
@@ -21,13 +21,13 @@ MonoBehaviour:
     - ElementName: Default Work Unit
       ObjectType: 12
       guid: 97688df47e58d04e8d2564e1a905e2bb
-    ParentPath: Virtual Acoustics/Default Work Unit
+    ParentPath: Virtual Acoustics\Default Work Unit
     guid: 97688df47e58d04e8d2564e1a905e2bb
     GuidInternal: 
-    m_lastTime: -8585436279150295460
+    m_lastTime: -8585436160134731314
     List: []
   AuxBusWwu:
-  - PhysicalPath: Master-Mixer Hierarchy/Default Work Unit.wwu
+  - PhysicalPath: Master-Mixer Hierarchy\Default Work Unit.wwu
     PathAndIcons:
     - ElementName: Master-Mixer Hierarchy
       ObjectType: 5
@@ -35,10 +35,14 @@ MonoBehaviour:
     - ElementName: Default Work Unit
       ObjectType: 12
       guid: f237aca2cae8de438faf817a8b993675
-    ParentPath: Master-Mixer Hierarchy/Default Work Unit
+    ParentPath: Master-Mixer Hierarchy\Default Work Unit
     guid: f237aca2cae8de438faf817a8b993675
     GuidInternal: 
+<<<<<<< HEAD
     m_lastTime: -8585436071381346727
+=======
+    m_lastTime: -8585436160136432229
+>>>>>>> e5b6836 (Refractored projectile system and removed unneeded files)
     List:
     - name: Ambience
       guid: 4253afc9b2285546b488bf42389cd782
@@ -59,7 +63,11 @@ MonoBehaviour:
       - ElementName: Ambience
         ObjectType: 2
         guid: 4253afc9b2285546b488bf42389cd782
+<<<<<<< HEAD
       Path: Master-Mixer Hierarchy/Default Work Unit/Master Audio Bus/HDR/Ambience
+=======
+      Path: Master-Mixer Hierarchy\Default Work Unit\Master Audio Bus\HDR\Ambience
+>>>>>>> e5b6836 (Refractored projectile system and removed unneeded files)
     - name: Character
       guid: e035ab7ba094c74fabe5977f23be5a1e
       id: 436743010
@@ -79,7 +87,11 @@ MonoBehaviour:
       - ElementName: Character
         ObjectType: 2
         guid: e035ab7ba094c74fabe5977f23be5a1e
+<<<<<<< HEAD
       Path: Master-Mixer Hierarchy/Default Work Unit/Master Audio Bus/HDR/Character
+=======
+      Path: Master-Mixer Hierarchy\Default Work Unit\Master Audio Bus\HDR\Character
+>>>>>>> e5b6836 (Refractored projectile system and removed unneeded files)
     - name: Enemies
       guid: 417eb2b69341b2418ccb46d2d32a360b
       id: 2242381963
@@ -99,7 +111,11 @@ MonoBehaviour:
       - ElementName: Enemies
         ObjectType: 2
         guid: 417eb2b69341b2418ccb46d2d32a360b
+<<<<<<< HEAD
       Path: Master-Mixer Hierarchy/Default Work Unit/Master Audio Bus/HDR/Enemies
+=======
+      Path: Master-Mixer Hierarchy\Default Work Unit\Master Audio Bus\HDR\Enemies
+>>>>>>> e5b6836 (Refractored projectile system and removed unneeded files)
     - name: HDR
       guid: aff423d1157b66489d3dea300e23e899
       id: 931844945
@@ -116,7 +132,11 @@ MonoBehaviour:
       - ElementName: HDR
         ObjectType: 2
         guid: aff423d1157b66489d3dea300e23e899
+<<<<<<< HEAD
       Path: Master-Mixer Hierarchy/Default Work Unit/Master Audio Bus/HDR
+=======
+      Path: Master-Mixer Hierarchy\Default Work Unit\Master Audio Bus\HDR
+>>>>>>> e5b6836 (Refractored projectile system and removed unneeded files)
     - name: Master Audio Bus
       guid: d8a41415a61d2a41a17e75ca0c2149f3
       id: 3803692087
@@ -130,7 +150,11 @@ MonoBehaviour:
       - ElementName: Master Audio Bus
         ObjectType: 2
         guid: d8a41415a61d2a41a17e75ca0c2149f3
+<<<<<<< HEAD
       Path: Master-Mixer Hierarchy/Default Work Unit/Master Audio Bus
+=======
+      Path: Master-Mixer Hierarchy\Default Work Unit\Master Audio Bus
+>>>>>>> e5b6836 (Refractored projectile system and removed unneeded files)
     - name: Music
       guid: e220b1c4fac28040bfa6bb20ef2a84e3
       id: 3991942870
@@ -147,7 +171,11 @@ MonoBehaviour:
       - ElementName: Music
         ObjectType: 2
         guid: e220b1c4fac28040bfa6bb20ef2a84e3
+<<<<<<< HEAD
       Path: Master-Mixer Hierarchy/Default Work Unit/Master Audio Bus/Music
+=======
+      Path: Master-Mixer Hierarchy\Default Work Unit\Master Audio Bus\Music
+>>>>>>> e5b6836 (Refractored projectile system and removed unneeded files)
     - name: UI
       guid: 4531b9b56f0cda49ab6c6213af3028c7
       id: 1551306167
@@ -164,9 +192,13 @@ MonoBehaviour:
       - ElementName: UI
         ObjectType: 2
         guid: 4531b9b56f0cda49ab6c6213af3028c7
+<<<<<<< HEAD
       Path: Master-Mixer Hierarchy/Default Work Unit/Master Audio Bus/UI
+=======
+      Path: Master-Mixer Hierarchy\Default Work Unit\Master Audio Bus\UI
+>>>>>>> e5b6836 (Refractored projectile system and removed unneeded files)
   BankWwu:
-  - PhysicalPath: SoundBanks/Default Work Unit.wwu
+  - PhysicalPath: SoundBanks\Default Work Unit.wwu
     PathAndIcons:
     - ElementName: SoundBanks
       ObjectType: 5
@@ -174,10 +206,10 @@ MonoBehaviour:
     - ElementName: Default Work Unit
       ObjectType: 12
       guid: cc5d0f9d58b867478d03ca5f2591b414
-    ParentPath: SoundBanks/Default Work Unit
+    ParentPath: SoundBanks\Default Work Unit
     guid: cc5d0f9d58b867478d03ca5f2591b414
     GuidInternal: 
-    m_lastTime: -8585436279150315783
+    m_lastTime: -8585436160134748691
     List:
     - name: Master
       guid: 6a533db0037d3e45b3fdd1b2f310b953
@@ -192,9 +224,9 @@ MonoBehaviour:
       - ElementName: Master
         ObjectType: 7
         guid: 6a533db0037d3e45b3fdd1b2f310b953
-      Path: SoundBanks/Default Work Unit/Master
+      Path: SoundBanks\Default Work Unit\Master
   EventWwu:
-  - PhysicalPath: Events/Default Work Unit.wwu
+  - PhysicalPath: Events\Default Work Unit.wwu
     PathAndIcons:
     - ElementName: Events
       ObjectType: 5
@@ -202,10 +234,10 @@ MonoBehaviour:
     - ElementName: Default Work Unit
       ObjectType: 12
       guid: 8b620d5cde2873478cf640ce9f0c174e
-    ParentPath: Events/Default Work Unit
+    ParentPath: Events\Default Work Unit
     guid: 8b620d5cde2873478cf640ce9f0c174e
     GuidInternal: 
-    m_lastTime: -8585436279150430304
+    m_lastTime: -8585436160136529802
     List:
     - name: Default
       guid: 6437c2a8682052459b5a3a90943f876f
@@ -220,7 +252,7 @@ MonoBehaviour:
       - ElementName: Default
         ObjectType: 4
         guid: 6437c2a8682052459b5a3a90943f876f
-      Path: Events/Default Work Unit/Default
+      Path: Events\Default Work Unit\Default
       maxAttenuation: 0
       maxDuration: -1
       minDuration: -1
@@ -240,12 +272,12 @@ MonoBehaviour:
       - ElementName: Test
         ObjectType: 3
         guid: f21c68c4b30b49458bf2fe56a7090ee3
-      Path: Events/Default Work Unit/Default/Test
+      Path: Events\Default Work Unit\Default\Test
       maxAttenuation: 0
       maxDuration: 0.344156
       minDuration: 0.344156
   RtpcWwu:
-  - PhysicalPath: Game Parameters/Default Work Unit.wwu
+  - PhysicalPath: Game Parameters\Default Work Unit.wwu
     PathAndIcons:
     - ElementName: Game Parameters
       ObjectType: 5
@@ -253,10 +285,14 @@ MonoBehaviour:
     - ElementName: Default Work Unit
       ObjectType: 12
       guid: 9f1a786d12e90746ae71cc44e6a86e87
-    ParentPath: Game Parameters/Default Work Unit
+    ParentPath: Game Parameters\Default Work Unit
     guid: 9f1a786d12e90746ae71cc44e6a86e87
     GuidInternal: 
+<<<<<<< HEAD
     m_lastTime: -8585436071381350487
+=======
+    m_lastTime: -8585436160136519821
+>>>>>>> e5b6836 (Refractored projectile system and removed unneeded files)
     List:
     - name: Level_indicator
       guid: 0c343d9cea4e494da03935c6458771a1
@@ -271,9 +307,13 @@ MonoBehaviour:
       - ElementName: Level_indicator
         ObjectType: 13
         guid: 0c343d9cea4e494da03935c6458771a1
+<<<<<<< HEAD
       Path: Game Parameters/Default Work Unit/Level_indicator
+=======
+      Path: Game Parameters\Default Work Unit\Level_indicator
+>>>>>>> e5b6836 (Refractored projectile system and removed unneeded files)
   StateWwu:
-  - PhysicalPath: States/Default Work Unit.wwu
+  - PhysicalPath: States\Default Work Unit.wwu
     PathAndIcons:
     - ElementName: States
       ObjectType: 5
@@ -281,10 +321,14 @@ MonoBehaviour:
     - ElementName: Default Work Unit
       ObjectType: 12
       guid: 3a67362d16f3ca41a204ddd612e10d53
-    ParentPath: States/Default Work Unit
+    ParentPath: States\Default Work Unit
     guid: 3a67362d16f3ca41a204ddd612e10d53
     GuidInternal: 
+<<<<<<< HEAD
     m_lastTime: -8585436071380081708
+=======
+    m_lastTime: -8585436160134738691
+>>>>>>> e5b6836 (Refractored projectile system and removed unneeded files)
     List:
     - name: Music_Gameplay
       guid: e6aed6a17b07974c974ca9fe5887d05f
@@ -299,7 +343,11 @@ MonoBehaviour:
       - ElementName: Music_Gameplay
         ObjectType: 9
         guid: e6aed6a17b07974c974ca9fe5887d05f
+<<<<<<< HEAD
       Path: States/Default Work Unit/Music_Gameplay
+=======
+      Path: States\Default Work Unit\Music_Gameplay
+>>>>>>> e5b6836 (Refractored projectile system and removed unneeded files)
       values:
       - name: None
         guid: 376f59abd7095845b7cf0b29eff97cc5
@@ -369,7 +417,7 @@ MonoBehaviour:
       ValueIcons: []
       valuesInternal: []
   SwitchWwu:
-  - PhysicalPath: Switches/Default Work Unit.wwu
+  - PhysicalPath: Switches\Default Work Unit.wwu
     PathAndIcons:
     - ElementName: Switches
       ObjectType: 5
@@ -377,13 +425,13 @@ MonoBehaviour:
     - ElementName: Default Work Unit
       ObjectType: 12
       guid: 9aa59006a2e3ee4fb35f8ba46ddca7b7
-    ParentPath: Switches/Default Work Unit
+    ParentPath: Switches\Default Work Unit
     guid: 9aa59006a2e3ee4fb35f8ba46ddca7b7
     GuidInternal: 
-    m_lastTime: -8585436279150305614
+    m_lastTime: -8585436160134738691
     List: []
   TriggerWwu:
-  - PhysicalPath: Triggers/Default Work Unit.wwu
+  - PhysicalPath: Triggers\Default Work Unit.wwu
     PathAndIcons:
     - ElementName: Triggers
       ObjectType: 5
@@ -391,10 +439,10 @@ MonoBehaviour:
     - ElementName: Default Work Unit
       ObjectType: 12
       guid: 840011ea1f66944a83435c2f099df9e9
-    ParentPath: Triggers/Default Work Unit
+    ParentPath: Triggers\Default Work Unit
     guid: 840011ea1f66944a83435c2f099df9e9
     GuidInternal: 
-    m_lastTime: -8585436279150300537
+    m_lastTime: -8585436160134731314
     List: []
   ExpandedFileSystemItemIds: 
   ExpandedWaapiItemIds: 0a0000000b000000

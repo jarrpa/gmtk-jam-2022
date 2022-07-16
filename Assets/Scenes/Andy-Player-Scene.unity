@@ -192,7 +192,7 @@ GameObject:
   - component: {fileID: 374157475}
   - component: {fileID: 374157474}
   - component: {fileID: 374157473}
-  m_Layer: 12
+  m_Layer: 13
   m_Name: WallHorizontalBounds2
   m_TagString: Wall
   m_Icon: {fileID: 0}
@@ -285,7 +285,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: -493406435
-  m_SortingLayer: 6
+  m_SortingLayer: 0
   m_SortingOrder: 0
   m_Sprite: {fileID: 7482667652216324306, guid: 311925a002f4447b3a28927169b83ea6, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -325,7 +325,7 @@ GameObject:
   - component: {fileID: 388553279}
   - component: {fileID: 388553278}
   - component: {fileID: 388553281}
-  m_Layer: 12
+  m_Layer: 13
   m_Name: Obstacles_001
   m_TagString: Wall
   m_Icon: {fileID: 0}
@@ -392,7 +392,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: -493406435
-  m_SortingLayer: 6
+  m_SortingLayer: 0
   m_SortingOrder: 0
   m_Sprite: {fileID: 7482667652216324306, guid: 311925a002f4447b3a28927169b83ea6, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -566,7 +566,7 @@ GameObject:
   - component: {fileID: 1206251890}
   - component: {fileID: 1206251889}
   - component: {fileID: 1206251888}
-  m_Layer: 12
+  m_Layer: 13
   m_Name: WallHorizontalBounds1
   m_TagString: Wall
   m_Icon: {fileID: 0}
@@ -659,7 +659,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: -493406435
-  m_SortingLayer: 6
+  m_SortingLayer: 0
   m_SortingOrder: 0
   m_Sprite: {fileID: 7482667652216324306, guid: 311925a002f4447b3a28927169b83ea6, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -699,7 +699,7 @@ GameObject:
   - component: {fileID: 1661015220}
   - component: {fileID: 1661015219}
   - component: {fileID: 1661015218}
-  m_Layer: 12
+  m_Layer: 13
   m_Name: VerticalBounds2
   m_TagString: Wall
   m_Icon: {fileID: 0}
@@ -792,7 +792,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: -493406435
-  m_SortingLayer: 6
+  m_SortingLayer: 0
   m_SortingOrder: 0
   m_Sprite: {fileID: 7482667652216324306, guid: 311925a002f4447b3a28927169b83ea6, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -832,7 +832,7 @@ GameObject:
   - component: {fileID: 1737571001}
   - component: {fileID: 1737571000}
   - component: {fileID: 1737570999}
-  m_Layer: 12
+  m_Layer: 13
   m_Name: VerticalBounds
   m_TagString: Wall
   m_Icon: {fileID: 0}
@@ -925,7 +925,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: -493406435
-  m_SortingLayer: 6
+  m_SortingLayer: 0
   m_SortingOrder: 0
   m_Sprite: {fileID: 7482667652216324306, guid: 311925a002f4447b3a28927169b83ea6, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -965,7 +965,7 @@ GameObject:
   - component: {fileID: 1751713717}
   - component: {fileID: 1751713715}
   - component: {fileID: 1751713719}
-  m_Layer: 12
+  m_Layer: 13
   m_Name: Obstacles
   m_TagString: Wall
   m_Icon: {fileID: 0}
@@ -1032,7 +1032,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: -493406435
-  m_SortingLayer: 6
+  m_SortingLayer: 0
   m_SortingOrder: 0
   m_Sprite: {fileID: 7482667652216324306, guid: 311925a002f4447b3a28927169b83ea6, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -1148,6 +1148,10 @@ PrefabInstance:
       propertyPath: player
       value: 
       objectReference: {fileID: 850229291}
+    - target: {fileID: 3601197527815684827, guid: 10d0cbf1822330a4493e5d41e750488b, type: 3}
+      propertyPath: projectile
+      value: 
+      objectReference: {fileID: 7826530154575317790, guid: 575ec5b5d50b2d348b299a8537ac0de7, type: 3}
     - target: {fileID: 3601197527815684829, guid: 10d0cbf1822330a4493e5d41e750488b, type: 3}
       propertyPath: m_Name
       value: Enemy Charger
@@ -1311,12 +1315,35 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8422530110084229730, guid: a27e53210f7751b49adcfca7c7ef6ab6, type: 3}
+      propertyPath: moveSpeed
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 8422530110084229730, guid: a27e53210f7751b49adcfca7c7ef6ab6, type: 3}
       propertyPath: playerCamera
       value: 
       objectReference: {fileID: 449237149}
+    - target: {fileID: 8422530110084229735, guid: a27e53210f7751b49adcfca7c7ef6ab6, type: 3}
+      propertyPath: secBtwnShot
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 8422530110084229735, guid: a27e53210f7751b49adcfca7c7ef6ab6, type: 3}
+      propertyPath: projectilePrefab
+      value: 
+      objectReference: {fileID: 5196141513470838171, guid: 8b4e0c0b7479f4946b14f44816cc8a95, type: 3}
+    - target: {fileID: 8422530110084229740, guid: a27e53210f7751b49adcfca7c7ef6ab6, type: 3}
+      propertyPath: m_LinearDrag
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8422530110084229740, guid: a27e53210f7751b49adcfca7c7ef6ab6, type: 3}
+      propertyPath: m_AngularDrag
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 8422530110084229741, guid: a27e53210f7751b49adcfca7c7ef6ab6, type: 3}
       propertyPath: m_Name
       value: PlayerPlaceholder
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 8422530110084229755, guid: a27e53210f7751b49adcfca7c7ef6ab6, type: 3}
+    - {fileID: 8422530110084229754, guid: a27e53210f7751b49adcfca7c7ef6ab6, type: 3}
+    - {fileID: 0}
   m_SourcePrefab: {fileID: 100100000, guid: a27e53210f7751b49adcfca7c7ef6ab6, type: 3}

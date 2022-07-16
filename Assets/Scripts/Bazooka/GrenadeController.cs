@@ -13,12 +13,12 @@ public class GrenadeController : BulletController
 
     private bool hasExploded;
 
-    // Update is called once per frame
-    void Update()
+    protected override void Update()
     {
         timeUntilExplosion -= Time.deltaTime;
-        if(timeUntilExplosion <= 0 || hasExploded)
+        if (timeUntilExplosion <= 0 || hasExploded)
             Explode();
+        base.Update();
     }
     void OnCollisionEnter2D(Collision2D col)
     {

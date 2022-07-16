@@ -1,6 +1,10 @@
 fileFormatVersion: 2
 <<<<<<<< HEAD:Assets/Scripts/Player/PlayerAbilityController.cs.meta
+<<<<<<< HEAD
 guid: 91aa82b38a8994e97aa60011b26d8ee0
+=======
+guid: ac9c4272d516ec548bcbbbd92101b159
+>>>>>>> e5b6836 (Refractored projectile system and removed unneeded files)
 ========
 guid: 97e170e1f143cdb47890ed9f93b850a3
 >>>>>>>> 0ef350c (2 maps & GameManager):Assets/Scripts/SceneManager/GameManager.cs.meta

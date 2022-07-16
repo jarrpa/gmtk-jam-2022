@@ -9,6 +9,8 @@ TagManager:
   - Enemy
   - Wall
   - AbilityTrigger
+  - PlayerProjectile
+  - EnemyProjectile
   layers:
   - Default
   - TransparentFX
@@ -19,11 +21,11 @@ TagManager:
   - Foreground
   - Background
   - 
-  - 
-  - 
-  - 
-  - 
-  - 
+  - Player
+  - Enemy
+  - PlayerProjectile
+  - EnemyProjectile
+  - Wall
   - 
   - 
   - 
