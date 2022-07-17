@@ -17,10 +17,11 @@ public class Entity : MonoBehaviour
 
     public void TakeDamage(int amount)
     {
-        if (IsDead())
-           // OnDeath();
-
         currentHealth -= amount;
+        if (IsDead())
+           OnDeath();
+
+     
     }
 
     public void SetHealth(int amount)
