@@ -47,7 +47,7 @@ TextureImporter:
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 64
+  spritePixelsToUnits: 1
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -1262,6 +1262,7 @@ TextureImporter:
       GMTK_Rock_Wall_1_7: -1784034094
       GMTK_Rock_Wall_1_45: 108495823
       GMTK_Rock_Wall_1_50: 2040448111
+      GMTK_Rock_Wall_1_52: 419099714
       GMTK_Rock_Wall_1_42: -2007369362
       GMTK_Rock_Wall_1_18: -2143393566
       GMTK_Rock_Wall_1_11: 1927646287
@@ -1270,14 +1271,13 @@ TextureImporter:
       GMTK_Rock_Wall_1_28: 2054867289
       GMTK_Rock_Wall_1_4: -934732881
       GMTK_Rock_Wall_1_9: 1232295056
-      GMTK_Rock_Wall_1_52: 419099714
       GMTK_Rock_Wall_1_36: 1193732391
       GMTK_Rock_Wall_1_51: 1259784393
       GMTK_Rock_Wall_1_39: 1349060750
       GMTK_Rock_Wall_1_37: 1303790672
       GMTK_Rock_Wall_1_15: 1306596735
-      GMTK_Rock_Wall_1_17: 1362580474
       GMTK_Rock_Wall_1_21: 1356819861
+      GMTK_Rock_Wall_1_17: 1362580474
       GMTK_Rock_Wall_1_44: -704197235
       GMTK_Rock_Wall_1_38: -247750184
       GMTK_Rock_Wall_1_13: 216064702
