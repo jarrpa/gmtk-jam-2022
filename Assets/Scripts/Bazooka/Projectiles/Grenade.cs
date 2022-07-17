@@ -12,6 +12,8 @@ public class Grenade : Bullet
 
     private bool hasExploded;
 
+    public static event Action OnExplode;
+
     protected override void Update()
     {
         if (timeUntilExplosion <= 0 || hasExploded)
@@ -39,6 +41,8 @@ public class Grenade : Bullet
 
         var particles = Instantiate(explosionEffect, transform.position, Quaternion.identity);
         
+        OnExplode?.Invoke();
+        
         Destroy(particles, 5f);
         Destroy(gameObject);
     }
@@ -47,7 +51,7 @@ public class Grenade : Bullet
     {
         var dir = (body.transform.position - explosionPosition);
         float wearoff = 1 - (dir.magnitude / explosionRadius);
-        body.AddForce(dir.normalized * explosionForce * wearoff);
+        body.AddForce(dir.normalized * explosionForce * wearoff, ForceMode2D.Impulse);
     }
 
     private void OnDrawGizmos()

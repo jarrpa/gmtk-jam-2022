@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -11,6 +12,7 @@ public class PlayerMovement : MonoBehaviour
 
     private Rigidbody2D rb;
     private AbilityHolder abilityHolder;
+
     private void Start()
     {
         rb = GetComponent<Rigidbody2D>();
@@ -23,23 +25,17 @@ public class PlayerMovement : MonoBehaviour
         mousePosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
         
         Move();
-
-
-    }
-
-    private void FixedUpdate()
-    {
-        //Move();
     }
 
     private void Move()
     {
+        if(abilityHolder.IsActive())
+           return; 
         Vector2 lookDirection = GetLookDirection();
         float angle = Mathf.Atan2(lookDirection.y, lookDirection.x) * Mathf.Rad2Deg - 90f;
         rb.rotation = angle;
-
-        if(!abilityHolder.IsActive())
-            rb.velocity = velocity * moveSpeed;
+        
+        rb.velocity = velocity * moveSpeed;
         //rb.MovePosition(rb.position + velocity * moveSpeed * Time.fixedDeltaTime);
     }
 
@@ -52,6 +48,4 @@ public class PlayerMovement : MonoBehaviour
     {
         return mousePosition - rb.position;
     }
-    
-
 }

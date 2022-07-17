@@ -1,5 +1,13 @@
 fileFormatVersion: 2
+<<<<<<< HEAD
 guid: 954b424429e2b054b9963d3f001a7486
+=======
+<<<<<<< HEAD:Assets/EnemyManager.cs.meta
+guid: a1f595f2f8a6042c3a51faa12811124b
+=======
+guid: 7bf579363d8c84b459db394fd710f3f4
+>>>>>>> 39ca2ec (Finished ability system):Assets/Scripts/Player/Ability/Ability.cs.meta
+>>>>>>> 53d32ec (Finished ability system)
 MonoImporter:
   externalObjects: {}
   serializedVersion: 2

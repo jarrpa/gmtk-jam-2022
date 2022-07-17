@@ -46,7 +46,7 @@ GameObject:
   - component: {fileID: 705148870580690595}
   - component: {fileID: 705148870580690592}
   - component: {fileID: 705148870580690599}
-  - component: {fileID: 1483096051329443138}
+  - component: {fileID: 7128546154520371815}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -177,8 +177,9 @@ MonoBehaviour:
   - {fileID: 7345878199375349459}
   abilities:
   - {fileID: 11400000, guid: 9a5509efe68ab4cf1b87e177e701cc0f, type: 2}
-  abilityText: {fileID: 0}
-  weaponText: {fileID: 0}
+  - {fileID: 11400000, guid: 8985829a982a04d46b6de2239684e21b, type: 2}
+  abilityImage: {fileID: 0}
+  weaponImage: {fileID: 0}
 --- !u!61 &705148870580690592
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -218,8 +219,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   maxHealth: 100
-  currentHealth: 0
---- !u!114 &1483096051329443138
+  currentHealth: 100
+--- !u!114 &7128546154520371815
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -232,7 +233,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   ability: {fileID: 0}
-  key: 0
+  key: 32
 --- !u!1001 &705148869148118833
 PrefabInstance:
   m_ObjectHideFlags: 0

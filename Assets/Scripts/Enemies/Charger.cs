@@ -13,7 +13,6 @@ public class Charger : Enemy
             return;
 
         player.GetComponent<Entity>().TakeDamage(meleeDamage);
-        Debug.Log("Player took damage");
     }
 
     public override void Move()

@@ -22,6 +22,7 @@ public class Ranger : Enemy
 
     public override void Move()
     {
+        Vector2 velocity = (player.position - transform.position).normalized;
         if (Vector2.Distance(transform.position, player.position) > stoppingDistance)
         {
             transform.position = Vector2.MoveTowards(transform.position, player.position, speed * Time.deltaTime);
@@ -29,7 +30,7 @@ public class Ranger : Enemy
         else if (Vector2.Distance(transform.position, player.position) < stoppingDistance && 
                  Vector2.Distance(transform.position, player.position) > retreatDistance)
         {
-            transform.position = this.transform.position;
+            //transform.position = this.transform.position;
         }
         else if (Vector2.Distance(transform.position, player.position) < retreatDistance)
         {
