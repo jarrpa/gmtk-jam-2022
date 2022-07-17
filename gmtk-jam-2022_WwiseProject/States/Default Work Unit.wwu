@@ -3,12 +3,12 @@
 	<States>
 		<WorkUnit Name="Default Work Unit" ID="{2D36673A-F316-41CA-A204-DDD612E10D53}" PersistMode="Standalone">
 			<ChildrenList>
-				<StateGroup Name="Music_Gameplay" ID="{A1D6AEE6-077B-4C97-974C-A9FE5887D05F}">
+				<StateGroup Name="STATE_Music" ID="{A1D6AEE6-077B-4C97-974C-A9FE5887D05F}">
 					<ChildrenList>
 						<State Name="None" ID="{AB596F37-09D7-4558-B7CF-0B29EFF97CC5}"/>
-						<State Name="STATE_Level1" ID="{B3EDE86E-CDF2-4778-918E-1FC6D29EEAC9}"/>
-						<State Name="STATE_Level2" ID="{65E97529-20E9-4D7C-9D7B-3D0A6B9C5A33}"/>
-						<State Name="STATE_Level3" ID="{6B28DC56-AAAC-4343-B0EA-8B464BB2E911}"/>
+						<State Name="STATE_Menu" ID="{B3EDE86E-CDF2-4778-918E-1FC6D29EEAC9}"/>
+						<State Name="STATE_Rooms" ID="{65E97529-20E9-4D7C-9D7B-3D0A6B9C5A33}"/>
+						<State Name="STATE_Credits" ID="{6B28DC56-AAAC-4343-B0EA-8B464BB2E911}"/>
 					</ChildrenList>
 				</StateGroup>
 			</ChildrenList>

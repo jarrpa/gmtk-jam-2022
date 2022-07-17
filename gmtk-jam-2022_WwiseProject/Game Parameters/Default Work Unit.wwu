@@ -3,7 +3,23 @@
 	<GameParameters>
 		<WorkUnit Name="Default Work Unit" ID="{6D781A9F-E912-4607-AE71-CC44E6A86E87}" PersistMode="Standalone">
 			<ChildrenList>
-				<GameParameter Name="Level_indicator" ID="{9C3D340C-4EEA-4D49-A039-35C6458771A1}"/>
+				<GameParameter Name="RTPC_ext_rooms" ID="{9C3D340C-4EEA-4D49-A039-35C6458771A1}">
+					<PropertyList>
+						<Property Name="InitialValue" Type="Real64" Value="1"/>
+						<Property Name="Max" Type="Real64" Value="3"/>
+						<Property Name="Min" Type="Real64" Value="1"/>
+					</PropertyList>
+				</GameParameter>
+				<GameParameter Name="RTPC_ext_SFX_vol" ID="{F2238B6D-7EB3-4708-93CC-E0EAB4EF4155}">
+					<PropertyList>
+						<Property Name="InitialValue" Type="Real64" Value="100"/>
+					</PropertyList>
+				</GameParameter>
+				<GameParameter Name="RTPC_ext_Music_vol" ID="{205D5A79-3DFD-43C8-9D7B-63F43C370C68}">
+					<PropertyList>
+						<Property Name="InitialValue" Type="Real64" Value="100"/>
+					</PropertyList>
+				</GameParameter>
 			</ChildrenList>
 		</WorkUnit>
 	</GameParameters>

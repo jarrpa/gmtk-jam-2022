@@ -1,5 +1,33 @@
+Switch Group	ID	Name			Wwise Object Path	Notes
+	3667359600	SWITCH_rooms			\Default Work Unit\SWITCH_rooms	
+
+Switch	ID	Name	Switch Group			Notes
+	3667359536	SWITCH_Room3	SWITCH_rooms			
+	3667359537	SWITCH_Room2	SWITCH_rooms			
+	3667359538	SWITCH_Room1	SWITCH_rooms			
+
+State Group	ID	Name			Wwise Object Path	Notes
+	1992488372	STATE_Music			\Default Work Unit\STATE_Music	
+
+State	ID	Name	State Group			Notes
+	387537969	STATE_Rooms	STATE_Music			
+	748895195	None	STATE_Music			
+	2052296799	STATE_Credits	STATE_Music			
+	3900992838	STATE_Menu	STATE_Music			
+
+Game Parameter	ID	Name			Wwise Object Path	Notes
+	1748895166	RTPC_ext_Music_vol			\Default Work Unit\RTPC_ext_Music_vol	
+	3983751694	RTPC_ext_SFX_vol			\Default Work Unit\RTPC_ext_SFX_vol	
+
 Audio Bus	ID	Name			Wwise Object Path	Notes
+	85412153	Ambience			\Default Work Unit\Master Audio Bus\HDR\Ambience	
+	436743010	Character			\Default Work Unit\Master Audio Bus\HDR\Character	
+	931844945	HDR			\Default Work Unit\Master Audio Bus\HDR	
+	1467963052	Weapons			\Default Work Unit\Master Audio Bus\HDR\Weapons	
+	1551306167	UI			\Default Work Unit\Master Audio Bus\UI	
+	2242381963	Enemies			\Default Work Unit\Master Audio Bus\HDR\Enemies	
 	3803692087	Master Audio Bus			\Default Work Unit\Master Audio Bus	
+	3991942870	Music			\Default Work Unit\Master Audio Bus\Music	
 
 Audio Devices	ID	Name	Type				Notes
 	2317455096	No_Output	No Output			

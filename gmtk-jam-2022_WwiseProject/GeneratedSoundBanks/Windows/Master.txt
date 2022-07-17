@@ -1,6 +1,96 @@
 Event	ID	Name			Wwise Object Path	Notes
-	3157003241	Test			\Default Work Unit\Default\Test	
+	992244	Play_Shotgun			\Default Work Unit\Weapons\Play_Shotgun	
+	311910498	Play_click			\Default Work Unit\UI\Play_click	
+	1074022805	Play_WhiteNoise			\Default Work Unit\Amb\Play_WhiteNoise	
+	1629017912	Play_Single_Auto			\Default Work Unit\Weapons\Play_Single_Auto	
+	1756926810	Play_char_damage			\Default Work Unit\Character\Play_char_damage	
+	2211787386	Play_dash			\Default Work Unit\Character\Play_dash	
+	2418170363	Play_Bazooka			\Default Work Unit\Weapons\Play_Bazooka	
+	2507488987	Play_charger_attack			\Default Work Unit\Enemies\Play_charger_attack	
+	2600469463	Play_steps			\Default Work Unit\Character\Play_steps	
+	2925990347	Play_charger_death			\Default Work Unit\Enemies\Play_charger_death	
+	3065695153	Play_bird_hit			\Default Work Unit\Enemies\Play_bird_hit	
+	3539215392	Play_bird_death			\Default Work Unit\Enemies\Play_bird_death	
+	3788303255	Play_GateOpen			\Default Work Unit\Amb\Play_GateOpen	
+	3893482503	Play_navigate			\Default Work Unit\UI\Play_navigate	
+
+Switch Group	ID	Name			Wwise Object Path	Notes
+	4011692932	SWITCH_char_footsteps			\Default Work Unit\SWITCH_char_footsteps	
+
+Switch	ID	Name	Switch Group			Notes
+	1983658940	SWITCH_tile	SWITCH_char_footsteps			
+	2902377486	SWITCH_grass	SWITCH_char_footsteps			
+
+Effect plug-ins	ID	Name	Type				Notes
+	64956486	Wwise Compressor (Custom)	Wwise Compressor			
+	290426066	Wwise Compressor (Custom)	Wwise Compressor			
+	365637851	Wwise Guitar Distortion (Custom)	Wwise Guitar Distortion			
 
 In Memory Audio	ID	Name	Audio source file		Wwise Object Path	Notes	Data Size
-	998391283	BT INSTRUMENT Bird Pipe Chirp	D:\Юнити\Джем\gmtk-jam-2022\gmtk-jam-2022_WwiseProject\.cache\Windows\SFX\BT INSTRUMENT Bird Pipe Chirp_10C4C929.wem		\Actor-Mixer Hierarchy\Default Work Unit\Test\BT INSTRUMENT Bird Pipe Chirp		66140
+	26443093	CC-CK Punch Low Smack 04-002	D:\Юнити\Джем\gmtk-jam-2022\gmtk-jam-2022_WwiseProject\.cache\Windows\SFX\CC-CK Punch Low Smack 04-002_363638FD.wem		\Actor-Mixer Hierarchy\Default Work Unit\Character\char_damage\Punch\CC-CK Punch Low Smack 04-002		31356
+	27974589	grass-001	D:\Юнити\Джем\gmtk-jam-2022\gmtk-jam-2022_WwiseProject\.cache\Windows\SFX\grass-001_C92D7041.wem		\Actor-Mixer Hierarchy\Default Work Unit\Character\Locomotion\steps\grass\grass-001		60436
+	65942660	tile-002	D:\Юнити\Джем\gmtk-jam-2022\gmtk-jam-2022_WwiseProject\.cache\Windows\SFX\tile-002_CAAF4074.wem		\Actor-Mixer Hierarchy\Default Work Unit\Character\Locomotion\steps\tile\tile-002		47252
+	73006644	UI Navigate-002	D:\Юнити\Джем\gmtk-jam-2022\gmtk-jam-2022_WwiseProject\.cache\Windows\SFX\UI Navigate-002_10C4C929.wem		\Actor-Mixer Hierarchy\Default Work Unit\UI\navigate\UI Navigate-002		25352
+	79678128	BT PUNCH Slap Bright-002	D:\Юнити\Джем\gmtk-jam-2022\gmtk-jam-2022_WwiseProject\.cache\Windows\SFX\BT PUNCH Slap Bright-002_F5673D9B.wem		\Actor-Mixer Hierarchy\Default Work Unit\Character\char_damage\Slap\BT PUNCH Slap Bright-002		23432
+	107841545	BirdDeath-001	D:\Юнити\Джем\gmtk-jam-2022\gmtk-jam-2022_WwiseProject\.cache\Windows\SFX\BirdDeath-001_10C4C929.wem		\Actor-Mixer Hierarchy\Default Work Unit\Enemies\bird_death\BirdDeath-001		113360
+	111375180	UI Navigate-001	D:\Юнити\Джем\gmtk-jam-2022\gmtk-jam-2022_WwiseProject\.cache\Windows\SFX\UI Navigate-001_10C4C929.wem		\Actor-Mixer Hierarchy\Default Work Unit\UI\navigate\UI Navigate-001		38292
+	127698413	GateOpen	D:\Юнити\Джем\gmtk-jam-2022\gmtk-jam-2022_WwiseProject\.cache\Windows\SFX\GateOpen_10C4C929.wem		\Actor-Mixer Hierarchy\Default Work Unit\Ambience\GateOpen		846816
+	134077422	BirdHit-001	D:\Юнити\Джем\gmtk-jam-2022\gmtk-jam-2022_WwiseProject\.cache\Windows\SFX\BirdHit-001_10C4C929.wem		\Actor-Mixer Hierarchy\Default Work Unit\Enemies\bird_hit\BirdHit-001		42032
+	144307092	UI Click-004	D:\Юнити\Джем\gmtk-jam-2022\gmtk-jam-2022_WwiseProject\.cache\Windows\SFX\UI Click-004_10C4C929.wem		\Actor-Mixer Hierarchy\Default Work Unit\UI\click\UI Click-004		28296
+	158575514	ShotgunTail-002	D:\Юнити\Джем\gmtk-jam-2022\gmtk-jam-2022_WwiseProject\.cache\Windows\SFX\ShotgunTail-002_10C4C929.wem		\Actor-Mixer Hierarchy\Default Work Unit\Weapons\Shotgun\ShotgunTail\ShotgunTail-002		466904
+	187254984	Balloon-002	D:\Юнити\Джем\gmtk-jam-2022\gmtk-jam-2022_WwiseProject\.cache\Windows\SFX\Balloon-002_10C4C929.wem		\Actor-Mixer Hierarchy\Default Work Unit\Weapons\Bazooka\Exp\Tail\Balloon-002		435112
+	202050271	SimpleRifleLayer-003	D:\Юнити\Джем\gmtk-jam-2022\gmtk-jam-2022_WwiseProject\.cache\Windows\SFX\SimpleRifleLayer-003_05771D63.wem		\Actor-Mixer Hierarchy\Default Work Unit\Weapons\Single Auto\SingleShot\Rifle\SimpleRifleLayer-003		33284
+	229507045	CC-CK Punch Low Smack 04-001	D:\Юнити\Джем\gmtk-jam-2022\gmtk-jam-2022_WwiseProject\.cache\Windows\SFX\CC-CK Punch Low Smack 04-001_5993F3D0.wem		\Actor-Mixer Hierarchy\Default Work Unit\Character\char_damage\Punch\CC-CK Punch Low Smack 04-001		24900
+	246085346	tile-001	D:\Юнити\Джем\gmtk-jam-2022\gmtk-jam-2022_WwiseProject\.cache\Windows\SFX\tile-001_10382A92.wem		\Actor-Mixer Hierarchy\Default Work Unit\Character\Locomotion\steps\tile\tile-001		40400
+	257267251	Voices, Female, Anime, Schoolgirl, Fight Exhale 08 SND68074-002	D:\Юнити\Джем\gmtk-jam-2022\gmtk-jam-2022_WwiseProject\.cache\Windows\SFX\Voices, Female, Anime, Schoolgirl, Fight Exhale 08 SND68074-002_A0905E20.wem		\Actor-Mixer Hierarchy\Default Work Unit\Character\char_damage\VO\Voices, Female, Anime, Schoolgirl, Fight Exhale 08 SND68074-002		93156
+	299035899	ChargerDeath-003	D:\Юнити\Джем\gmtk-jam-2022\gmtk-jam-2022_WwiseProject\.cache\Windows\SFX\ChargerDeath-003_10C4C929.wem		\Actor-Mixer Hierarchy\Default Work Unit\Enemies\charger_death\ChargerDeath-003		202968
+	310155114	BirdHit-003	D:\Юнити\Джем\gmtk-jam-2022\gmtk-jam-2022_WwiseProject\.cache\Windows\SFX\BirdHit-003_10C4C929.wem		\Actor-Mixer Hierarchy\Default Work Unit\Enemies\bird_hit\BirdHit-003		52100
+	338888042	BirdDeath-002	D:\Юнити\Джем\gmtk-jam-2022\gmtk-jam-2022_WwiseProject\.cache\Windows\SFX\BirdDeath-002_10C4C929.wem		\Actor-Mixer Hierarchy\Default Work Unit\Enemies\bird_death\BirdDeath-002		137428
+	362835235	UI Click-001	D:\Юнити\Джем\gmtk-jam-2022\gmtk-jam-2022_WwiseProject\.cache\Windows\SFX\UI Click-001_10C4C929.wem		\Actor-Mixer Hierarchy\Default Work Unit\UI\click\UI Click-001		25680
+	374806952	ChargerAttack-001	D:\Юнити\Джем\gmtk-jam-2022\gmtk-jam-2022_WwiseProject\.cache\Windows\SFX\ChargerAttack-001_10C4C929.wem		\Actor-Mixer Hierarchy\Default Work Unit\Enemies\charger_attack\ChargerAttack-001		285168
+	414597740	ShotgunBody-002	D:\Юнити\Джем\gmtk-jam-2022\gmtk-jam-2022_WwiseProject\.cache\Windows\SFX\ShotgunBody-002_10C4C929.wem		\Actor-Mixer Hierarchy\Default Work Unit\Weapons\Shotgun\ShotgunBody\ShotgunBody-002		152076
+	419832253	UI Click-003	D:\Юнити\Джем\gmtk-jam-2022\gmtk-jam-2022_WwiseProject\.cache\Windows\SFX\UI Click-003_10C4C929.wem		\Actor-Mixer Hierarchy\Default Work Unit\UI\click\UI Click-003		18304
+	426038124	Explosion-001	D:\Юнити\Джем\gmtk-jam-2022\gmtk-jam-2022_WwiseProject\.cache\Windows\SFX\Explosion-001_10C4C929.wem		\Actor-Mixer Hierarchy\Default Work Unit\Weapons\Bazooka\Exp\Body\Explosion-001		311508
+	431754237	Balloon-003	D:\Юнити\Джем\gmtk-jam-2022\gmtk-jam-2022_WwiseProject\.cache\Windows\SFX\Balloon-003_10C4C929.wem		\Actor-Mixer Hierarchy\Default Work Unit\Weapons\Bazooka\Exp\Tail\Balloon-003		435112
+	433826311	Dash-001	D:\Юнити\Джем\gmtk-jam-2022\gmtk-jam-2022_WwiseProject\.cache\Windows\SFX\Dash-001_10C4C929.wem		\Actor-Mixer Hierarchy\Default Work Unit\Character\Locomotion\dash\Dash-001		127620
+	441177781	ChargerAttack-003	D:\Юнити\Джем\gmtk-jam-2022\gmtk-jam-2022_WwiseProject\.cache\Windows\SFX\ChargerAttack-003_10C4C929.wem		\Actor-Mixer Hierarchy\Default Work Unit\Enemies\charger_attack\ChargerAttack-003		186796
+	485463825	Voices, Female, Anime, Schoolgirl, Fight Exhale 05 SND68077-002	D:\Юнити\Джем\gmtk-jam-2022\gmtk-jam-2022_WwiseProject\.cache\Windows\SFX\Voices, Female, Anime, Schoolgirl, Fight Exhale 05 SND68077-002_736F4190.wem		\Actor-Mixer Hierarchy\Default Work Unit\Character\char_damage\VO\Voices, Female, Anime, Schoolgirl, Fight Exhale 05 SND68077-002		38624
+	507282173	Voices, Female, Anime, Schoolgirl, Fight Exhale 08 SND68074-001	D:\Юнити\Джем\gmtk-jam-2022\gmtk-jam-2022_WwiseProject\.cache\Windows\SFX\Voices, Female, Anime, Schoolgirl, Fight Exhale 08 SND68074-001_A6B085AC.wem		\Actor-Mixer Hierarchy\Default Work Unit\Character\char_damage\VO\Voices, Female, Anime, Schoolgirl, Fight Exhale 08 SND68074-001		94464
+	509053515	Voices, Female, Anime, Schoolgirl, Fight Exhale 05 SND68077-003	D:\Юнити\Джем\gmtk-jam-2022\gmtk-jam-2022_WwiseProject\.cache\Windows\SFX\Voices, Female, Anime, Schoolgirl, Fight Exhale 05 SND68077-003_E1D12D88.wem		\Actor-Mixer Hierarchy\Default Work Unit\Character\char_damage\VO\Voices, Female, Anime, Schoolgirl, Fight Exhale 05 SND68077-003		46800
+	550822961	UI Navigate-004	D:\Юнити\Джем\gmtk-jam-2022\gmtk-jam-2022_WwiseProject\.cache\Windows\SFX\UI Navigate-004_10C4C929.wem		\Actor-Mixer Hierarchy\Default Work Unit\UI\navigate\UI Navigate-004		34604
+	589659366	grass-002	D:\Юнити\Джем\gmtk-jam-2022\gmtk-jam-2022_WwiseProject\.cache\Windows\SFX\grass-002_C5174F0E.wem		\Actor-Mixer Hierarchy\Default Work Unit\Character\Locomotion\steps\grass\grass-002		56088
+	596186013	tile-006	D:\Юнити\Джем\gmtk-jam-2022\gmtk-jam-2022_WwiseProject\.cache\Windows\SFX\tile-006_10C4C929.wem		\Actor-Mixer Hierarchy\Default Work Unit\Character\Locomotion\steps\tile\tile-006		56420
+	599065141	tile-004	D:\Юнити\Джем\gmtk-jam-2022\gmtk-jam-2022_WwiseProject\.cache\Windows\SFX\tile-004_10C4C929.wem		\Actor-Mixer Hierarchy\Default Work Unit\Character\Locomotion\steps\tile\tile-004		56196
+	609946504	BirdHit-004	D:\Юнити\Джем\gmtk-jam-2022\gmtk-jam-2022_WwiseProject\.cache\Windows\SFX\BirdHit-004_10C4C929.wem		\Actor-Mixer Hierarchy\Default Work Unit\Enemies\bird_hit\BirdHit-004		42852
+	624430896	Voices, Female, Anime, Schoolgirl, Fight Exhale 06 SND68076	D:\Юнити\Джем\gmtk-jam-2022\gmtk-jam-2022_WwiseProject\.cache\Windows\SFX\Voices, Female, Anime, Schoolgirl, Fight Exhale 06 SND68076_2F570890.wem		\Actor-Mixer Hierarchy\Default Work Unit\Character\char_damage\VO\Voices, Female, Anime, Schoolgirl, Fight Exhale 06 SND68076		108808
+	651821964	SimpleRifleLayer-001	D:\Юнити\Джем\gmtk-jam-2022\gmtk-jam-2022_WwiseProject\.cache\Windows\SFX\SimpleRifleLayer-001_13CF3374.wem		\Actor-Mixer Hierarchy\Default Work Unit\Weapons\Single Auto\SingleShot\Rifle\SimpleRifleLayer-001		39316
+	678421501	ChargerAttack-002	D:\Юнити\Джем\gmtk-jam-2022\gmtk-jam-2022_WwiseProject\.cache\Windows\SFX\ChargerAttack-002_10C4C929.wem		\Actor-Mixer Hierarchy\Default Work Unit\Enemies\charger_attack\ChargerAttack-002		179808
+	726436587	tile-005	D:\Юнити\Джем\gmtk-jam-2022\gmtk-jam-2022_WwiseProject\.cache\Windows\SFX\tile-005_10C4C929.wem		\Actor-Mixer Hierarchy\Default Work Unit\Character\Locomotion\steps\tile\tile-005		53976
+	729023770	ShotgunBody-003	D:\Юнити\Джем\gmtk-jam-2022\gmtk-jam-2022_WwiseProject\.cache\Windows\SFX\ShotgunBody-003_10C4C929.wem		\Actor-Mixer Hierarchy\Default Work Unit\Weapons\Shotgun\ShotgunBody\ShotgunBody-003		167412
+	744486772	grass-003	D:\Юнити\Джем\gmtk-jam-2022\gmtk-jam-2022_WwiseProject\.cache\Windows\SFX\grass-003_2B26352C.wem		\Actor-Mixer Hierarchy\Default Work Unit\Character\Locomotion\steps\grass\grass-003		57408
+	788929379	ShotgunBody-004	D:\Юнити\Джем\gmtk-jam-2022\gmtk-jam-2022_WwiseProject\.cache\Windows\SFX\ShotgunBody-004_10C4C929.wem		\Actor-Mixer Hierarchy\Default Work Unit\Weapons\Shotgun\ShotgunBody\ShotgunBody-004		152552
+	789609277	tile-003	D:\Юнити\Джем\gmtk-jam-2022\gmtk-jam-2022_WwiseProject\.cache\Windows\SFX\tile-003_10C4C929.wem		\Actor-Mixer Hierarchy\Default Work Unit\Character\Locomotion\steps\tile\tile-003		58436
+	810257973	SimpleSynth	D:\Юнити\Джем\gmtk-jam-2022\gmtk-jam-2022_WwiseProject\.cache\Windows\SFX\SimpleSynth_10C4C929.wem		\Actor-Mixer Hierarchy\Default Work Unit\Weapons\Single Auto\SingleShot\SimpleSynth		118684
+	810656859	BirdHit-002	D:\Юнити\Джем\gmtk-jam-2022\gmtk-jam-2022_WwiseProject\.cache\Windows\SFX\BirdHit-002_10C4C929.wem		\Actor-Mixer Hierarchy\Default Work Unit\Enemies\bird_hit\BirdHit-002		49220
+	819210726	Explosion-002	D:\Юнити\Джем\gmtk-jam-2022\gmtk-jam-2022_WwiseProject\.cache\Windows\SFX\Explosion-002_10C4C929.wem		\Actor-Mixer Hierarchy\Default Work Unit\Weapons\Bazooka\Exp\Body\Explosion-002		357092
+	824031503	ShotgunBody-001	D:\Юнити\Джем\gmtk-jam-2022\gmtk-jam-2022_WwiseProject\.cache\Windows\SFX\ShotgunBody-001_10C4C929.wem		\Actor-Mixer Hierarchy\Default Work Unit\Weapons\Shotgun\ShotgunBody\ShotgunBody-001		169532
+	843793947	Dash-002	D:\Юнити\Джем\gmtk-jam-2022\gmtk-jam-2022_WwiseProject\.cache\Windows\SFX\Dash-002_10C4C929.wem		\Actor-Mixer Hierarchy\Default Work Unit\Character\Locomotion\dash\Dash-002		146556
+	870072715	Voices, Female, Anime, Schoolgirl, Fight Exhale 05 SND68077-001	D:\Юнити\Джем\gmtk-jam-2022\gmtk-jam-2022_WwiseProject\.cache\Windows\SFX\Voices, Female, Anime, Schoolgirl, Fight Exhale 05 SND68077-001_AD216AC7.wem		\Actor-Mixer Hierarchy\Default Work Unit\Character\char_damage\VO\Voices, Female, Anime, Schoolgirl, Fight Exhale 05 SND68077-001		47636
+	888675141	BT PUNCH Slap Bright-001	D:\Юнити\Джем\gmtk-jam-2022\gmtk-jam-2022_WwiseProject\.cache\Windows\SFX\BT PUNCH Slap Bright-001_8F645699.wem		\Actor-Mixer Hierarchy\Default Work Unit\Character\char_damage\Slap\BT PUNCH Slap Bright-001		28604
+	906132848	SimpleRifleLayer-002	D:\Юнити\Джем\gmtk-jam-2022\gmtk-jam-2022_WwiseProject\.cache\Windows\SFX\SimpleRifleLayer-002_679FF778.wem		\Actor-Mixer Hierarchy\Default Work Unit\Weapons\Single Auto\SingleShot\Rifle\SimpleRifleLayer-002		33288
+	923705557	Explosion-003	D:\Юнити\Джем\gmtk-jam-2022\gmtk-jam-2022_WwiseProject\.cache\Windows\SFX\Explosion-003_10C4C929.wem		\Actor-Mixer Hierarchy\Default Work Unit\Weapons\Bazooka\Exp\Body\Explosion-003		357092
+	927837539	grass-005	D:\Юнити\Джем\gmtk-jam-2022\gmtk-jam-2022_WwiseProject\.cache\Windows\SFX\grass-005_10C4C929.wem		\Actor-Mixer Hierarchy\Default Work Unit\Character\Locomotion\steps\grass\grass-005		62792
+	936361397	WhiteNoise	D:\Юнити\Джем\gmtk-jam-2022\gmtk-jam-2022_WwiseProject\.cache\Windows\SFX\Archived, Test Tone, White Noise SND3563_F12A3F78.wem		\Actor-Mixer Hierarchy\Default Work Unit\Ambience\WhiteNoise		1743968
+	939848575	Noise	D:\Юнити\Джем\gmtk-jam-2022\gmtk-jam-2022_WwiseProject\.cache\Windows\SFX\Noise_ED36C254.wem		\Actor-Mixer Hierarchy\Default Work Unit\Character\char_damage\Noise		37420
+	948688986	Balloon-001	D:\Юнити\Джем\gmtk-jam-2022\gmtk-jam-2022_WwiseProject\.cache\Windows\SFX\Balloon-001_10C4C929.wem		\Actor-Mixer Hierarchy\Default Work Unit\Weapons\Bazooka\Exp\Tail\Balloon-001		435112
+	965256987	ChargerDeath-002	D:\Юнити\Джем\gmtk-jam-2022\gmtk-jam-2022_WwiseProject\.cache\Windows\SFX\ChargerDeath-002_10C4C929.wem		\Actor-Mixer Hierarchy\Default Work Unit\Enemies\charger_death\ChargerDeath-002		178168
+	971371585	BirdDeath-003	D:\Юнити\Джем\gmtk-jam-2022\gmtk-jam-2022_WwiseProject\.cache\Windows\SFX\BirdDeath-003_10C4C929.wem		\Actor-Mixer Hierarchy\Default Work Unit\Enemies\bird_death\BirdDeath-003		129700
+	1010164714	CC-CK Bone Break Large 03	D:\Юнити\Джем\gmtk-jam-2022\gmtk-jam-2022_WwiseProject\.cache\Windows\SFX\CC-CK Bone Break Large 03_B340A442.wem		\Actor-Mixer Hierarchy\Default Work Unit\Character\char_damage\CC-CK Bone Break Large 03		18128
+	1013294578	ShotgunTail-001	D:\Юнити\Джем\gmtk-jam-2022\gmtk-jam-2022_WwiseProject\.cache\Windows\SFX\ShotgunTail-001_10C4C929.wem		\Actor-Mixer Hierarchy\Default Work Unit\Weapons\Shotgun\ShotgunTail\ShotgunTail-001		466904
+	1026572950	grass-004	D:\Юнити\Джем\gmtk-jam-2022\gmtk-jam-2022_WwiseProject\.cache\Windows\SFX\grass-004_1A1379C7.wem		\Actor-Mixer Hierarchy\Default Work Unit\Character\Locomotion\steps\grass\grass-004		58376
+	1026688514	UI Click-002	D:\Юнити\Джем\gmtk-jam-2022\gmtk-jam-2022_WwiseProject\.cache\Windows\SFX\UI Click-002_10C4C929.wem		\Actor-Mixer Hierarchy\Default Work Unit\UI\click\UI Click-002		22196
+	1032553978	ChargerDeath-001	D:\Юнити\Джем\gmtk-jam-2022\gmtk-jam-2022_WwiseProject\.cache\Windows\SFX\ChargerDeath-001_10C4C929.wem		\Actor-Mixer Hierarchy\Default Work Unit\Enemies\charger_death\ChargerDeath-001		305824
+	1047358395	BazShot	D:\Юнити\Джем\gmtk-jam-2022\gmtk-jam-2022_WwiseProject\.cache\Windows\SFX\BazShot_10C4C929.wem		\Actor-Mixer Hierarchy\Default Work Unit\Weapons\Bazooka\BazShot		530688
+	1057996162	UI Navigate-003	D:\Юнити\Джем\gmtk-jam-2022\gmtk-jam-2022_WwiseProject\.cache\Windows\SFX\UI Navigate-003_10C4C929.wem		\Actor-Mixer Hierarchy\Default Work Unit\UI\navigate\UI Navigate-003		33532
+	1069360442	Bass	D:\Юнити\Джем\gmtk-jam-2022\gmtk-jam-2022_WwiseProject\.cache\Windows\SFX\Bass_10C4C929.wem		\Actor-Mixer Hierarchy\Default Work Unit\Weapons\Bazooka\Exp\Bass		161792
 

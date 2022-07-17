@@ -11,25 +11,371 @@
 	<StreamedFiles/>
 	<MediaFilesNotInAnyBank/>
 	<SoundBanks>
-		<SoundBank Id="1355168291" Language="SFX" Hash="3690994985">
+		<SoundBank Id="1355168291" Language="SFX" Hash="2843448967">
 			<ObjectPath>Init</ObjectPath>
 			<ShortName>Init</ShortName>
 			<Path>Init.bnk</Path>
+			<GameParameters>
+				<GameParameter Id="1748895166" Name="RTPC_ext_Music_vol" ObjectPath="\Game Parameters\Default Work Unit\RTPC_ext_Music_vol"/>
+				<GameParameter Id="3983751694" Name="RTPC_ext_SFX_vol" ObjectPath="\Game Parameters\Default Work Unit\RTPC_ext_SFX_vol"/>
+			</GameParameters>
 		</SoundBank>
-		<SoundBank Id="4056684167" Language="SFX" Hash="3134930237">
+		<SoundBank Id="4056684167" Language="SFX" Hash="3191935757">
 			<ObjectPath>\SoundBanks\Default Work Unit\Master</ObjectPath>
 			<ShortName>Master</ShortName>
 			<Path>Master.bnk</Path>
 			<IncludedEvents>
-				<Event Id="3157003241" Name="Test" ObjectPath="\Events\Default Work Unit\Default\Test" DurationType="OneShot" DurationMin="0.344156" DurationMax="0.344156">
+				<Event Id="2418170363" Name="Play_Bazooka" ObjectPath="\Events\Default Work Unit\Weapons\Play_Bazooka" DurationType="OneShot" DurationMin="2.323957" DurationMax="3.102111">
 					<IncludedMemoryFiles>
-						<File Id="998391283" Language="SFX">
-							<ShortName>BT INSTRUMENT Bird Pipe Chirp.wav</ShortName>
-							<Path>SFX\BT INSTRUMENT Bird Pipe Chirp_10C4C929.wem</Path>
+						<File Id="187254984" Language="SFX">
+							<ShortName>Balloon-002.wav</ShortName>
+							<Path>SFX\Balloon-002_10C4C929.wem</Path>
+						</File>
+						<File Id="426038124" Language="SFX">
+							<ShortName>Explosion-001.wav</ShortName>
+							<Path>SFX\Explosion-001_10C4C929.wem</Path>
+						</File>
+						<File Id="431754237" Language="SFX">
+							<ShortName>Balloon-003.wav</ShortName>
+							<Path>SFX\Balloon-003_10C4C929.wem</Path>
+						</File>
+						<File Id="819210726" Language="SFX">
+							<ShortName>Explosion-002.wav</ShortName>
+							<Path>SFX\Explosion-002_10C4C929.wem</Path>
+						</File>
+						<File Id="923705557" Language="SFX">
+							<ShortName>Explosion-003.wav</ShortName>
+							<Path>SFX\Explosion-003_10C4C929.wem</Path>
+						</File>
+						<File Id="948688986" Language="SFX">
+							<ShortName>Balloon-001.wav</ShortName>
+							<Path>SFX\Balloon-001_10C4C929.wem</Path>
+						</File>
+						<File Id="1047358395" Language="SFX">
+							<ShortName>BazShot.wav</ShortName>
+							<Path>SFX\BazShot_10C4C929.wem</Path>
+						</File>
+						<File Id="1069360442" Language="SFX">
+							<ShortName>Bass.wav</ShortName>
+							<Path>SFX\Bass_10C4C929.wem</Path>
+						</File>
+					</IncludedMemoryFiles>
+				</Event>
+				<Event Id="3539215392" Name="Play_bird_death" ObjectPath="\Events\Default Work Unit\Enemies\Play_bird_death" DurationType="OneShot" DurationMin="0.590083" DurationMax="0.715437">
+					<IncludedMemoryFiles>
+						<File Id="107841545" Language="SFX">
+							<ShortName>BirdDeath-001.wav</ShortName>
+							<Path>SFX\BirdDeath-001_10C4C929.wem</Path>
+						</File>
+						<File Id="338888042" Language="SFX">
+							<ShortName>BirdDeath-002.wav</ShortName>
+							<Path>SFX\BirdDeath-002_10C4C929.wem</Path>
+						</File>
+						<File Id="971371585" Language="SFX">
+							<ShortName>BirdDeath-003.wav</ShortName>
+							<Path>SFX\BirdDeath-003_10C4C929.wem</Path>
+						</File>
+					</IncludedMemoryFiles>
+				</Event>
+				<Event Id="3065695153" Name="Play_bird_hit" ObjectPath="\Events\Default Work Unit\Enemies\Play_bird_hit" DurationType="OneShot" DurationMin="0.218583" DurationMax="0.271021">
+					<IncludedMemoryFiles>
+						<File Id="134077422" Language="SFX">
+							<ShortName>BirdHit-001.wav</ShortName>
+							<Path>SFX\BirdHit-001_10C4C929.wem</Path>
+						</File>
+						<File Id="310155114" Language="SFX">
+							<ShortName>BirdHit-003.wav</ShortName>
+							<Path>SFX\BirdHit-003_10C4C929.wem</Path>
+						</File>
+						<File Id="609946504" Language="SFX">
+							<ShortName>BirdHit-004.wav</ShortName>
+							<Path>SFX\BirdHit-004_10C4C929.wem</Path>
+						</File>
+						<File Id="810656859" Language="SFX">
+							<ShortName>BirdHit-002.wav</ShortName>
+							<Path>SFX\BirdHit-002_10C4C929.wem</Path>
+						</File>
+					</IncludedMemoryFiles>
+				</Event>
+				<Event Id="1756926810" Name="Play_char_damage" ObjectPath="\Events\Default Work Unit\Character\Play_char_damage" DurationType="OneShot" DurationMin="0.213641" DurationMax="0.646746">
+					<IncludedMemoryFiles>
+						<File Id="26443093" Language="SFX">
+							<ShortName>CC-CK Punch Low Smack 04-002.wav</ShortName>
+							<Path>SFX\CC-CK Punch Low Smack 04-002_363638FD.wem</Path>
+						</File>
+						<File Id="79678128" Language="SFX">
+							<ShortName>BT PUNCH Slap Bright-002.wav</ShortName>
+							<Path>SFX\BT PUNCH Slap Bright-002_F5673D9B.wem</Path>
+						</File>
+						<File Id="229507045" Language="SFX">
+							<ShortName>CC-CK Punch Low Smack 04-001.wav</ShortName>
+							<Path>SFX\CC-CK Punch Low Smack 04-001_5993F3D0.wem</Path>
+						</File>
+						<File Id="257267251" Language="SFX">
+							<ShortName>Voices, Female, Anime, Schoolgirl, Fight Exhale 08 SND68074-002.wav</ShortName>
+							<Path>SFX\Voices, Female, Anime, Schoolgirl, Fight Exhale 08 SND68074-002_A0905E20.wem</Path>
+						</File>
+						<File Id="485463825" Language="SFX">
+							<ShortName>Voices, Female, Anime, Schoolgirl, Fight Exhale 05 SND68077-002.wav</ShortName>
+							<Path>SFX\Voices, Female, Anime, Schoolgirl, Fight Exhale 05 SND68077-002_736F4190.wem</Path>
+						</File>
+						<File Id="507282173" Language="SFX">
+							<ShortName>Voices, Female, Anime, Schoolgirl, Fight Exhale 08 SND68074-001.wav</ShortName>
+							<Path>SFX\Voices, Female, Anime, Schoolgirl, Fight Exhale 08 SND68074-001_A6B085AC.wem</Path>
+						</File>
+						<File Id="509053515" Language="SFX">
+							<ShortName>Voices, Female, Anime, Schoolgirl, Fight Exhale 05 SND68077-003.wav</ShortName>
+							<Path>SFX\Voices, Female, Anime, Schoolgirl, Fight Exhale 05 SND68077-003_E1D12D88.wem</Path>
+						</File>
+						<File Id="624430896" Language="SFX">
+							<ShortName>Voices, Female, Anime, Schoolgirl, Fight Exhale 06 SND68076.wav</ShortName>
+							<Path>SFX\Voices, Female, Anime, Schoolgirl, Fight Exhale 06 SND68076_2F570890.wem</Path>
+						</File>
+						<File Id="870072715" Language="SFX">
+							<ShortName>Voices, Female, Anime, Schoolgirl, Fight Exhale 05 SND68077-001.wav</ShortName>
+							<Path>SFX\Voices, Female, Anime, Schoolgirl, Fight Exhale 05 SND68077-001_AD216AC7.wem</Path>
+						</File>
+						<File Id="888675141" Language="SFX">
+							<ShortName>BT PUNCH Slap Bright-001.wav</ShortName>
+							<Path>SFX\BT PUNCH Slap Bright-001_8F645699.wem</Path>
+						</File>
+						<File Id="939848575" Language="SFX">
+							<ShortName>Noise.wav</ShortName>
+							<Path>SFX\Noise_ED36C254.wem</Path>
+						</File>
+						<File Id="1010164714" Language="SFX">
+							<ShortName>CC-CK Bone Break Large 03.wav</ShortName>
+							<Path>SFX\CC-CK Bone Break Large 03_B340A442.wem</Path>
+						</File>
+					</IncludedMemoryFiles>
+				</Event>
+				<Event Id="2507488987" Name="Play_charger_attack" ObjectPath="\Events\Default Work Unit\Enemies\Play_charger_attack" DurationType="OneShot" DurationMin="0.936167" DurationMax="1.484917">
+					<IncludedMemoryFiles>
+						<File Id="374806952" Language="SFX">
+							<ShortName>ChargerAttack-001.wav</ShortName>
+							<Path>SFX\ChargerAttack-001_10C4C929.wem</Path>
+						</File>
+						<File Id="441177781" Language="SFX">
+							<ShortName>ChargerAttack-003.wav</ShortName>
+							<Path>SFX\ChargerAttack-003_10C4C929.wem</Path>
+						</File>
+						<File Id="678421501" Language="SFX">
+							<ShortName>ChargerAttack-002.wav</ShortName>
+							<Path>SFX\ChargerAttack-002_10C4C929.wem</Path>
+						</File>
+					</IncludedMemoryFiles>
+				</Event>
+				<Event Id="2925990347" Name="Play_charger_death" ObjectPath="\Events\Default Work Unit\Enemies\Play_charger_death" DurationType="OneShot" DurationMin="0.927625" DurationMax="1.592500">
+					<IncludedMemoryFiles>
+						<File Id="299035899" Language="SFX">
+							<ShortName>ChargerDeath-003.wav</ShortName>
+							<Path>SFX\ChargerDeath-003_10C4C929.wem</Path>
+						</File>
+						<File Id="965256987" Language="SFX">
+							<ShortName>ChargerDeath-002.wav</ShortName>
+							<Path>SFX\ChargerDeath-002_10C4C929.wem</Path>
+						</File>
+						<File Id="1032553978" Language="SFX">
+							<ShortName>ChargerDeath-001.wav</ShortName>
+							<Path>SFX\ChargerDeath-001_10C4C929.wem</Path>
+						</File>
+					</IncludedMemoryFiles>
+				</Event>
+				<Event Id="311910498" Name="Play_click" ObjectPath="\Events\Default Work Unit\UI\Play_click" DurationType="OneShot" DurationMin="0.084635" DurationMax="0.165049">
+					<IncludedMemoryFiles>
+						<File Id="144307092" Language="SFX">
+							<ShortName>UI Click-004.wav</ShortName>
+							<Path>SFX\UI Click-004_10C4C929.wem</Path>
+						</File>
+						<File Id="362835235" Language="SFX">
+							<ShortName>UI Click-001.wav</ShortName>
+							<Path>SFX\UI Click-001_10C4C929.wem</Path>
+						</File>
+						<File Id="419832253" Language="SFX">
+							<ShortName>UI Click-003.wav</ShortName>
+							<Path>SFX\UI Click-003_10C4C929.wem</Path>
+						</File>
+						<File Id="1026688514" Language="SFX">
+							<ShortName>UI Click-002.wav</ShortName>
+							<Path>SFX\UI Click-002_10C4C929.wem</Path>
+						</File>
+					</IncludedMemoryFiles>
+				</Event>
+				<Event Id="2211787386" Name="Play_dash" ObjectPath="\Events\Default Work Unit\Character\Play_dash" DurationType="OneShot" DurationMin="0.664354" DurationMax="0.762979">
+					<IncludedMemoryFiles>
+						<File Id="433826311" Language="SFX">
+							<ShortName>Dash-001.wav</ShortName>
+							<Path>SFX\Dash-001_10C4C929.wem</Path>
+						</File>
+						<File Id="843793947" Language="SFX">
+							<ShortName>Dash-002.wav</ShortName>
+							<Path>SFX\Dash-002_10C4C929.wem</Path>
+						</File>
+					</IncludedMemoryFiles>
+				</Event>
+				<Event Id="3788303255" Name="Play_GateOpen" ObjectPath="\Events\Default Work Unit\Amb\Play_GateOpen" DurationType="OneShot" DurationMin="4.410167" DurationMax="4.410167">
+					<IncludedMemoryFiles>
+						<File Id="127698413" Language="SFX">
+							<ShortName>GateOpen.wav</ShortName>
+							<Path>SFX\GateOpen_10C4C929.wem</Path>
+						</File>
+					</IncludedMemoryFiles>
+				</Event>
+				<Event Id="3893482503" Name="Play_navigate" ObjectPath="\Events\Default Work Unit\UI\Play_navigate" DurationType="OneShot" DurationMin="0.131708" DurationMax="0.199104">
+					<IncludedMemoryFiles>
+						<File Id="73006644" Language="SFX">
+							<ShortName>UI Navigate-002.wav</ShortName>
+							<Path>SFX\UI Navigate-002_10C4C929.wem</Path>
+						</File>
+						<File Id="111375180" Language="SFX">
+							<ShortName>UI Navigate-001.wav</ShortName>
+							<Path>SFX\UI Navigate-001_10C4C929.wem</Path>
+						</File>
+						<File Id="550822961" Language="SFX">
+							<ShortName>UI Navigate-004.wav</ShortName>
+							<Path>SFX\UI Navigate-004_10C4C929.wem</Path>
+						</File>
+						<File Id="1057996162" Language="SFX">
+							<ShortName>UI Navigate-003.wav</ShortName>
+							<Path>SFX\UI Navigate-003_10C4C929.wem</Path>
+						</File>
+					</IncludedMemoryFiles>
+				</Event>
+				<Event Id="992244" Name="Play_Shotgun" ObjectPath="\Events\Default Work Unit\Weapons\Play_Shotgun" DurationType="OneShot" DurationMin="2.591458" DurationMax="2.591458">
+					<IncludedMemoryFiles>
+						<File Id="158575514" Language="SFX">
+							<ShortName>ShotgunTail-002.wav</ShortName>
+							<Path>SFX\ShotgunTail-002_10C4C929.wem</Path>
+						</File>
+						<File Id="414597740" Language="SFX">
+							<ShortName>ShotgunBody-002.wav</ShortName>
+							<Path>SFX\ShotgunBody-002_10C4C929.wem</Path>
+						</File>
+						<File Id="729023770" Language="SFX">
+							<ShortName>ShotgunBody-003.wav</ShortName>
+							<Path>SFX\ShotgunBody-003_10C4C929.wem</Path>
+						</File>
+						<File Id="788929379" Language="SFX">
+							<ShortName>ShotgunBody-004.wav</ShortName>
+							<Path>SFX\ShotgunBody-004_10C4C929.wem</Path>
+						</File>
+						<File Id="824031503" Language="SFX">
+							<ShortName>ShotgunBody-001.wav</ShortName>
+							<Path>SFX\ShotgunBody-001_10C4C929.wem</Path>
+						</File>
+						<File Id="1013294578" Language="SFX">
+							<ShortName>ShotgunTail-001.wav</ShortName>
+							<Path>SFX\ShotgunTail-001_10C4C929.wem</Path>
+						</File>
+					</IncludedMemoryFiles>
+				</Event>
+				<Event Id="1629017912" Name="Play_Single_Auto" ObjectPath="\Events\Default Work Unit\Weapons\Play_Single_Auto" DurationType="Infinite">
+					<IncludedMemoryFiles>
+						<File Id="202050271" Language="SFX">
+							<ShortName>SimpleRifleLayer-003.wav</ShortName>
+							<Path>SFX\SimpleRifleLayer-003_05771D63.wem</Path>
+						</File>
+						<File Id="651821964" Language="SFX">
+							<ShortName>SimpleRifleLayer-001.wav</ShortName>
+							<Path>SFX\SimpleRifleLayer-001_13CF3374.wem</Path>
+						</File>
+						<File Id="810257973" Language="SFX">
+							<ShortName>SimpleSynth.wav</ShortName>
+							<Path>SFX\SimpleSynth_10C4C929.wem</Path>
+						</File>
+						<File Id="906132848" Language="SFX">
+							<ShortName>SimpleRifleLayer-002.wav</ShortName>
+							<Path>SFX\SimpleRifleLayer-002_679FF778.wem</Path>
+						</File>
+					</IncludedMemoryFiles>
+				</Event>
+				<Event Id="2600469463" Name="Play_steps" ObjectPath="\Events\Default Work Unit\Character\Play_steps" DurationType="OneShot" DurationMin="0.210082" DurationMax="0.326708">
+					<IncludedMemoryFiles>
+						<File Id="27974589" Language="SFX">
+							<ShortName>grass-001.wav</ShortName>
+							<Path>SFX\grass-001_C92D7041.wem</Path>
+						</File>
+						<File Id="65942660" Language="SFX">
+							<ShortName>tile-002.wav</ShortName>
+							<Path>SFX\tile-002_CAAF4074.wem</Path>
+						</File>
+						<File Id="246085346" Language="SFX">
+							<ShortName>tile-001.wav</ShortName>
+							<Path>SFX\tile-001_10382A92.wem</Path>
+						</File>
+						<File Id="589659366" Language="SFX">
+							<ShortName>grass-002.wav</ShortName>
+							<Path>SFX\grass-002_C5174F0E.wem</Path>
+						</File>
+						<File Id="596186013" Language="SFX">
+							<ShortName>tile-006.wav</ShortName>
+							<Path>SFX\tile-006_10C4C929.wem</Path>
+						</File>
+						<File Id="599065141" Language="SFX">
+							<ShortName>tile-004.wav</ShortName>
+							<Path>SFX\tile-004_10C4C929.wem</Path>
+						</File>
+						<File Id="726436587" Language="SFX">
+							<ShortName>tile-005.wav</ShortName>
+							<Path>SFX\tile-005_10C4C929.wem</Path>
+						</File>
+						<File Id="744486772" Language="SFX">
+							<ShortName>grass-003.wav</ShortName>
+							<Path>SFX\grass-003_2B26352C.wem</Path>
+						</File>
+						<File Id="789609277" Language="SFX">
+							<ShortName>tile-003.wav</ShortName>
+							<Path>SFX\tile-003_10C4C929.wem</Path>
+						</File>
+						<File Id="927837539" Language="SFX">
+							<ShortName>grass-005.wav</ShortName>
+							<Path>SFX\grass-005_10C4C929.wem</Path>
+						</File>
+						<File Id="1026572950" Language="SFX">
+							<ShortName>grass-004.wav</ShortName>
+							<Path>SFX\grass-004_1A1379C7.wem</Path>
+						</File>
+					</IncludedMemoryFiles>
+					<DefaultSwitchValue>{3441386D-0010-4587-84C7-891D3917FDAF}</DefaultSwitchValue>
+					<SwitchContainers>
+						<SwitchContainer SwitchValue="{3441386D-0010-4587-84C7-891D3917FDAF}">
+							<Media>
+								<File Id="27974589"/>
+								<File Id="589659366"/>
+								<File Id="744486772"/>
+								<File Id="927837539"/>
+								<File Id="1026572950"/>
+							</Media>
+						</SwitchContainer>
+						<SwitchContainer SwitchValue="{1A20A087-1867-42C7-AA5E-3A149E21E6DB}">
+							<Media>
+								<File Id="65942660"/>
+								<File Id="246085346"/>
+								<File Id="596186013"/>
+								<File Id="599065141"/>
+								<File Id="726436587"/>
+								<File Id="789609277"/>
+							</Media>
+						</SwitchContainer>
+					</SwitchContainers>
+				</Event>
+				<Event Id="1074022805" Name="Play_WhiteNoise" ObjectPath="\Events\Default Work Unit\Amb\Play_WhiteNoise" DurationType="Infinite">
+					<IncludedMemoryFiles>
+						<File Id="936361397" Language="SFX">
+							<ShortName>Archived, Test Tone, White Noise SND3563.wav</ShortName>
+							<Path>SFX\Archived, Test Tone, White Noise SND3563_F12A3F78.wem</Path>
 						</File>
 					</IncludedMemoryFiles>
 				</Event>
 			</IncludedEvents>
+			<SwitchGroups>
+				<SwitchGroup Id="4011692932" Name="SWITCH_char_footsteps" ObjectPath="\Switches\Default Work Unit\SWITCH_char_footsteps">
+					<Switches>
+						<Switch Id="1983658940" Name="SWITCH_tile" ObjectPath="\Switches\Default Work Unit\SWITCH_char_footsteps\SWITCH_tile"/>
+						<Switch Id="2902377486" Name="SWITCH_grass" ObjectPath="\Switches\Default Work Unit\SWITCH_char_footsteps\SWITCH_grass"/>
+					</Switches>
+				</SwitchGroup>
+			</SwitchGroups>
 		</SoundBank>
 	</SoundBanks>
 </SoundBanksInfo>

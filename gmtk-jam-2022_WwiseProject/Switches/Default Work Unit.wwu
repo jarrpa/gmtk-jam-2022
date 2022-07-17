@@ -9,6 +9,41 @@
 						<Switch Name="SWITCH_grass" ID="{3441386D-0010-4587-84C7-891D3917FDAF}"/>
 					</ChildrenList>
 				</SwitchGroup>
+				<SwitchGroup Name="SWITCH_rooms" ID="{1FB7C126-FFB0-4864-B143-1855FA1CE62F}">
+					<PropertyList>
+						<Property Name="UseGameParameter" Type="bool" Value="True"/>
+					</PropertyList>
+					<ChildrenList>
+						<Switch Name="SWITCH_Room1" ID="{0DBD96EC-3D4A-4C72-A7D2-6844C06C23E9}"/>
+						<Switch Name="SWITCH_Room2" ID="{CBB97D5E-55FF-459F-A132-05DB34995611}"/>
+						<Switch Name="SWITCH_Room3" ID="{FBD960CA-5FCB-4E29-83DB-C788055A29C0}"/>
+					</ChildrenList>
+					<SwitchOnRTPC>
+						<GameParameterRef Name="RTPC_ext_rooms" ID="{9C3D340C-4EEA-4D49-A039-35C6458771A1}"/>
+						<Curve Name="" ID="{C49B3104-59C3-4813-B6B2-E0EAB2AB20EF}">
+							<PropertyList>
+								<Property Name="Flags" Type="int32" Value="65537"/>
+							</PropertyList>
+							<PointList>
+								<Point>
+									<XPos>1</XPos>
+									<YPos>1</YPos>
+									<Flags>5</Flags>
+								</Point>
+								<Point>
+									<XPos>2</XPos>
+									<YPos>2</YPos>
+									<Flags>0</Flags>
+								</Point>
+								<Point>
+									<XPos>3</XPos>
+									<YPos>3</YPos>
+									<Flags>37</Flags>
+								</Point>
+							</PointList>
+						</Curve>
+					</SwitchOnRTPC>
+				</SwitchGroup>
 			</ChildrenList>
 		</WorkUnit>
 	</Switches>
