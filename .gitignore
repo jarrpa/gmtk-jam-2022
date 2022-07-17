@@ -136,3 +136,10 @@ tags
 
 # Persistent undo
 [._]*.un~
+
+# Wwise Project Files
+.cache
+*.akd
+*.prof
+*.validationcache
+*/Assets/Wwise/Editor/ProjectData/AkWwiseProjectData.asset*

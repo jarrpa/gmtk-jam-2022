@@ -1,0 +1,1300 @@
+fileFormatVersion: 2
+guid: be93ea73b443245d0b3adf0ea2253ba8
+TextureImporter:
+  internalIDToNameTable: []
+  externalObjects: {}
+  serializedVersion: 11
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMasterTextureLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 0
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 64
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Server
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: GMTK_Rock_Wall_1_0
+      rect:
+        serializedVersion: 2
+        x: 64
+        y: 936
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e4faaf1595ef34d0f9196a9f5e293ba9
+      internalID: -459546327
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GMTK_Rock_Wall_1_1
+      rect:
+        serializedVersion: 2
+        x: 64
+        y: 872
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e959c9a7c98d44633829c199bfe2c09b
+      internalID: 1774110054
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GMTK_Rock_Wall_1_2
+      rect:
+        serializedVersion: 2
+        x: 256
+        y: 872
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 56fe7db12054e4d2f9cebd4442008402
+      internalID: -1086954916
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GMTK_Rock_Wall_1_3
+      rect:
+        serializedVersion: 2
+        x: 320
+        y: 872
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b4097eb84d40a4ab59cfcfb085fa0efc
+      internalID: -1838826982
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GMTK_Rock_Wall_1_4
+      rect:
+        serializedVersion: 2
+        x: 384
+        y: 872
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 74673447f2f9a464486f83f7f055c486
+      internalID: -934732881
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GMTK_Rock_Wall_1_5
+      rect:
+        serializedVersion: 2
+        x: 256
+        y: 808
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 07c68c03de310441190192760626bea6
+      internalID: 1759579368
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GMTK_Rock_Wall_1_6
+      rect:
+        serializedVersion: 2
+        x: 384
+        y: 808
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cc85db2c5458345b6987c35052913908
+      internalID: -623016302
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GMTK_Rock_Wall_1_7
+      rect:
+        serializedVersion: 2
+        x: 512
+        y: 808
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 44ca204de47514c93ad4b436f4fd84df
+      internalID: -1784034094
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GMTK_Rock_Wall_1_8
+      rect:
+        serializedVersion: 2
+        x: 640
+        y: 808
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a8a12992d64004673ab56d5b4f3d5c19
+      internalID: -342192524
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GMTK_Rock_Wall_1_9
+      rect:
+        serializedVersion: 2
+        x: 256
+        y: 680
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b4fee0c63c1f84a5189028079ed7e91c
+      internalID: 1232295056
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GMTK_Rock_Wall_1_10
+      rect:
+        serializedVersion: 2
+        x: 448
+        y: 680
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7cef17ec1a023461eb606f6d75a099e2
+      internalID: 588502155
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GMTK_Rock_Wall_1_11
+      rect:
+        serializedVersion: 2
+        x: 512
+        y: 680
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: efb66a26a43394f4ea7e021f5ad465f1
+      internalID: 1927646287
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GMTK_Rock_Wall_1_12
+      rect:
+        serializedVersion: 2
+        x: 576
+        y: 680
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5bc68331f936f43b5a0d327f3cd38150
+      internalID: -211800300
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GMTK_Rock_Wall_1_13
+      rect:
+        serializedVersion: 2
+        x: 768
+        y: 680
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9e2d7162aed4447098152d5bcc1b3a68
+      internalID: 216064702
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GMTK_Rock_Wall_1_14
+      rect:
+        serializedVersion: 2
+        x: 832
+        y: 680
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 999383950bc93490eb2ee9d825c4dd45
+      internalID: -813908527
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GMTK_Rock_Wall_1_15
+      rect:
+        serializedVersion: 2
+        x: 768
+        y: 616
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cf6b2428ce78c4a9bb043d070a4bfe78
+      internalID: 1306596735
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GMTK_Rock_Wall_1_16
+      rect:
+        serializedVersion: 2
+        x: 832
+        y: 616
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2ed50fa8f31fc446587c81407cdadcca
+      internalID: 1277706099
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GMTK_Rock_Wall_1_17
+      rect:
+        serializedVersion: 2
+        x: 384
+        y: 552
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6822fee57ab504b4b8cab4a9c32ab3ec
+      internalID: 1362580474
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GMTK_Rock_Wall_1_18
+      rect:
+        serializedVersion: 2
+        x: 768
+        y: 552
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a523914b0c11049e1b9299c4dbaadf63
+      internalID: -2143393566
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GMTK_Rock_Wall_1_19
+      rect:
+        serializedVersion: 2
+        x: 128
+        y: 488
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 298cd37c0e10742e89c1e737642464f9
+      internalID: -1684319852
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GMTK_Rock_Wall_1_20
+      rect:
+        serializedVersion: 2
+        x: 192
+        y: 488
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ad5db7cf1a9274834985a3f941c28769
+      internalID: -220943437
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GMTK_Rock_Wall_1_21
+      rect:
+        serializedVersion: 2
+        x: 384
+        y: 488
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0773c8402f9304a069558d2c9c78a470
+      internalID: 1356819861
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GMTK_Rock_Wall_1_22
+      rect:
+        serializedVersion: 2
+        x: 576
+        y: 488
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7b8bf3500c5e045c5abcbe31dff8a517
+      internalID: 1118344287
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GMTK_Rock_Wall_1_23
+      rect:
+        serializedVersion: 2
+        x: 768
+        y: 488
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3cd31116e447a45f7a52ec2af41ab3b7
+      internalID: 143230405
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GMTK_Rock_Wall_1_24
+      rect:
+        serializedVersion: 2
+        x: 384
+        y: 424
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 402db2e11874445639cd4b8bcf59fa86
+      internalID: 1204826694
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GMTK_Rock_Wall_1_25
+      rect:
+        serializedVersion: 2
+        x: 448
+        y: 424
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 60771f3715d824ac1b3603b53c026c2e
+      internalID: -1234126343
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GMTK_Rock_Wall_1_26
+      rect:
+        serializedVersion: 2
+        x: 576
+        y: 424
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c7c4519b7a492434f9cc8ffcf77a0023
+      internalID: 1990462287
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GMTK_Rock_Wall_1_27
+      rect:
+        serializedVersion: 2
+        x: 512
+        y: 360
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 00010ac4da6e540018a35575c79c0f20
+      internalID: -629297324
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GMTK_Rock_Wall_1_28
+      rect:
+        serializedVersion: 2
+        x: 576
+        y: 360
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c07af9c6e9b2a464986145afea7db80e
+      internalID: 2054867289
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GMTK_Rock_Wall_1_29
+      rect:
+        serializedVersion: 2
+        x: 704
+        y: 360
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f731bc61b44e54b5c860a8acec450bd5
+      internalID: -1921609206
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GMTK_Rock_Wall_1_30
+      rect:
+        serializedVersion: 2
+        x: 64
+        y: 296
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0a8c0002d27424e4a9937ae31316990c
+      internalID: 416346790
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GMTK_Rock_Wall_1_31
+      rect:
+        serializedVersion: 2
+        x: 128
+        y: 296
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9d6a3d6844e0b454188d0419f6492626
+      internalID: 2054764339
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GMTK_Rock_Wall_1_32
+      rect:
+        serializedVersion: 2
+        x: 256
+        y: 296
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f12aba0c306ad47e8b5fcb6fe60a6e23
+      internalID: 988876326
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GMTK_Rock_Wall_1_33
+      rect:
+        serializedVersion: 2
+        x: 320
+        y: 296
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 53dee04562ce04eb7872ac20d6d175e3
+      internalID: -1372953519
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GMTK_Rock_Wall_1_34
+      rect:
+        serializedVersion: 2
+        x: 384
+        y: 296
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 92f994bd33bed4eb8b81f89d1baa3715
+      internalID: 1415519087
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GMTK_Rock_Wall_1_35
+      rect:
+        serializedVersion: 2
+        x: 512
+        y: 296
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4c56774655d80431caef96a6c1c94fe5
+      internalID: -438779503
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GMTK_Rock_Wall_1_36
+      rect:
+        serializedVersion: 2
+        x: 576
+        y: 296
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 926bbf47c40f34a90917035f6b1eaeea
+      internalID: 1193732391
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GMTK_Rock_Wall_1_37
+      rect:
+        serializedVersion: 2
+        x: 896
+        y: 296
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3711762b716574ddbb31e387f60037ee
+      internalID: 1303790672
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GMTK_Rock_Wall_1_38
+      rect:
+        serializedVersion: 2
+        x: 704
+        y: 232
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5cf20bf07bf2044d098e7739e88973ba
+      internalID: -247750184
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GMTK_Rock_Wall_1_39
+      rect:
+        serializedVersion: 2
+        x: 896
+        y: 232
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9f5afd07827eb4d22939563217849e7a
+      internalID: 1349060750
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GMTK_Rock_Wall_1_40
+      rect:
+        serializedVersion: 2
+        x: 128
+        y: 168
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bed83deabb4be46b0801136f862d4a15
+      internalID: -153528292
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GMTK_Rock_Wall_1_41
+      rect:
+        serializedVersion: 2
+        x: 256
+        y: 168
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c19be329ef9d14720beffbbaea2b7bb8
+      internalID: 1147966908
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GMTK_Rock_Wall_1_42
+      rect:
+        serializedVersion: 2
+        x: 704
+        y: 168
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2fb8c36992dbe4bdea4b17c1bf28db7e
+      internalID: -2007369362
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GMTK_Rock_Wall_1_43
+      rect:
+        serializedVersion: 2
+        x: 832
+        y: 168
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d0e13c1ca31cb4d59b02b92c17f46f22
+      internalID: 19063815
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GMTK_Rock_Wall_1_44
+      rect:
+        serializedVersion: 2
+        x: 896
+        y: 168
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b03a589d26e3d47038753643f8b18f63
+      internalID: -704197235
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GMTK_Rock_Wall_1_45
+      rect:
+        serializedVersion: 2
+        x: 128
+        y: 104
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 25e88b221b54f403885e26634ad47ea2
+      internalID: 108495823
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GMTK_Rock_Wall_1_46
+      rect:
+        serializedVersion: 2
+        x: 256
+        y: 104
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 079d96464c36e4077b1c3b4195c8b43b
+      internalID: -602287634
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GMTK_Rock_Wall_1_47
+      rect:
+        serializedVersion: 2
+        x: 704
+        y: 104
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ba6c7d5b2950045ef8e853f331c2fb60
+      internalID: -1325999731
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GMTK_Rock_Wall_1_48
+      rect:
+        serializedVersion: 2
+        x: 768
+        y: 104
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: feb414bb3c1ad4fae8edbef5dcf90591
+      internalID: 743428955
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GMTK_Rock_Wall_1_49
+      rect:
+        serializedVersion: 2
+        x: 128
+        y: 40
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7187874c4b9764ed1919d307b52dbb83
+      internalID: 1445886657
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GMTK_Rock_Wall_1_50
+      rect:
+        serializedVersion: 2
+        x: 256
+        y: 40
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ff3497424eaab4db3be8ae557d3a4887
+      internalID: 2040448111
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GMTK_Rock_Wall_1_51
+      rect:
+        serializedVersion: 2
+        x: 704
+        y: 40
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7bd165aebe9bd459baca31ad6c72b1b7
+      internalID: 1259784393
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GMTK_Rock_Wall_1_52
+      rect:
+        serializedVersion: 2
+        x: 768
+        y: 40
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0ca8a9361ec024f88bab80aa35f1c136
+      internalID: 419099714
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    nameFileIdTable:
+      GMTK_Rock_Wall_1_22: 1118344287
+      GMTK_Rock_Wall_1_23: 143230405
+      GMTK_Rock_Wall_1_25: -1234126343
+      GMTK_Rock_Wall_1_26: 1990462287
+      GMTK_Rock_Wall_1_46: -602287634
+      GMTK_Rock_Wall_1_31: 2054764339
+      GMTK_Rock_Wall_1_12: -211800300
+      GMTK_Rock_Wall_1_8: -342192524
+      GMTK_Rock_Wall_1_27: -629297324
+      GMTK_Rock_Wall_1_29: -1921609206
+      GMTK_Rock_Wall_1_2: -1086954916
+      GMTK_Rock_Wall_1_5: 1759579368
+      GMTK_Rock_Wall_1_33: -1372953519
+      GMTK_Rock_Wall_1_1: 1774110054
+      GMTK_Rock_Wall_1_43: 19063815
+      GMTK_Rock_Wall_1_40: -153528292
+      GMTK_Rock_Wall_1_3: -1838826982
+      GMTK_Rock_Wall_1_48: 743428955
+      GMTK_Rock_Wall_1_16: 1277706099
+      GMTK_Rock_Wall_1_19: -1684319852
+      GMTK_Rock_Wall_1_7: -1784034094
+      GMTK_Rock_Wall_1_45: 108495823
+      GMTK_Rock_Wall_1_50: 2040448111
+      GMTK_Rock_Wall_1_42: -2007369362
+      GMTK_Rock_Wall_1_18: -2143393566
+      GMTK_Rock_Wall_1_11: 1927646287
+      GMTK_Rock_Wall_1_30: 416346790
+      GMTK_Rock_Wall_1_14: -813908527
+      GMTK_Rock_Wall_1_28: 2054867289
+      GMTK_Rock_Wall_1_4: -934732881
+      GMTK_Rock_Wall_1_9: 1232295056
+      GMTK_Rock_Wall_1_52: 419099714
+      GMTK_Rock_Wall_1_36: 1193732391
+      GMTK_Rock_Wall_1_51: 1259784393
+      GMTK_Rock_Wall_1_39: 1349060750
+      GMTK_Rock_Wall_1_37: 1303790672
+      GMTK_Rock_Wall_1_15: 1306596735
+      GMTK_Rock_Wall_1_17: 1362580474
+      GMTK_Rock_Wall_1_21: 1356819861
+      GMTK_Rock_Wall_1_44: -704197235
+      GMTK_Rock_Wall_1_38: -247750184
+      GMTK_Rock_Wall_1_13: 216064702
+      GMTK_Rock_Wall_1_41: 1147966908
+      GMTK_Rock_Wall_1_6: -623016302
+      GMTK_Rock_Wall_1_0: -459546327
+      GMTK_Rock_Wall_1_35: -438779503
+      GMTK_Rock_Wall_1_34: 1415519087
+      GMTK_Rock_Wall_1_49: 1445886657
+      GMTK_Rock_Wall_1_24: 1204826694
+      GMTK_Rock_Wall_1_20: -220943437
+      GMTK_Rock_Wall_1_10: 588502155
+      GMTK_Rock_Wall_1_47: -1325999731
+      GMTK_Rock_Wall_1_32: 988876326
+  spritePackingTag: 
+  pSDRemoveMatte: 0
+  pSDShowRemoveMatteOption: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
