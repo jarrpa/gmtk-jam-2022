@@ -46,6 +46,7 @@ GameObject:
   - component: {fileID: 705148870580690595}
   - component: {fileID: 705148870580690592}
   - component: {fileID: 705148870580690599}
+  - component: {fileID: 1483096051329443138}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -174,6 +175,10 @@ MonoBehaviour:
   - {fileID: 675361905286486277}
   - {fileID: 8090825588149753855}
   - {fileID: 7345878199375349459}
+  abilities:
+  - {fileID: 11400000, guid: 9a5509efe68ab4cf1b87e177e701cc0f, type: 2}
+  abilityText: {fileID: 0}
+  weaponText: {fileID: 0}
 --- !u!61 &705148870580690592
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -214,6 +219,20 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   maxHealth: 100
   currentHealth: 0
+--- !u!114 &1483096051329443138
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 705148870580690590}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f90199c68876e40128464151de96edb5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ability: {fileID: 0}
+  key: 0
 --- !u!1001 &705148869148118833
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -353,7 +372,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8755369483575011301, guid: 86f1b868ab4304af0a7db1fd4859804f, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 86f1b868ab4304af0a7db1fd4859804f, type: 3}

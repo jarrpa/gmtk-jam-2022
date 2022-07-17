@@ -158,10 +158,16 @@ MonoBehaviour:
   currentHealth: 10
   speed: 5
   stoppingDistance: 2
+<<<<<<< HEAD
   retreatDistance: 1
   projectile: {fileID: 5196141513470838171, guid: 8b4e0c0b7479f4946b14f44816cc8a95, type: 3}
   startTimeBetweenShots: 2
   player: {fileID: 8422530110084229728, guid: a27e53210f7751b49adcfca7c7ef6ab6, type: 3}
+=======
+  attackRate: 0
+  player: {fileID: 0}
+  meleeDamage: 10
+>>>>>>> 39ca2ec (Finished ability system)
 --- !u!114 &3601197527815684804
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -171,8 +177,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 3601197527815684829}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 80e77db9064999348b8ff7b15a944c3b, type: 3}
+  m_Script: {fileID: 11500000, guid: 2449bbf94dd110a4baaea75c883162fc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxHealthValue: 15
-  defenseValue: 5
+  speed: 5
+  stoppingDistance: 3
+  attackRate: 2
+  player: {fileID: 0}
+  meleeDamage: 10
