@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <SoundBanksInfo Platform="Windows" BasePlatform="Windows" SchemaVersion="12" SoundbankVersion="140">
 	<RootPaths>
-		<ProjectRoot>D:\Юнити\Джем\gmtk-jam-2022\gmtk-jam-2022_WwiseProject\</ProjectRoot>
-		<SourceFilesRoot>D:\Юнити\Джем\gmtk-jam-2022\gmtk-jam-2022_WwiseProject\.cache\Windows\</SourceFilesRoot>
-		<SoundBanksRoot>D:\Юнити\Джем\gmtk-jam-2022\gmtk-jam-2022_WwiseProject\GeneratedSoundBanks\Windows\</SoundBanksRoot>
+		<ProjectRoot>C:\Users\jrivera\projects\unity\gmtk-jam-2022\gmtk-jam-2022_WwiseProject\</ProjectRoot>
+		<SourceFilesRoot>C:\Users\jrivera\projects\unity\gmtk-jam-2022\gmtk-jam-2022_WwiseProject\.cache\Windows\</SourceFilesRoot>
+		<SoundBanksRoot>C:\Users\jrivera\projects\unity\gmtk-jam-2022\gmtk-jam-2022_WwiseProject\GeneratedSoundBanks\Windows\</SoundBanksRoot>
 		<ExternalSourcesInputFile></ExternalSourcesInputFile>
-		<ExternalSourcesOutputRoot>D:\Юнити\Джем\gmtk-jam-2022\gmtk-jam-2022_WwiseProject\GeneratedSoundBanks\Windows</ExternalSourcesOutputRoot>
+		<ExternalSourcesOutputRoot>C:\Users\jrivera\projects\unity\gmtk-jam-2022\gmtk-jam-2022_WwiseProject\GeneratedSoundBanks\Windows</ExternalSourcesOutputRoot>
 	</RootPaths>
 	<DialogueEvents/>
 	<StreamedFiles/>
@@ -20,7 +20,7 @@
 				<GameParameter Id="3983751694" Name="RTPC_ext_SFX_vol" ObjectPath="\Game Parameters\Default Work Unit\RTPC_ext_SFX_vol"/>
 			</GameParameters>
 		</SoundBank>
-		<SoundBank Id="4056684167" Language="SFX" Hash="2415028800">
+		<SoundBank Id="4056684167" Language="SFX" Hash="160412498">
 			<ObjectPath>\SoundBanks\Default Work Unit\Master</ObjectPath>
 			<ShortName>Master</ShortName>
 			<Path>Master.bnk</Path>
@@ -225,6 +225,51 @@
 						</File>
 					</IncludedMemoryFiles>
 				</Event>
+				<Event Id="1182046178" Name="Play_Music_Gameplay" ObjectPath="\Events\Default Work Unit\Play_Music_Gameplay" DurationType="Infinite">
+					<IncludedMemoryFiles>
+						<File Id="492514643" Language="SFX">
+							<ShortName>Room 2 Loop Cycle.wav</ShortName>
+							<Path>SFX\Room 2 Loop Cycle_D79FB2B7.wem</Path>
+						</File>
+						<File Id="603862162" Language="SFX">
+							<ShortName>MagicGirlPianoQuiet(Final).wav</ShortName>
+							<Path>SFX\MagicGirlPianoQuiet(Final)_D79FB2B7.wem</Path>
+						</File>
+						<File Id="645640934" Language="SFX">
+							<ShortName>Room 3 Loop Cycle.wav</ShortName>
+							<Path>SFX\Room 3 Loop Cycle_D79FB2B7.wem</Path>
+						</File>
+					</IncludedMemoryFiles>
+					<SwitchContainers>
+						<SwitchContainer SwitchValue="{65E97529-20E9-4D7C-9D7B-3D0A6B9C5A33}">
+							<Children>
+								<SwitchContainer SwitchValue="{FBD960CA-5FCB-4E29-83DB-C788055A29C0}">
+									<Media>
+										<File Id="645640934"/>
+									</Media>
+								</SwitchContainer>
+							</Children>
+						</SwitchContainer>
+						<SwitchContainer SwitchValue="{65E97529-20E9-4D7C-9D7B-3D0A6B9C5A33}">
+							<Children>
+								<SwitchContainer SwitchValue="{0DBD96EC-3D4A-4C72-A7D2-6844C06C23E9}">
+									<Media>
+										<File Id="603862162"/>
+									</Media>
+								</SwitchContainer>
+							</Children>
+						</SwitchContainer>
+						<SwitchContainer SwitchValue="{65E97529-20E9-4D7C-9D7B-3D0A6B9C5A33}">
+							<Children>
+								<SwitchContainer SwitchValue="{CBB97D5E-55FF-459F-A132-05DB34995611}">
+									<Media>
+										<File Id="492514643"/>
+									</Media>
+								</SwitchContainer>
+							</Children>
+						</SwitchContainer>
+					</SwitchContainers>
+				</Event>
 				<Event Id="3893482503" Name="Play_navigate" ObjectPath="\Events\Default Work Unit\UI\Play_navigate" DurationType="OneShot" DurationMin="0.000000" DurationMax="0.179896">
 					<IncludedMemoryFiles>
 						<File Id="73006644" Language="SFX">
@@ -396,7 +441,27 @@
 					</IncludedMemoryFiles>
 				</Event>
 			</IncludedEvents>
+			<GameParameters>
+				<GameParameter Id="1488248637" Name="RTPC_ext_rooms" ObjectPath="\Game Parameters\Default Work Unit\RTPC_ext_rooms"/>
+			</GameParameters>
+			<StateGroups>
+				<StateGroup Id="1992488372" Name="STATE_Music" ObjectPath="\States\Default Work Unit\STATE_Music">
+					<States>
+						<State Id="748895195" Name="None" ObjectPath="\States\Default Work Unit\STATE_Music\None"/>
+						<State Id="3900992838" Name="STATE_Menu" ObjectPath="\States\Default Work Unit\STATE_Music\STATE_Menu"/>
+						<State Id="387537969" Name="STATE_Rooms" ObjectPath="\States\Default Work Unit\STATE_Music\STATE_Rooms"/>
+						<State Id="2052296799" Name="STATE_Credits" ObjectPath="\States\Default Work Unit\STATE_Music\STATE_Credits"/>
+					</States>
+				</StateGroup>
+			</StateGroups>
 			<SwitchGroups>
+				<SwitchGroup Id="3667359600" Name="SWITCH_rooms" ObjectPath="\Switches\Default Work Unit\SWITCH_rooms">
+					<Switches>
+						<Switch Id="3667359538" Name="SWITCH_Room1" ObjectPath="\Switches\Default Work Unit\SWITCH_rooms\SWITCH_Room1"/>
+						<Switch Id="3667359537" Name="SWITCH_Room2" ObjectPath="\Switches\Default Work Unit\SWITCH_rooms\SWITCH_Room2"/>
+						<Switch Id="3667359536" Name="SWITCH_Room3" ObjectPath="\Switches\Default Work Unit\SWITCH_rooms\SWITCH_Room3"/>
+					</Switches>
+				</SwitchGroup>
 				<SwitchGroup Id="4011692932" Name="SWITCH_char_footsteps" ObjectPath="\Switches\Default Work Unit\SWITCH_char_footsteps">
 					<Switches>
 						<Switch Id="1983658940" Name="SWITCH_tile" ObjectPath="\Switches\Default Work Unit\SWITCH_char_footsteps\SWITCH_tile"/>

@@ -142,5 +142,8 @@ tags
 *.akd
 *.prof
 *.validationcache
+*.wsettings
 */AkWwiseProjectData.asset*
 /Assets/Wwise/Editor/ProjectData/
+/Assets/StreamingAssets/Audio/GeneratedSoundBanks/
+/Assets/StreamingAssets/Audio/GeneratedSoundBanks.meta
