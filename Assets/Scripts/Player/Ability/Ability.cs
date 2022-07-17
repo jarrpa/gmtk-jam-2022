@@ -9,5 +9,10 @@ public class Ability : ScriptableObject
     public float cooldown;
     public float activeTime;
 
-    public virtual void Activate(GameObject parent) {}
+    public event Action<String> OnActivate;
+
+    public virtual void Activate(GameObject parent)
+    {
+        //OnActivate?.Invoke(name);
+    }
 }

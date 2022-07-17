@@ -7,9 +7,10 @@ public class Entity : MonoBehaviour
 {
     [SerializeField] private int maxHealth = 100;
     public int currentHealth;
-
-    public event Action OnDeath;
     
+    public event Action OnDeath;
+    public event Action OnHit;
+
     void Awake()
     {
         currentHealth = maxHealth;
@@ -18,9 +19,13 @@ public class Entity : MonoBehaviour
     public void TakeDamage(int amount)
     {
         if (IsDead())
-           // OnDeath();
-
+        {
+            OnDeath?.Invoke();
+            return;
+        }
+        
         currentHealth -= amount;
+        OnHit?.Invoke();
     }
 
     public void SetHealth(int amount)
@@ -32,4 +37,6 @@ public class Entity : MonoBehaviour
     {
         return currentHealth <= 0;
     }
+    
+    
 }

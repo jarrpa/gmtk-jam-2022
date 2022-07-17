@@ -6,6 +6,8 @@ using UnityEngine;
 
 public abstract class Weapon : MonoBehaviour
 {
+    public String name = "weapon";
+    
     // Weapon attribute
     private int damage;
     public float fireRate;
@@ -18,6 +20,8 @@ public abstract class Weapon : MonoBehaviour
 
     public GameObject bulletPrefab;
 
+    public static event Action<String> OnShoot;
+
     private void Start()
     {
         canShoot = true;
@@ -26,7 +30,10 @@ public abstract class Weapon : MonoBehaviour
     public void FixedUpdate()
     {
         if (Input.GetButton("Fire1") && canShoot)
+        {
+            OnShoot?.Invoke(name);
             StartCoroutine(FireWeapon());
+        }
     }
 
     protected abstract void Shoot();
