@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 3415060967221119802}
   - component: {fileID: 1239149235493021589}
   - component: {fileID: 419498739033092090}
-  m_Layer: 11
+  m_Layer: 0
   m_Name: Grenade Bullet
   m_TagString: PlayerProjectile
   m_Icon: {fileID: 0}
@@ -75,7 +75,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 2
   m_Sprite: {fileID: -2413806693520163455, guid: a86470a33a6bf42c4b3595704624658b, type: 3}
   m_Color: {r: 0.9811321, g: 0.43965825, b: 0.43965825, a: 1}
   m_FlipX: 0
@@ -136,11 +136,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ecf2dbdde1d8c4dba9e2cbd3849f0769, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  bulletSpeed: 800
+  bulletSpeed: 4
   rb: {fileID: 3415060967221119802}
-  bulletDamage: 0
-  range: 10
-  explosionRadius: 3
-  explosionEffect: {fileID: 4594623368557294763, guid: b5a2fe80b033e47af88570aa8e816176, type: 3}
+  bulletDamage: 20
+  range: 5
+  explosionRadius: 1.2
+  explosionEffect: {fileID: 228922861371978889, guid: 762b510f416fe3942b4b795eb989e022, type: 3}
   timeUntilExplosion: 10
-  explosionForce: 10
+  explosionForce: 20
