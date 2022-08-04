@@ -4,52 +4,84 @@ using System.Collections.Generic;
 using System.Security.Cryptography;
 using UnityEngine;
 
-public abstract class Weapon : MonoBehaviour
+public class Weapon : MonoBehaviour
 {
-    public String name = "weapon";
+    public new String name = "weapon";
+
+    #region Weapon Attributes
     
-    // Weapon attribute
-    private int damage;
-    public float fireRate;
-    private bool canShoot;
-    private Vector2 shootingDir;
+    public float fireRate = 1f;
+    public float spread;
+    public int numberOfBullets = 4;
+    public bool isMultiShot;
+    public ParticleSystem muzzleFlash;
+    
+    private bool _canShoot;
+    private Vector2 _shootingDir;
+    private int _damage;
+    
+    
+    #endregion
+    
+    #region Bullet Attributes
 
-    // Bullet attributes
-    public float bulletSpeed = 20f;
     public Transform firePosition;
-
     public GameObject bulletPrefab;
+
+    #endregion
+    
 
     public static event Action<String> OnShoot;
 
-    private void Start()
+    public void Start()
     {
-        canShoot = true;
+        _canShoot = true;
     }
 
     public void FixedUpdate()
     {
-        if (Input.GetButton("Fire1") && canShoot)
+        if (Input.GetButton("Fire1") && _canShoot)
         {
+            muzzleFlash.startRotation = transform.rotation.eulerAngles.y * Mathf.Deg2Rad;
+            muzzleFlash.Play();
             OnShoot?.Invoke(name);
             StartCoroutine(FireWeapon());
         }
     }
 
-    protected abstract void Shoot();
-    
-    protected IEnumerator FireWeapon()
+    private void Shoot()
     {
-        canShoot = false;
-        Shoot();
-        yield return new WaitForSeconds(fireRate);
-        canShoot = true;
+        if (isMultiShot)
+        {
+            var right = firePosition.right;
+            var facingAngle = Mathf.Atan2(right.y, right.x) * Mathf.Rad2Deg;
+            var startRotation = facingAngle + spread / 2f;
+            var angleIncrease = spread / ((float)numberOfBullets - 1);
+
+            for (int i = 0; i < numberOfBullets; i++)
+            {
+                var rot = startRotation - angleIncrease * i;
+                var bullet = Instantiate(bulletPrefab, firePosition.position, Quaternion.Euler(0f, 0f, rot));
+                bullet.GetComponent<Bullet>().Setup(new Vector2(Mathf.Cos(rot*Mathf.Deg2Rad), Mathf.Sin(rot*Mathf.Deg2Rad)));
+            }
+        }
+        else
+        {
+            InstantiateBullet();
+        }
     }
     
-    protected void InstantiateBullet(Vector2 dir, Quaternion rotation)
+    private IEnumerator FireWeapon()
     {
-        GameObject bullet = Instantiate(bulletPrefab, firePosition.position, rotation);
-        Rigidbody2D rb = bullet.GetComponent<Rigidbody2D>();
-        rb.AddForce(dir * bulletSpeed, ForceMode2D.Impulse);
+        _canShoot = false;
+        Shoot();
+        yield return new WaitForSeconds(fireRate);
+        _canShoot = true;
+    }
+    
+    private void InstantiateBullet()
+    {
+        var bullet = Instantiate(bulletPrefab, firePosition.position, Quaternion.identity);
+        bullet.GetComponent<Bullet>().Setup(firePosition.right);
     }
 }

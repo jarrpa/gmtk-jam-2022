@@ -5,22 +5,24 @@ using UnityEngine;
 [CreateAssetMenu(menuName = "Abilities/Smash")]
 public class SmashAbility : Ability
 {
-    public float knockback;
+    public float knockback = 20f;
     public float radius = 2f;
-    public float jumpingAnimationTime = 2f;
-    public int damage;
+    public int damage = 5;
     
     
     public override void Activate(GameObject parent)
     {
-        base.Activate(parent);
         SmashAction(parent);
+    }
+
+    public override void Deactivate()
+    {
 
     }
 
     void SmashAction(GameObject parent)
     {
-        //yield return new WaitForSeconds(jumpingAnimationTime);
+        parent.GetComponent<Rigidbody2D>().velocity = Vector2.zero;
         
         Collider2D[] objectsInRange = Physics2D.OverlapCircleAll(parent.transform.position, radius);
  
@@ -28,10 +30,11 @@ public class SmashAbility : Ability
         {
             if (col.CompareTag("Enemy"))
             {
-                Rigidbody2D rbEnemy = col.GetComponent<Rigidbody2D>();
                 var dir = (col.transform.position - parent.transform.position);
                 float wearoff = 1 - (dir.magnitude / radius);
-                rbEnemy.velocity = dir.normalized * knockback * wearoff;
+                col.GetComponent<Rigidbody2D>().velocity = dir.normalized * knockback * wearoff;
+                
+                col.GetComponent<Entity>().TakeDamage(damage);
             }
         }
     }

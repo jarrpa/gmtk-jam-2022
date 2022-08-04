@@ -8,11 +8,10 @@ using UnityEngine.UI;
 public class PlayerAbilityController : MonoBehaviour
 {
     // create movement abilities aswell
-    public Transform[] weapons;
-    public Ability[] abilities;
 
-    // public Image abilityImage;
-    // public Image weaponImage;
+    public GameObject[] weapons = new GameObject[3];
+    public Ability[] abilities = new Ability[3];
+    public Transform weaponHolder;
     
     private AbilityHolder abilityHolder;
 
@@ -20,41 +19,9 @@ public class PlayerAbilityController : MonoBehaviour
     private int selectedAbility;
 
     public event Action<int, int> OnAbilityChange;
-    private void Start()
+    private void Awake()
     {
         abilityHolder = GetComponent<AbilityHolder>();
-        ChoseAbilities();
-        // transform abilities[selectedAbility].name to lowe case
-        // switch (abilities[selectedAbility].name.ToLower())
-        // {
-        //     case "dash":
-        //         Debug.Log("abilities[selectedAbility].name.ToLower():" + abilities[selectedAbility].name.ToLower());
-        //         abilityImage.sprite = Resources.Load<Sprite>("Sprites/Ability=Dash Icon");
-        //         break;
-        //     case "smash":
-        //         abilityImage.sprite = Resources.Load<Sprite>("Sprites/Ability=Slam Icon");
-        //         break;
-        //     case "teleport":
-        //         abilityImage.sprite = Resources.Load<Sprite>("Sprites/Ability=Teleport Icon");
-        //         break;
-        //     default:
-        //         break;
-        // }
-        // switch (selectedWeapon)
-        // {
-        //     case 0:
-        //         weaponImage.sprite = Resources.Load<Sprite>("Sprites/fireball");
-        //         break;
-        //     case 1:
-        //         weaponImage.sprite = Resources.Load<Sprite>("Sprites/iceball");
-        //         break;
-        //     case 2:
-        //         weaponImage.sprite = Resources.Load<Sprite>("Sprites/lightningball");
-        //         break;
-        //     default:
-        //         break;
-        // }
-        
     }
 
     public void ChoseAbilities()
@@ -71,9 +38,9 @@ public class PlayerAbilityController : MonoBehaviour
 
     private void ActivateWeapon(int index)
     {
-        weapons[selectedWeapon].gameObject.SetActive(false);
         selectedWeapon = index;
-        weapons[selectedWeapon].gameObject.SetActive(true);
+        Destroy(weaponHolder.transform.GetChild(0).gameObject);
+        Instantiate(weapons[selectedWeapon], weaponHolder.transform);
     }
     
     private void ActiveAbility(int index)

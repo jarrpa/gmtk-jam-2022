@@ -1,12 +1,10 @@
-using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-public class MainMenu : MonoBehaviour
+public class TransitionDoor : MonoBehaviour
 {
-
     private void Awake()
     {
         GameManager.OnGameStateChanged += GameManagerOnOnGameStateChanged;
@@ -19,19 +17,20 @@ public class MainMenu : MonoBehaviour
 
     private void GameManagerOnOnGameStateChanged(GameState state)
     {
-        if (state == GameState.mainMenu)
+        if (state != GameState.NextLevel)
         {
+            gameObject.SetActive(false);
+        }
+        
+    }
+    public void OnTriggerEnter2D(Collider2D collision)
+    {
+
+        if (collision.gameObject.tag == "Player")
+        {
+            Debug.Log("Next Scene");
+            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
             
         }
-    }
-    // Start is called before the first frame update
-    public void PlayGame() {
-        SceneManager.LoadScene("Map_1");
-        GameManager.Instance.UpdateGameState(GameState.levelOne);
-    }
-
-    public void QuitGame() {
-        Debug.Log("Quit");
-        Application.Quit();
     }
 }

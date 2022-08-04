@@ -2,14 +2,16 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
+using UnityEngine.Serialization;
 
 public class Entity : MonoBehaviour
 {
     [SerializeField] private int maxHealth = 100;
     public int currentHealth;
-    
-    public event Action OnDeath;
-    public event Action OnHit;
+    public UnityEvent onDeath;
+    public UnityEvent<int> onHit;
+    public float nextWaypointDistance = 3f;
 
     void Awake()
     {
@@ -18,14 +20,17 @@ public class Entity : MonoBehaviour
 
     public void TakeDamage(int amount)
     {
-        if (IsDead())
+        currentHealth = Mathf.Clamp(currentHealth - amount, 0, 100);
+        onHit?.Invoke(currentHealth);
+        if (currentHealth <= 0)
         {
-            OnDeath?.Invoke();
-            return;
+            onDeath?.Invoke();
+            if(gameObject.CompareTag("Player"))
+                return;
+            
+            //onDeath?.RemoveAllListeners();
+            Destroy(gameObject);
         }
-        
-        currentHealth -= amount;
-        OnHit?.Invoke();
     }
 
     public void SetHealth(int amount)

@@ -6,14 +6,18 @@ using UnityEngine;
 public class DashAbility : Ability
 {
     public float dashVelocity;
-
+    
     public override void Activate(GameObject parent)
     {
-        base.Activate(parent);
-        PlayerMovement movement = parent.GetComponent<PlayerMovement>();
+        PlayerController movement = parent.GetComponent<PlayerController>();
         Rigidbody2D rb = parent.GetComponent<Rigidbody2D>();
-
+        
         rb.velocity = movement.GetVelocity() * dashVelocity;
 
+    }
+
+    public override void Deactivate()
+    {
+        
     }
 }
