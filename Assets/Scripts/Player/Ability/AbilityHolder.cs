@@ -7,50 +7,74 @@ using UnityEngine;
 public class AbilityHolder : MonoBehaviour
 {
     public Ability ability;
-    private float cooldown;
-    private float activeTime;
+    private float _cooldown;
+    private float _activeTime;
 
+    public Material material; 
+
+    public ParticleSystem smashParticle; 
+    
     enum AbilityState
     {
         Ready,
         Active,
         Cooldown
     }
-
-    private AbilityState state = AbilityState.Ready;
+    
+    private AbilityState _state = AbilityState.Ready;
     public KeyCode key;
+    private static readonly int GrayscaleAmount = Shader.PropertyToID("_GrayscaleAmount");
 
     public void Update()
     {
-        switch(state)
+        switch(_state)
         {
             case AbilityState.Ready:
                 if (Input.GetKeyDown(key))
                 {
                     ability.Activate(gameObject);
-                    state = AbilityState.Active;
-                    activeTime = ability.activeTime;
+                    _state = AbilityState.Active;
+                    _activeTime = ability.activeTime;
+                    switch (ability.name)
+                    {
+                        case "smash":
+                            smashParticle.Play();
+                            break;
+                        case "teleport":
+                            material.SetFloat(GrayscaleAmount,1);
+                            break;
+                    }
                 }
                 break;
             case AbilityState.Active:
-                if (activeTime > 0)
+                if (_activeTime > 0)
                 {
-                    activeTime -= Time.deltaTime;
+                    _activeTime -= Time.deltaTime;
+                    if (ability.name.Equals("teleport") && Input.GetKeyDown(key))
+                    {
+                        var teleportAbility = (TeleportAbility) ability;
+                        teleportAbility.KeepActive(gameObject);
+                        _activeTime = 0;
+                    }
                 }
                 else
                 {
-                    state = AbilityState.Cooldown;
-                    cooldown = ability.cooldown;
+                    ability.Deactivate();
+                    if (ability.name.Equals("teleport"))
+                        material.SetFloat(GrayscaleAmount,0);
+
+                    _state = AbilityState.Cooldown;
+                    _cooldown = ability.cooldown;
                 }
                 break;
             case AbilityState.Cooldown:
-                if (cooldown > 0)
+                if (_cooldown > 0)
                 {
-                    cooldown -= Time.deltaTime;
+                    _cooldown -= Time.deltaTime;
                 }
                 else
                 {
-                    state = AbilityState.Ready;
+                    _state = AbilityState.Ready;
                 }
                 break;
         }
@@ -58,6 +82,22 @@ public class AbilityHolder : MonoBehaviour
 
     public bool IsActive()
     {
-        return state == AbilityState.Active;
+        return _state == AbilityState.Active;
+    }
+
+    private void OnDrawGizmos()
+    {
+
+        switch (ability.name)
+        {
+            case "smash":
+                var smashAbility = (SmashAbility) ability;
+                Gizmos.DrawWireSphere(gameObject.transform.position, smashAbility.radius);
+                break;
+            case "teleport":
+                var teleportAbility = (TeleportAbility) ability;
+                Gizmos.DrawWireSphere(gameObject.transform.position, teleportAbility.radius);
+                break;
+        }
     }
 }

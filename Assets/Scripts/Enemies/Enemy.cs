@@ -1,6 +1,6 @@
-using System;
 using System.Collections;
 using System.Collections.Generic;
+using Pathfinding;
 using UnityEngine;
 
 public abstract class Enemy : MonoBehaviour
@@ -9,39 +9,120 @@ public abstract class Enemy : MonoBehaviour
     [SerializeField] protected float stoppingDistance;
     [SerializeField] protected float attackRate;
     [SerializeField] protected float preAttackAudioDuration = 0f; // this should be the length of pre attack audio
-    [SerializeField] protected Animator animator;
-
+    [SerializeField] protected float timeBeforeMoveAgain = 0.5f;
     protected Rigidbody2D rb;
-    private bool canAttack = true;
 
-    public event Action OnAttack;
+    public float nextWaypointDistance = 3f;
+    protected Path path;
+    protected int currentWaypoint = 0;
+    protected bool reachedEndOfPath = false;
+
+    public Seeker seeker;
+    
+    protected bool canAttack = true;
+    protected bool canMove = true;
+
+    private float _dirAngle;
+    protected AIPath AIPath;
+
+    #region Animation Variables
+    private string _currentState = ENEMY_IDLE_DOWN;
+    [SerializeField] protected Animator animator;
+    [SerializeField] protected float rightAngleOffset;    // offset in degrees
+    [SerializeField] protected float leftAngleOffset;     // offset in degrees
+    private const string ENEMY_IDLE_DOWN = "enemy_idle_down";
+    private const string ENEMY_IDLE_LEFT = "enemy_idle_left";
+    private const string ENEMY_IDLE_RIGHT = "enemy_idle_right";
+    private const string ENEMY_IDLE_UP = "enemy_idle_up";
+    private const string ENEMY_WALK_LEFT = "enemy_walk_left";
+    private const string ENEMY_WALK_RIGHT = "enemy_walk_right";
+    private const string ENEMY_WALK_UP = "enemy_walk_up";
+    private const string ENEMY_WALK_DOWN = "enemy_walk_down";
+    #endregion
 
     public Transform player;
 
     public abstract void Attack();
     public abstract void Move();
 
-    IEnumerator StartAttacking()
+    protected void ChangeAnimationFromAngle(float angle)
     {
-        canAttack = false;
-        OnAttack?.Invoke();
-        yield return new WaitForSeconds(preAttackAudioDuration);
-        Attack();
-        yield return new WaitForSeconds(attackRate);
-        canAttack = true;
+        string newState = _currentState;
+        if ((angle >= 0 && angle <= rightAngleOffset) || (angle >= -rightAngleOffset && angle <= 0))
+        {
+            if(rb.velocity != Vector2.zero)
+                newState = ENEMY_WALK_RIGHT;
+            else
+                newState = ENEMY_IDLE_RIGHT;
+        }
+        else if ((angle >= leftAngleOffset && angle <= 180) || (angle >= -180 && angle <= -leftAngleOffset))
+        {
+            if(rb.velocity != Vector2.zero)
+                newState = ENEMY_WALK_LEFT;
+            else
+                newState = ENEMY_IDLE_LEFT;
+        }
+        else if (angle > rightAngleOffset && angle < leftAngleOffset)
+        {
+            if(rb.velocity != Vector2.zero)
+                newState = ENEMY_WALK_UP;
+            else
+                newState = ENEMY_IDLE_UP;
+        }
+        else if (angle > -leftAngleOffset && angle < -rightAngleOffset)
+        {
+            if(rb.velocity != Vector2.zero)
+                newState = ENEMY_WALK_DOWN;
+            else
+                newState = ENEMY_IDLE_DOWN;
+        }
+        ChangeAnimationState(newState);
     }
 
-    private void Start()
+    protected void ChangeAnimationState(string newState)
+    {
+        if (_currentState.Equals(newState)) return;
+        
+        animator.Play(newState);
+
+        _currentState = newState;
+
+    }
+    protected void Awake()
     {
         rb = GetComponent<Rigidbody2D>();
+        seeker.GetComponent<Seeker>();
+        
+        InvokeRepeating(nameof(UpdatePath), 0f, 0.5f);
+    
+        player = PlayerController.instance.gameObject.transform;
+    
     }
 
-    
-    private void Update()
+    private void UpdatePath()
     {
-        if (canAttack)
-            StartCoroutine(StartAttacking());
-        
-        Move();
+        if(seeker.IsDone())
+            seeker.StartPath(rb.position, player.transform.position, OnPathComplete);
+    }
+    
+    protected void OnPathComplete(Path p)
+    {
+        if (!p.error)
+        {
+            path = p;
+            currentWaypoint = 0;
+        }
+    }
+
+    protected void OnHit(int health)
+    {
+        StartCoroutine(WaitBeforeMove());
+    }
+
+    protected IEnumerator WaitBeforeMove()
+    {
+        canMove = false;
+        yield return new WaitForSeconds(timeBeforeMoveAgain);
+        canMove = true;
     }
 }

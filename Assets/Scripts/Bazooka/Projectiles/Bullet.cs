@@ -7,9 +7,10 @@ public class Bullet : MonoBehaviour
 {
     [SerializeField] private float bulletSpeed;
     [SerializeField] private Rigidbody2D rb;
-    [SerializeField] private float bulletDamage;
+    [SerializeField] private int bulletDamage;
     protected Vector2 startPosition;
     private Transform player;
+    private Vector2 shootDirection;
 
     public float range;
 
@@ -20,11 +21,18 @@ public class Bullet : MonoBehaviour
         rb = GetComponent<Rigidbody2D>();
     }
 
+    public void Setup(Vector2 direction)
+    {
+        shootDirection = direction;
+    }
+
     // Update is called once per frame
     protected virtual void Update()
     {
         if (Vector2.Distance(startPosition, transform.position) >= range)
             DestroyBullet();
+
+        transform.position = (Vector2) transform.position + shootDirection * bulletSpeed * Time.deltaTime;
     }
 
     protected virtual void DestroyBullet()
@@ -34,17 +42,10 @@ public class Bullet : MonoBehaviour
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        if (collision.gameObject.CompareTag("Wall"))
+        if (collision.gameObject.CompareTag("Player") || collision.gameObject.CompareTag("Enemy"))
         {
-        }
-        if (collision.gameObject.CompareTag("Player"))
-        {
-            Debug.Log("Player Took Damage");
-        }
-        if (collision.gameObject.CompareTag("Enemy"))
-        {
-            Debug.Log("Enemy Took Damage");
-            Destroy(gameObject);
+            collision.gameObject.GetComponent<Entity>().TakeDamage(bulletDamage);
+            
         }
         DestroyBullet();
     }

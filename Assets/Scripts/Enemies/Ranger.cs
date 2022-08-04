@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -5,48 +6,65 @@ using UnityEngine;
 public class Ranger : Enemy
 {
     public GameObject bulletPrefab;
-    public float bulletSpeed = 10f;
-    [SerializeField] protected float retreatDistance;
-    private Vector2 movement;
+    private Vector2 _movement;
+
+    private bool _canShoot = true;
     public override void Attack()
     {
-        Vector2 attackDirection = (player.position - transform.position).normalized;
-        animator.SetBool("isShooting", true);
-        InstantiateBullet(attackDirection);
+        InstantiateBullet();
     }
     
-    private void InstantiateBullet(Vector2 dir)
+    private void InstantiateBullet()
     {
-        var bullet = Instantiate(bulletPrefab, transform.position, Quaternion.identity);
-        bullet.GetComponent<Rigidbody2D>().AddForce(dir * bulletSpeed, ForceMode2D.Impulse);
+        var shootDir = ((Vector2) player.position - rb.position).normalized;
+        var bullet = Instantiate(bulletPrefab, (Vector2)transform.position + shootDir * 0.8f, Quaternion.identity);
+        bullet.GetComponent<Bullet>().Setup(shootDir);
+    }
+
+    private void Update()
+    {
+        if (path == null)
+            return;
+
+        if (currentWaypoint >= path.vectorPath.Count)
+        {
+            reachedEndOfPath = true;
+            return;
+        }
+        
+        reachedEndOfPath = false;
+
+        _movement = ((Vector2)path.vectorPath[currentWaypoint] - rb.position).normalized;
+        float angle = Mathf.Atan2(_movement.y, _movement.x) * Mathf.Rad2Deg;
+        ChangeAnimationFromAngle(angle);
+
+        if (Vector2.Distance(path.vectorPath[currentWaypoint], rb.position) < nextWaypointDistance)
+            currentWaypoint++;
+        
+        Move();
+
     }
 
     public override void Move()
     {
-        Vector2 velocity = (player.position - transform.position).normalized;
-        Vector2 movement = transform.position - player.position; ;
-        if (Vector2.Distance(transform.position, player.position) > stoppingDistance)
+        if (Vector2.Distance(player.position, rb.position) > stoppingDistance)
         {
-            animator.SetBool("isInRange", true);
-            animator.SetFloat("moveX", movement.x);
-            animator.SetFloat("moveY", movement.y);
-            transform.position = Vector2.MoveTowards(transform.position, player.position, speed * Time.deltaTime);
-        }
-        else if (Vector2.Distance(transform.position, player.position) < stoppingDistance && 
-                 Vector2.Distance(transform.position, player.position) > retreatDistance)
-        {
-            //transform.position = this.transform.position;
-        }
-        else if (Vector2.Distance(transform.position, player.position) < retreatDistance)
-        {
-            animator.SetBool("isInRange", true);
-            animator.SetFloat("moveX", movement.x);
-            animator.SetFloat("moveY", movement.y);
-            transform.position = Vector2.MoveTowards(transform.position, player.position, -speed * Time.deltaTime);
+            rb.velocity = _movement * speed;
         }
         else
         {
-            animator.SetBool("isInRange", false);
+            rb.velocity = Vector2.zero;
+            if (_canShoot)
+                StartCoroutine(Shoot());
         }
+       
+    }
+
+    private IEnumerator Shoot()
+    {
+        _canShoot = false;
+        Attack();
+        yield return new WaitForSeconds(attackRate);
+        _canShoot = true;
     }
 }

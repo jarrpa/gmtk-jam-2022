@@ -35,36 +35,36 @@ public class AudioManScr : MonoBehaviour
 
     private void OnEnable()
     {
-        player.GetComponent<Entity>().OnHit += PlayerHit;
-        sniper.GetComponent<Entity>().OnHit += SniperHit;
-        ranger.GetComponent<Entity>().OnHit += RangerHit;
-        charger.GetComponent<Entity>().OnHit += ChargerHit;
+        player.GetComponent<Entity>().onHit.RemoveListener(PlayerHit);
+        sniper.GetComponent<Entity>().onHit.RemoveListener(SniperHit);
+        ranger.GetComponent<Entity>().onHit.RemoveListener(RangerHit);
+        charger.GetComponent<Entity>().onHit.RemoveListener(ChargerHit);
 
     }
 
-    public void PlayerHit()
+    public void PlayerHit(int health)
     {
         hit.Post(player);
     }
-    public void SniperHit()
+    public void SniperHit(int health)
     {
         hit.Post(player);
     }
-    public void RangerHit()
+    public void RangerHit(int health)
     {
         hit.Post(player);
     }
-    public void ChargerHit()
+    public void ChargerHit(int health)
     {
         hit.Post(player);
     }
 
     private void OnDisable()
     {
-        player.GetComponent<Entity>().OnHit -= PlayerHit;
-        sniper.GetComponent<Entity>().OnHit -= SniperHit;
-        ranger.GetComponent<Entity>().OnHit -= RangerHit;
-        charger.GetComponent<Entity>().OnHit -= ChargerHit;
+        player.GetComponent<Entity>().onHit.AddListener(PlayerHit);
+        sniper.GetComponent<Entity>().onHit.AddListener(SniperHit);
+        ranger.GetComponent<Entity>().onHit.AddListener(RangerHit);
+        charger.GetComponent<Entity>().onHit.AddListener(ChargerHit);
     }
 
     void Footsteps()

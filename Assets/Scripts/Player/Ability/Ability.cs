@@ -3,16 +3,12 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Ability : ScriptableObject
+public abstract class Ability : ScriptableObject
 {
     public new String name;
     public float cooldown;
     public float activeTime;
 
-    public event Action<String> OnActivate;
-
-    public virtual void Activate(GameObject parent)
-    {
-        //OnActivate?.Invoke(name);
-    }
+    public abstract void Activate(GameObject parent);
+    public abstract void Deactivate();
 }
