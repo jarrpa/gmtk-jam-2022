@@ -42,14 +42,14 @@ public class WaveManager : MonoBehaviour
         _waveCountDown = timeBetweenWaves;
         if (spawnPoints.Length == 0)
         {
-            Debug.Log("Error no spawn Points set");
+            Debug.Log("WaveManager: Error no spawn Points set");
         }
     }
     private void Update()
     { 
         if(_state == SpawnState.Inactive)
         {
-            Debug.Log("Inactive");
+            Debug.Log("WaveManager Inactive");
             return;
         }
         

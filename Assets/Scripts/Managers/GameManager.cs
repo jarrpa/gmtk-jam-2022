@@ -29,16 +29,21 @@ public class GameManager : MonoBehaviour
         PauseGame();
     }
 
-    private void OnEnable()
+    private IEnumerator Start()
     {
+        yield return new WaitUntil( () => Singleton.Instance != null );
         player.GetComponent<Entity>().onDeath.AddListener(OnGameOver);
         Singleton.Instance.WaveManager.onWavesDone.AddListener(OnPlayerWin);
+        UpdateGameState(GameState.LevelOne);
     }
 
     private void OnDisable()
     {
-        player.GetComponent<Entity>().onDeath.RemoveListener(OnGameOver);
-        Singleton.Instance.WaveManager.onWavesDone.RemoveListener(OnPlayerWin);
+        if (player != null)
+        {
+            player.GetComponent<Entity>().onDeath.RemoveListener(OnGameOver);
+            Singleton.Instance.WaveManager.onWavesDone.RemoveListener(OnPlayerWin);
+        }
     }
 
     public void UpdateGameState(GameState newState)
@@ -75,11 +80,6 @@ public class GameManager : MonoBehaviour
             Time.timeScale = 1;
         }
         onPause?.Invoke(_gameIsPaused);
-    }
-
-    private void Start()
-    {
-        UpdateGameState(GameState.LevelOne);
     }
 
     // Start is called before the first frame update

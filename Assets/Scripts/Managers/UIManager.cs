@@ -42,8 +42,11 @@ public class UIManager : MonoBehaviour
 
     private void OnDisable()
     {
-        player.GetComponent<PlayerAbilityController>().OnAbilityChange -= PlayCardAnimations;
-        player.GetComponent<Entity>().onHit.RemoveListener(UpdatePlayerHealth);
+        if (player != null)
+        {
+            player.GetComponent<PlayerAbilityController>().OnAbilityChange -= PlayCardAnimations;
+            player.GetComponent<Entity>().onHit.RemoveListener(UpdatePlayerHealth);
+        }
         Singleton.Instance.WaveManager.onWaveChange.RemoveListener(UpdateWaveCount);
         Singleton.Instance.GameManager.onPause.RemoveListener(PauseGame);
         Singleton.Instance.GameManager.onPlayerDeath.RemoveListener(GameOverPanel);

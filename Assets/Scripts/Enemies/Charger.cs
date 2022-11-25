@@ -34,7 +34,7 @@ public class Charger : Enemy
 
     public void Update()
     {
-        Debug.Log(canMove);
+        Debug.LogFormat("{0}[{1}].canMove: {2}", this.name, this.GetInstanceID(), canMove);
         if(!canMove)
             return;
         

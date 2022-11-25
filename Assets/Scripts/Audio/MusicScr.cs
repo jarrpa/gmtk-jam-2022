@@ -9,7 +9,6 @@ public class MusicScr : MonoBehaviour
     public AK.Wwise.RTPC RoomRTPC;
     string sceneName;
     Scene m_Scene;
-    // Start is called before the first frame update
 
     private void Awake()
     {

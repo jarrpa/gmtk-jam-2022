@@ -42,7 +42,8 @@ public class Weapon : MonoBehaviour
     {
         if (Input.GetButton("Fire1") && _canShoot)
         {
-            muzzleFlash.startRotation = transform.rotation.eulerAngles.y * Mathf.Deg2Rad;
+            var main = muzzleFlash.main;
+            main.startRotation = transform.rotation.eulerAngles.y * Mathf.Deg2Rad;
             muzzleFlash.Play();
             OnShoot?.Invoke(name);
             StartCoroutine(FireWeapon());
