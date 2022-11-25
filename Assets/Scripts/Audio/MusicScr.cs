@@ -8,29 +8,41 @@ public class MusicScr : MonoBehaviour
     public AK.Wwise.Event Music;
     public AK.Wwise.RTPC RoomRTPC;
     string sceneName;
+    private static MusicScr Instance;
     Scene m_Scene;
 
     private void Awake()
     {
-        DontDestroyOnLoad(this.gameObject);
+        if (Instance)
+		{
+			DestroyImmediate(this);
+			return;
+		}
+		Instance = this;
     }
     void Start()
     {
-       
-
+        SetMusicState();
+        Music.Post(Instance.gameObject);
     }
 
     // Update is called once per frame
     void Update()
     {
+        SetMusicState();
+    }
+
+     void SetMusicState()
+    {
         m_Scene = SceneManager.GetActiveScene();
         sceneName = m_Scene.name;
 
-        if (m_Scene.name == "Menu_m") AkSoundEngine.SetState("STATE_Music", "STATE_Menu");
+        if (m_Scene.name == "Menu") AkSoundEngine.SetState("STATE_Music", "STATE_Menu");
         else AkSoundEngine.SetState("STATE_Music", "STATE_Rooms");
 
         if (m_Scene.name == "Map_1") RoomRTPC.SetValue(gameObject, 1);
-        if (m_Scene.name == "Map_2") RoomRTPC.SetValue(gameObject, 2);
-        if (m_Scene.name == "Map_3") RoomRTPC.SetValue(gameObject, 3);
+        else if (m_Scene.name == "Map_2") RoomRTPC.SetValue(gameObject, 2);
+        else if (m_Scene.name == "Map_3") RoomRTPC.SetValue(gameObject, 3);
+        else RoomRTPC.SetValue(gameObject, 3);
     }
 }
