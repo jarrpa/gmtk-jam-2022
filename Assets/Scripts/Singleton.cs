@@ -15,6 +15,7 @@ public class Singleton : MonoBehaviour
             return;
         }
         Instance = this;
+
         GameManager = GetComponentInChildren<GameManager>();
         WaveManager = GetComponentInChildren<WaveManager>();
         UIManager = GetComponentInChildren<UIManager>();

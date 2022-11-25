@@ -38,6 +38,7 @@ public class MusicScr : MonoBehaviour
         sceneName = m_Scene.name;
 
         if (m_Scene.name == "Menu") AkSoundEngine.SetState("STATE_Music", "STATE_Menu");
+        else if (m_Scene.name == "Credits" || m_Scene.name == "Options") AkSoundEngine.SetState("STATE_Music", "STATE_Credits");
         else AkSoundEngine.SetState("STATE_Music", "STATE_Rooms");
 
         if (m_Scene.name == "Map_1") RoomRTPC.SetValue(gameObject, 1);
