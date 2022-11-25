@@ -210,6 +210,31 @@
 						</Event>
 					</ChildrenList>
 				</Folder>
+				<Event Name="Music" ID="{6279C3CB-38C4-4445-85D7-974661F5466B}">
+					<ChildrenList>
+						<Action Name="" ID="{46CDA344-B674-4716-987C-ADCC283C8453}" ShortID="679337339">
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="Music_Gameover" ID="{9C658028-11DC-4814-8377-1B3B518EDF2E}" WorkUnitID="{CD55D0B8-66B0-4C7D-B51A-962D8172ADDF}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+						<Action Name="" ID="{1359C851-870B-4AA0-8215-D77BCA8231A4}" ShortID="595530348">
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="Music_Gameplay" ID="{A5A4C495-0E69-489A-A688-2A3B4516EAB0}" WorkUnitID="{CD55D0B8-66B0-4C7D-B51A-962D8172ADDF}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+						<Action Name="" ID="{746039B3-4ACF-4C40-8843-29E8D20A0B23}" ShortID="93932996">
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="Music_MenuCredits" ID="{4D550E47-D50D-4C9D-819A-6FC013C54785}" WorkUnitID="{CD55D0B8-66B0-4C7D-B51A-962D8172ADDF}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+					</ChildrenList>
+				</Event>
 			</ChildrenList>
 		</WorkUnit>
 	</Events>

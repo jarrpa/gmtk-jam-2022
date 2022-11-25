@@ -1,31 +1,94 @@
 <?xml version="1.0" encoding="utf-8"?>
 <SoundBanksInfo Platform="Windows" BasePlatform="Windows" SchemaVersion="12" SoundbankVersion="140">
 	<RootPaths>
-		<ProjectRoot>C:\Users\jrivera\projects\unity\gmtk-jam-2022\gmtk-jam-2022_WwiseProject\</ProjectRoot>
-		<SourceFilesRoot>C:\Users\jrivera\projects\unity\gmtk-jam-2022\gmtk-jam-2022_WwiseProject\.cache\Windows\</SourceFilesRoot>
-		<SoundBanksRoot>C:\Users\jrivera\projects\unity\gmtk-jam-2022\gmtk-jam-2022_WwiseProject\GeneratedSoundBanks\Windows\</SoundBanksRoot>
+		<ProjectRoot>C:\Users\jrivera\Desktop\OF MINE\projects\unity\gmtk-jam-2022\gmtk-jam-2022_WwiseProject\</ProjectRoot>
+		<SourceFilesRoot>C:\Users\jrivera\Desktop\OF MINE\projects\unity\gmtk-jam-2022\gmtk-jam-2022_WwiseProject\.cache\Windows\</SourceFilesRoot>
+		<SoundBanksRoot>C:\Users\jrivera\Desktop\OF MINE\projects\unity\gmtk-jam-2022\gmtk-jam-2022_WwiseProject\GeneratedSoundBanks\Windows\</SoundBanksRoot>
 		<ExternalSourcesInputFile></ExternalSourcesInputFile>
-		<ExternalSourcesOutputRoot>C:\Users\jrivera\projects\unity\gmtk-jam-2022\gmtk-jam-2022_WwiseProject\GeneratedSoundBanks\Windows</ExternalSourcesOutputRoot>
+		<ExternalSourcesOutputRoot>C:\Users\jrivera\Desktop\OF MINE\projects\unity\gmtk-jam-2022\gmtk-jam-2022_WwiseProject\GeneratedSoundBanks\Windows</ExternalSourcesOutputRoot>
 	</RootPaths>
 	<DialogueEvents/>
 	<StreamedFiles/>
 	<MediaFilesNotInAnyBank/>
 	<SoundBanks>
-		<SoundBank Id="1355168291" Language="SFX" Hash="2843448967">
+		<SoundBank Id="1355168291" GUID="{701ECBBD-9C7B-4030-8CDB-749EE5D1C7B9}" Language="SFX" Hash="2843448967">
 			<ObjectPath>Init</ObjectPath>
 			<ShortName>Init</ShortName>
 			<Path>Init.bnk</Path>
 			<GameParameters>
-				<GameParameter Id="1748895166" Name="RTPC_ext_Music_vol" ObjectPath="\Game Parameters\Default Work Unit\RTPC_ext_Music_vol"/>
-				<GameParameter Id="3983751694" Name="RTPC_ext_SFX_vol" ObjectPath="\Game Parameters\Default Work Unit\RTPC_ext_SFX_vol"/>
+				<GameParameter Id="1748895166" Name="RTPC_ext_Music_vol" ObjectPath="\Game Parameters\Default Work Unit\RTPC_ext_Music_vol" GUID="{205D5A79-3DFD-43C8-9D7B-63F43C370C68}"/>
+				<GameParameter Id="3983751694" Name="RTPC_ext_SFX_vol" ObjectPath="\Game Parameters\Default Work Unit\RTPC_ext_SFX_vol" GUID="{F2238B6D-7EB3-4708-93CC-E0EAB4EF4155}"/>
 			</GameParameters>
 		</SoundBank>
-		<SoundBank Id="4056684167" Language="SFX" Hash="160412498">
+		<SoundBank Id="4056684167" GUID="{B03D536A-7D03-453E-B3FD-D1B2F310B953}" Language="SFX" Hash="2008454019">
 			<ObjectPath>\SoundBanks\Default Work Unit\Master</ObjectPath>
 			<ShortName>Master</ShortName>
 			<Path>Master.bnk</Path>
 			<IncludedEvents>
-				<Event Id="2418170363" Name="Play_Bazooka" ObjectPath="\Events\Default Work Unit\Weapons\Play_Bazooka" DurationType="OneShot" DurationMin="2.323957" DurationMax="3.102111">
+				<Event Id="3991942870" Name="Music" ObjectPath="\Events\Default Work Unit\Music" GUID="{6279C3CB-38C4-4445-85D7-974661F5466B}" DurationType="Infinite">
+					<IncludedMemoryFiles>
+						<File Id="242666385" Language="SFX">
+							<ShortName>Title.wav</ShortName>
+							<Path>SFX\Title_D79FB2B7.wem</Path>
+						</File>
+						<File Id="492514643" Language="SFX">
+							<ShortName>Room 2 Loop Cycle.wav</ShortName>
+							<Path>SFX\Room 2 Loop Cycle_D79FB2B7.wem</Path>
+						</File>
+						<File Id="603862162" Language="SFX">
+							<ShortName>MagicGirlPianoQuiet(Final).wav</ShortName>
+							<Path>SFX\MagicGirlPianoQuiet(Final)_D79FB2B7.wem</Path>
+						</File>
+						<File Id="645640934" Language="SFX">
+							<ShortName>Room 3 Loop Cycle.wav</ShortName>
+							<Path>SFX\Room 3 Loop Cycle_D79FB2B7.wem</Path>
+						</File>
+						<File Id="733749534" Language="SFX">
+							<ShortName>Credits.wav</ShortName>
+							<Path>SFX\Credits_D79FB2B7.wem</Path>
+						</File>
+					</IncludedMemoryFiles>
+					<SwitchContainers>
+						<SwitchContainer SwitchValue="{65E97529-20E9-4D7C-9D7B-3D0A6B9C5A33}">
+							<Children>
+								<SwitchContainer SwitchValue="{FBD960CA-5FCB-4E29-83DB-C788055A29C0}">
+									<Media>
+										<File Id="645640934"/>
+									</Media>
+								</SwitchContainer>
+							</Children>
+						</SwitchContainer>
+						<SwitchContainer SwitchValue="{65E97529-20E9-4D7C-9D7B-3D0A6B9C5A33}">
+							<Children>
+								<SwitchContainer SwitchValue="{0DBD96EC-3D4A-4C72-A7D2-6844C06C23E9}">
+									<Media>
+										<File Id="603862162"/>
+									</Media>
+								</SwitchContainer>
+							</Children>
+						</SwitchContainer>
+						<SwitchContainer SwitchValue="{65E97529-20E9-4D7C-9D7B-3D0A6B9C5A33}">
+							<Children>
+								<SwitchContainer SwitchValue="{CBB97D5E-55FF-459F-A132-05DB34995611}">
+									<Media>
+										<File Id="492514643"/>
+									</Media>
+								</SwitchContainer>
+							</Children>
+						</SwitchContainer>
+						<SwitchContainer SwitchValue="{B3EDE86E-CDF2-4778-918E-1FC6D29EEAC9}">
+							<Media>
+								<File Id="242666385"/>
+							</Media>
+						</SwitchContainer>
+						<SwitchContainer SwitchValue="{6B28DC56-AAAC-4343-B0EA-8B464BB2E911}">
+							<Media>
+								<File Id="733749534"/>
+							</Media>
+						</SwitchContainer>
+					</SwitchContainers>
+				</Event>
+				<Event Id="2418170363" Name="Play_Bazooka" ObjectPath="\Events\Default Work Unit\Weapons\Play_Bazooka" GUID="{80859CF3-BBC3-44DE-94C1-A7D88E21AD21}" DurationType="OneShot" DurationMin="2.323957" DurationMax="3.102111">
 					<IncludedMemoryFiles>
 						<File Id="1047358395" Language="SFX">
 							<ShortName>BazShot.wav</ShortName>
@@ -33,7 +96,7 @@
 						</File>
 					</IncludedMemoryFiles>
 				</Event>
-				<Event Id="3539215392" Name="Play_bird_death" ObjectPath="\Events\Default Work Unit\Enemies\Play_bird_death" DurationType="OneShot" DurationMin="0.590083" DurationMax="0.715437">
+				<Event Id="3539215392" Name="Play_bird_death" ObjectPath="\Events\Default Work Unit\Enemies\Play_bird_death" GUID="{ED6C2C9E-7DD1-4A6F-8875-022EFC282B79}" DurationType="OneShot" DurationMin="0.590083" DurationMax="0.715437">
 					<IncludedMemoryFiles>
 						<File Id="107841545" Language="SFX">
 							<ShortName>BirdDeath-001.wav</ShortName>
@@ -49,7 +112,7 @@
 						</File>
 					</IncludedMemoryFiles>
 				</Event>
-				<Event Id="3065695153" Name="Play_bird_hit" ObjectPath="\Events\Default Work Unit\Enemies\Play_bird_hit" DurationType="OneShot" DurationMin="0.218583" DurationMax="0.271021">
+				<Event Id="3065695153" Name="Play_bird_hit" ObjectPath="\Events\Default Work Unit\Enemies\Play_bird_hit" GUID="{74509F4C-53D0-4D0F-A8B3-71A208CC9684}" DurationType="OneShot" DurationMin="0.218583" DurationMax="0.271021">
 					<IncludedMemoryFiles>
 						<File Id="134077422" Language="SFX">
 							<ShortName>BirdHit-001.wav</ShortName>
@@ -69,7 +132,7 @@
 						</File>
 					</IncludedMemoryFiles>
 				</Event>
-				<Event Id="1756926810" Name="Play_char_damage" ObjectPath="\Events\Default Work Unit\Character\Play_char_damage" DurationType="OneShot" DurationMin="0.213641" DurationMax="0.646746">
+				<Event Id="1756926810" Name="Play_char_damage" ObjectPath="\Events\Default Work Unit\Character\Play_char_damage" GUID="{83E4DDD0-2B4F-4AC1-9D6F-CB37BA37B314}" DurationType="OneShot" DurationMin="0.213641" DurationMax="0.646746">
 					<IncludedMemoryFiles>
 						<File Id="26443093" Language="SFX">
 							<ShortName>CC-CK Punch Low Smack 04-002.wav</ShortName>
@@ -121,7 +184,7 @@
 						</File>
 					</IncludedMemoryFiles>
 				</Event>
-				<Event Id="2507488987" Name="Play_charger_attack" ObjectPath="\Events\Default Work Unit\Enemies\Play_charger_attack" DurationType="OneShot" DurationMin="0.936167" DurationMax="1.484917">
+				<Event Id="2507488987" Name="Play_charger_attack" ObjectPath="\Events\Default Work Unit\Enemies\Play_charger_attack" GUID="{426ADCB7-02D1-4852-A5C9-D1EA588F9177}" DurationType="OneShot" DurationMin="0.936167" DurationMax="1.484917">
 					<IncludedMemoryFiles>
 						<File Id="374806952" Language="SFX">
 							<ShortName>ChargerAttack-001.wav</ShortName>
@@ -137,7 +200,7 @@
 						</File>
 					</IncludedMemoryFiles>
 				</Event>
-				<Event Id="2925990347" Name="Play_charger_death" ObjectPath="\Events\Default Work Unit\Enemies\Play_charger_death" DurationType="OneShot" DurationMin="0.927625" DurationMax="1.592500">
+				<Event Id="2925990347" Name="Play_charger_death" ObjectPath="\Events\Default Work Unit\Enemies\Play_charger_death" GUID="{4EE6E64A-B0AF-4181-AD89-9D4F594DD783}" DurationType="OneShot" DurationMin="0.927625" DurationMax="1.592500">
 					<IncludedMemoryFiles>
 						<File Id="299035899" Language="SFX">
 							<ShortName>ChargerDeath-003.wav</ShortName>
@@ -153,7 +216,7 @@
 						</File>
 					</IncludedMemoryFiles>
 				</Event>
-				<Event Id="311910498" Name="Play_click" ObjectPath="\Events\Default Work Unit\UI\Play_click" DurationType="OneShot" DurationMin="0.084635" DurationMax="0.165049">
+				<Event Id="311910498" Name="Play_click" ObjectPath="\Events\Default Work Unit\UI\Play_click" GUID="{742C9D8E-7914-435F-BFA5-8D2C6E71008E}" DurationType="OneShot" DurationMin="0.084635" DurationMax="0.165049">
 					<IncludedMemoryFiles>
 						<File Id="144307092" Language="SFX">
 							<ShortName>UI Click-004.wav</ShortName>
@@ -173,7 +236,7 @@
 						</File>
 					</IncludedMemoryFiles>
 				</Event>
-				<Event Id="2211787386" Name="Play_dash" ObjectPath="\Events\Default Work Unit\Character\Play_dash" DurationType="OneShot" DurationMin="0.664354" DurationMax="0.762979">
+				<Event Id="2211787386" Name="Play_dash" ObjectPath="\Events\Default Work Unit\Character\Play_dash" GUID="{A2F6AD04-F7C1-4A67-9247-C9CC27C3F8F7}" DurationType="OneShot" DurationMin="0.664354" DurationMax="0.762979">
 					<IncludedMemoryFiles>
 						<File Id="433826311" Language="SFX">
 							<ShortName>Dash-001.wav</ShortName>
@@ -185,7 +248,7 @@
 						</File>
 					</IncludedMemoryFiles>
 				</Event>
-				<Event Id="4270539530" Name="Play_ExpBaz" ObjectPath="\Events\Default Work Unit\Weapons\Play_ExpBaz" DurationType="OneShot" DurationMin="2.365875" DurationMax="2.365875">
+				<Event Id="4270539530" Name="Play_ExpBaz" ObjectPath="\Events\Default Work Unit\Weapons\Play_ExpBaz" GUID="{9B77D222-DE16-4889-A1A5-23214A0432FB}" DurationType="OneShot" DurationMin="2.365875" DurationMax="2.365875">
 					<IncludedMemoryFiles>
 						<File Id="187254984" Language="SFX">
 							<ShortName>Balloon-002.wav</ShortName>
@@ -217,7 +280,7 @@
 						</File>
 					</IncludedMemoryFiles>
 				</Event>
-				<Event Id="3788303255" Name="Play_GateOpen" ObjectPath="\Events\Default Work Unit\Amb\Play_GateOpen" DurationType="OneShot" DurationMin="4.410167" DurationMax="4.410167">
+				<Event Id="3788303255" Name="Play_GateOpen" ObjectPath="\Events\Default Work Unit\Amb\Play_GateOpen" GUID="{2530FB6B-B8AA-444B-A834-C73A8381529A}" DurationType="OneShot" DurationMin="4.410167" DurationMax="4.410167">
 					<IncludedMemoryFiles>
 						<File Id="127698413" Language="SFX">
 							<ShortName>GateOpen.wav</ShortName>
@@ -225,52 +288,7 @@
 						</File>
 					</IncludedMemoryFiles>
 				</Event>
-				<Event Id="1182046178" Name="Play_Music_Gameplay" ObjectPath="\Events\Default Work Unit\Play_Music_Gameplay" DurationType="Infinite">
-					<IncludedMemoryFiles>
-						<File Id="492514643" Language="SFX">
-							<ShortName>Room 2 Loop Cycle.wav</ShortName>
-							<Path>SFX\Room 2 Loop Cycle_D79FB2B7.wem</Path>
-						</File>
-						<File Id="603862162" Language="SFX">
-							<ShortName>MagicGirlPianoQuiet(Final).wav</ShortName>
-							<Path>SFX\MagicGirlPianoQuiet(Final)_D79FB2B7.wem</Path>
-						</File>
-						<File Id="645640934" Language="SFX">
-							<ShortName>Room 3 Loop Cycle.wav</ShortName>
-							<Path>SFX\Room 3 Loop Cycle_D79FB2B7.wem</Path>
-						</File>
-					</IncludedMemoryFiles>
-					<SwitchContainers>
-						<SwitchContainer SwitchValue="{65E97529-20E9-4D7C-9D7B-3D0A6B9C5A33}">
-							<Children>
-								<SwitchContainer SwitchValue="{FBD960CA-5FCB-4E29-83DB-C788055A29C0}">
-									<Media>
-										<File Id="645640934"/>
-									</Media>
-								</SwitchContainer>
-							</Children>
-						</SwitchContainer>
-						<SwitchContainer SwitchValue="{65E97529-20E9-4D7C-9D7B-3D0A6B9C5A33}">
-							<Children>
-								<SwitchContainer SwitchValue="{0DBD96EC-3D4A-4C72-A7D2-6844C06C23E9}">
-									<Media>
-										<File Id="603862162"/>
-									</Media>
-								</SwitchContainer>
-							</Children>
-						</SwitchContainer>
-						<SwitchContainer SwitchValue="{65E97529-20E9-4D7C-9D7B-3D0A6B9C5A33}">
-							<Children>
-								<SwitchContainer SwitchValue="{CBB97D5E-55FF-459F-A132-05DB34995611}">
-									<Media>
-										<File Id="492514643"/>
-									</Media>
-								</SwitchContainer>
-							</Children>
-						</SwitchContainer>
-					</SwitchContainers>
-				</Event>
-				<Event Id="3893482503" Name="Play_navigate" ObjectPath="\Events\Default Work Unit\UI\Play_navigate" DurationType="OneShot" DurationMin="0.000000" DurationMax="0.179896">
+				<Event Id="3893482503" Name="Play_navigate" ObjectPath="\Events\Default Work Unit\UI\Play_navigate" GUID="{AA467E9F-EC97-4062-BAA7-F63132C0C69D}" DurationType="OneShot" DurationMin="0.131708" DurationMax="0.199104">
 					<IncludedMemoryFiles>
 						<File Id="73006644" Language="SFX">
 							<ShortName>UI Navigate-002.wav</ShortName>
@@ -290,7 +308,7 @@
 						</File>
 					</IncludedMemoryFiles>
 				</Event>
-				<Event Id="1067811349" Name="Play_normal_snip_attack" ObjectPath="\Events\Default Work Unit\Enemies\Play_normal_snip_attack" DurationType="OneShot" DurationMin="1.024375" DurationMax="1.236833">
+				<Event Id="1067811349" Name="Play_normal_snip_attack" ObjectPath="\Events\Default Work Unit\Enemies\Play_normal_snip_attack" GUID="{2D8DDD02-E758-4ED8-96E9-3D4E21223DB8}" DurationType="OneShot" DurationMin="1.024375" DurationMax="1.236833">
 					<IncludedMemoryFiles>
 						<File Id="284735567" Language="SFX">
 							<ShortName>NormalShooter Attack-002.wav</ShortName>
@@ -302,7 +320,7 @@
 						</File>
 					</IncludedMemoryFiles>
 				</Event>
-				<Event Id="3758914473" Name="Play_normal_snip_death" ObjectPath="\Events\Default Work Unit\Enemies\Play_normal_snip_death" DurationType="OneShot" DurationMin="1.135000" DurationMax="1.216875">
+				<Event Id="3758914473" Name="Play_normal_snip_death" ObjectPath="\Events\Default Work Unit\Enemies\Play_normal_snip_death" GUID="{0CFD38EF-65D5-4669-967B-C10D15069066}" DurationType="OneShot" DurationMin="1.135000" DurationMax="1.216875">
 					<IncludedMemoryFiles>
 						<File Id="319200834" Language="SFX">
 							<ShortName>NormalShooterDeath-001.wav</ShortName>
@@ -314,7 +332,7 @@
 						</File>
 					</IncludedMemoryFiles>
 				</Event>
-				<Event Id="992244" Name="Play_Shotgun" ObjectPath="\Events\Default Work Unit\Weapons\Play_Shotgun" DurationType="OneShot" DurationMin="2.591458" DurationMax="2.591458">
+				<Event Id="992244" Name="Play_Shotgun" ObjectPath="\Events\Default Work Unit\Weapons\Play_Shotgun" GUID="{3BAB3E49-ADE8-4FD3-895A-26703892F609}" DurationType="OneShot" DurationMin="2.591458" DurationMax="2.591458">
 					<IncludedMemoryFiles>
 						<File Id="158575514" Language="SFX">
 							<ShortName>ShotgunTail-002.wav</ShortName>
@@ -342,7 +360,7 @@
 						</File>
 					</IncludedMemoryFiles>
 				</Event>
-				<Event Id="1629017912" Name="Play_Single_Auto" ObjectPath="\Events\Default Work Unit\Weapons\Play_Single_Auto" DurationType="Infinite">
+				<Event Id="1629017912" Name="Play_Single_Auto" ObjectPath="\Events\Default Work Unit\Weapons\Play_Single_Auto" GUID="{AC809575-C449-4973-B3B2-ADA5FF155A83}" DurationType="Infinite">
 					<IncludedMemoryFiles>
 						<File Id="202050271" Language="SFX">
 							<ShortName>SimpleRifleLayer-003.wav</ShortName>
@@ -362,7 +380,7 @@
 						</File>
 					</IncludedMemoryFiles>
 				</Event>
-				<Event Id="2600469463" Name="Play_steps" ObjectPath="\Events\Default Work Unit\Character\Play_steps" DurationType="OneShot" DurationMin="0.210082" DurationMax="0.326708">
+				<Event Id="2600469463" Name="Play_steps" ObjectPath="\Events\Default Work Unit\Character\Play_steps" GUID="{9E3A42DD-9273-44E9-9BBA-43DEC3985A51}" DurationType="OneShot" DurationMin="0.210082" DurationMax="0.326708">
 					<IncludedMemoryFiles>
 						<File Id="27974589" Language="SFX">
 							<ShortName>grass-001.wav</ShortName>
@@ -432,7 +450,7 @@
 						</SwitchContainer>
 					</SwitchContainers>
 				</Event>
-				<Event Id="1074022805" Name="Play_WhiteNoise" ObjectPath="\Events\Default Work Unit\Amb\Play_WhiteNoise" DurationType="Infinite">
+				<Event Id="1074022805" Name="Play_WhiteNoise" ObjectPath="\Events\Default Work Unit\Amb\Play_WhiteNoise" GUID="{1F6B1C37-B519-441D-904D-AFEF43B9858F}" DurationType="Infinite">
 					<IncludedMemoryFiles>
 						<File Id="936361397" Language="SFX">
 							<ShortName>Archived, Test Tone, White Noise SND3563.wav</ShortName>
@@ -442,30 +460,31 @@
 				</Event>
 			</IncludedEvents>
 			<GameParameters>
-				<GameParameter Id="1488248637" Name="RTPC_ext_rooms" ObjectPath="\Game Parameters\Default Work Unit\RTPC_ext_rooms"/>
+				<GameParameter Id="1488248637" Name="RTPC_ext_rooms" ObjectPath="\Game Parameters\Default Work Unit\RTPC_ext_rooms" GUID="{9C3D340C-4EEA-4D49-A039-35C6458771A1}"/>
+				<GameParameter Id="1748895166" Name="RTPC_ext_Music_vol" ObjectPath="\Game Parameters\Default Work Unit\RTPC_ext_Music_vol" GUID="{205D5A79-3DFD-43C8-9D7B-63F43C370C68}"/>
 			</GameParameters>
 			<StateGroups>
-				<StateGroup Id="1992488372" Name="STATE_Music" ObjectPath="\States\Default Work Unit\STATE_Music">
+				<StateGroup Id="1992488372" Name="STATE_Music" ObjectPath="\States\Default Work Unit\STATE_Music" GUID="{A1D6AEE6-077B-4C97-974C-A9FE5887D05F}">
 					<States>
-						<State Id="748895195" Name="None" ObjectPath="\States\Default Work Unit\STATE_Music\None"/>
-						<State Id="3900992838" Name="STATE_Menu" ObjectPath="\States\Default Work Unit\STATE_Music\STATE_Menu"/>
-						<State Id="387537969" Name="STATE_Rooms" ObjectPath="\States\Default Work Unit\STATE_Music\STATE_Rooms"/>
-						<State Id="2052296799" Name="STATE_Credits" ObjectPath="\States\Default Work Unit\STATE_Music\STATE_Credits"/>
+						<State Id="748895195" Name="None" ObjectPath="\States\Default Work Unit\STATE_Music\None" GUID="{AB596F37-09D7-4558-B7CF-0B29EFF97CC5}"/>
+						<State Id="3900992838" Name="STATE_Menu" ObjectPath="\States\Default Work Unit\STATE_Music\STATE_Menu" GUID="{B3EDE86E-CDF2-4778-918E-1FC6D29EEAC9}"/>
+						<State Id="387537969" Name="STATE_Rooms" ObjectPath="\States\Default Work Unit\STATE_Music\STATE_Rooms" GUID="{65E97529-20E9-4D7C-9D7B-3D0A6B9C5A33}"/>
+						<State Id="2052296799" Name="STATE_Credits" ObjectPath="\States\Default Work Unit\STATE_Music\STATE_Credits" GUID="{6B28DC56-AAAC-4343-B0EA-8B464BB2E911}"/>
 					</States>
 				</StateGroup>
 			</StateGroups>
 			<SwitchGroups>
-				<SwitchGroup Id="3667359600" Name="SWITCH_rooms" ObjectPath="\Switches\Default Work Unit\SWITCH_rooms">
+				<SwitchGroup Id="3667359600" Name="SWITCH_rooms" ObjectPath="\Switches\Default Work Unit\SWITCH_rooms" GUID="{1FB7C126-FFB0-4864-B143-1855FA1CE62F}">
 					<Switches>
-						<Switch Id="3667359538" Name="SWITCH_Room1" ObjectPath="\Switches\Default Work Unit\SWITCH_rooms\SWITCH_Room1"/>
-						<Switch Id="3667359537" Name="SWITCH_Room2" ObjectPath="\Switches\Default Work Unit\SWITCH_rooms\SWITCH_Room2"/>
-						<Switch Id="3667359536" Name="SWITCH_Room3" ObjectPath="\Switches\Default Work Unit\SWITCH_rooms\SWITCH_Room3"/>
+						<Switch Id="3667359538" Name="SWITCH_Room1" ObjectPath="\Switches\Default Work Unit\SWITCH_rooms\SWITCH_Room1" GUID="{0DBD96EC-3D4A-4C72-A7D2-6844C06C23E9}"/>
+						<Switch Id="3667359537" Name="SWITCH_Room2" ObjectPath="\Switches\Default Work Unit\SWITCH_rooms\SWITCH_Room2" GUID="{CBB97D5E-55FF-459F-A132-05DB34995611}"/>
+						<Switch Id="3667359536" Name="SWITCH_Room3" ObjectPath="\Switches\Default Work Unit\SWITCH_rooms\SWITCH_Room3" GUID="{FBD960CA-5FCB-4E29-83DB-C788055A29C0}"/>
 					</Switches>
 				</SwitchGroup>
-				<SwitchGroup Id="4011692932" Name="SWITCH_char_footsteps" ObjectPath="\Switches\Default Work Unit\SWITCH_char_footsteps">
+				<SwitchGroup Id="4011692932" Name="SWITCH_char_footsteps" ObjectPath="\Switches\Default Work Unit\SWITCH_char_footsteps" GUID="{697DBC92-4FB8-46C1-88CC-027514DF9937}">
 					<Switches>
-						<Switch Id="1983658940" Name="SWITCH_tile" ObjectPath="\Switches\Default Work Unit\SWITCH_char_footsteps\SWITCH_tile"/>
-						<Switch Id="2902377486" Name="SWITCH_grass" ObjectPath="\Switches\Default Work Unit\SWITCH_char_footsteps\SWITCH_grass"/>
+						<Switch Id="1983658940" Name="SWITCH_tile" ObjectPath="\Switches\Default Work Unit\SWITCH_char_footsteps\SWITCH_tile" GUID="{1A20A087-1867-42C7-AA5E-3A149E21E6DB}"/>
+						<Switch Id="2902377486" Name="SWITCH_grass" ObjectPath="\Switches\Default Work Unit\SWITCH_char_footsteps\SWITCH_grass" GUID="{3441386D-0010-4587-84C7-891D3917FDAF}"/>
 					</Switches>
 				</SwitchGroup>
 			</SwitchGroups>

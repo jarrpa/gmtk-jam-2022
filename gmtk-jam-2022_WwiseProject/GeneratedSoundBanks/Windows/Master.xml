@@ -1,25 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
-<SoundBanksInfo Platform="Mac" BasePlatform="Mac" SchemaVersion="12" SoundbankVersion="140">
+<SoundBanksInfo Platform="Windows" BasePlatform="Windows" SchemaVersion="12" SoundbankVersion="140">
 	<RootPaths>
 		<ProjectRoot>C:\Users\jrivera\Desktop\OF MINE\projects\unity\gmtk-jam-2022\gmtk-jam-2022_WwiseProject\</ProjectRoot>
-		<SourceFilesRoot>C:\Users\jrivera\Desktop\OF MINE\projects\unity\gmtk-jam-2022\gmtk-jam-2022_WwiseProject\.cache\Mac\</SourceFilesRoot>
-		<SoundBanksRoot>C:\Users\jrivera\Desktop\OF MINE\projects\unity\gmtk-jam-2022\gmtk-jam-2022_WwiseProject\GeneratedSoundBanks\Mac\</SoundBanksRoot>
+		<SourceFilesRoot>C:\Users\jrivera\Desktop\OF MINE\projects\unity\gmtk-jam-2022\gmtk-jam-2022_WwiseProject\.cache\Windows\</SourceFilesRoot>
+		<SoundBanksRoot>C:\Users\jrivera\Desktop\OF MINE\projects\unity\gmtk-jam-2022\gmtk-jam-2022_WwiseProject\GeneratedSoundBanks\Windows\</SoundBanksRoot>
 		<ExternalSourcesInputFile></ExternalSourcesInputFile>
-		<ExternalSourcesOutputRoot>C:\Users\jrivera\Desktop\OF MINE\projects\unity\gmtk-jam-2022\gmtk-jam-2022_WwiseProject\GeneratedSoundBanks\Mac</ExternalSourcesOutputRoot>
+		<ExternalSourcesOutputRoot>C:\Users\jrivera\Desktop\OF MINE\projects\unity\gmtk-jam-2022\gmtk-jam-2022_WwiseProject\GeneratedSoundBanks\Windows</ExternalSourcesOutputRoot>
 	</RootPaths>
-	<DialogueEvents/>
-	<StreamedFiles/>
-	<MediaFilesNotInAnyBank/>
 	<SoundBanks>
-		<SoundBank Id="1355168291" GUID="{701ECBBD-9C7B-4030-8CDB-749EE5D1C7B9}" Language="SFX" Hash="1704646329">
-			<ObjectPath>Init</ObjectPath>
-			<ShortName>Init</ShortName>
-			<Path>Init.bnk</Path>
-			<GameParameters>
-				<GameParameter Id="1748895166" Name="RTPC_ext_Music_vol" ObjectPath="\Game Parameters\Default Work Unit\RTPC_ext_Music_vol" GUID="{205D5A79-3DFD-43C8-9D7B-63F43C370C68}"/>
-				<GameParameter Id="3983751694" Name="RTPC_ext_SFX_vol" ObjectPath="\Game Parameters\Default Work Unit\RTPC_ext_SFX_vol" GUID="{F2238B6D-7EB3-4708-93CC-E0EAB4EF4155}"/>
-			</GameParameters>
-		</SoundBank>
 		<SoundBank Id="4056684167" GUID="{B03D536A-7D03-453E-B3FD-D1B2F310B953}" Language="SFX" Hash="2008454019">
 			<ObjectPath>\SoundBanks\Default Work Unit\Master</ObjectPath>
 			<ShortName>Master</ShortName>
