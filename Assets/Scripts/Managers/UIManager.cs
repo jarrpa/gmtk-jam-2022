@@ -19,7 +19,9 @@ public class UIManager : MonoBehaviour
     public TMP_Text wavesText;
 
     public GameObject pausePanel;
-    public TMP_Text pauseText;
+    public GameObject pauseTitle;
+    private Image pauseTitleImage;
+    public Sprite[] pauseTitleSprites;
 
     private void Start()
     {
@@ -29,15 +31,13 @@ public class UIManager : MonoBehaviour
         Singleton.Instance.GameManager.onPause.AddListener(PauseGame);
         Singleton.Instance.GameManager.onPlayerDeath.AddListener(GameOverPanel);
         Singleton.Instance.WaveManager.onWavesDone.AddListener(WinPanel);
-
+        pauseTitleImage = pauseTitle.GetComponent<Image>();
     }
 
     private void OnEnable()
     {
         player.GetComponent<PlayerAbilityController>().OnAbilityChange += PlayCardAnimations;
         player.GetComponent<Entity>().onHit.AddListener(UpdatePlayerHealth);
-
-
     }
 
     private void OnDisable()
@@ -51,6 +51,7 @@ public class UIManager : MonoBehaviour
         Singleton.Instance.GameManager.onPause.RemoveListener(PauseGame);
         Singleton.Instance.GameManager.onPlayerDeath.RemoveListener(GameOverPanel);
         Singleton.Instance.WaveManager.onWavesDone.RemoveListener(WinPanel);
+        Time.timeScale = 1f;
     }
 
     private void UpdatePlayerHealth(int health)
@@ -77,21 +78,19 @@ public class UIManager : MonoBehaviour
 
     private void PauseGame(bool pause)
     {
+        pauseTitleImage.sprite = pauseTitleSprites[0];
         pausePanel.SetActive(pause);
-        
-        if (pause)
-            pauseText.text = "PAUSE";
     }
     
     private void GameOverPanel()
     {
-        pauseText.text = "GAMEOVER";
+        pauseTitleImage.sprite = pauseTitleSprites[1];
         pausePanel.SetActive(true);
     }
 
     private void WinPanel()
     {
-        pauseText.text = "YOU WON";
+        pauseTitleImage.sprite = pauseTitleSprites[2];
         pausePanel.SetActive(true);
     }
     

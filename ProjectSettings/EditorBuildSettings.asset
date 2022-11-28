@@ -9,12 +9,12 @@ EditorBuildSettings:
     path: Assets/Scenes/Menu.unity
     guid: 2cda990e2423bbf4892e6590ba056729
   - enabled: 1
-    path: Assets/Scenes/Cristian.unity
-    guid: 2001b04cbf77f43a8b4c6779588f3d74
-  - enabled: 1
     path: Assets/Scenes/Credits.unity
     guid: e5a254b7d22016a4bb80ceaa6e1edff6
   - enabled: 1
     path: Assets/Scenes/Options.unity
     guid: af9be8c21a2c4a84897b4bbb3eb24e66
+  - enabled: 1
+    path: Assets/Scenes/demo-level-jarrpa.unity
+    guid: 77467d438993b9f408a930a8b65dfc38
   m_configObjects: {}
