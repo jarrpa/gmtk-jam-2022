@@ -82,8 +82,6 @@ public class GameManager : MonoBehaviour
         onPause?.Invoke(_gameIsPaused);
     }
 
-    // Start is called before the first frame update
-
     private void Update() {
         if (Input.GetKeyDown(KeyCode.Escape) && _gameState == GameState.LevelOne)
         {
