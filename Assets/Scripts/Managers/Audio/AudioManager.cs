@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class AudioManScr : MonoBehaviour
+public class AudioManager : MonoBehaviour
 {
     public GameObject player;
     public GameObject sniper;

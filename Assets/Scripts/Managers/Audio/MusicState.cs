@@ -3,12 +3,12 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-public class MusicScr : MonoBehaviour
+public class MusicState : MonoBehaviour
 {
     public AK.Wwise.Event Music;
     public AK.Wwise.RTPC RoomRTPC;
     string sceneName;
-    private static MusicScr Instance;
+    private static MusicState Instance;
     Scene m_Scene;
 
     private void Awake()
