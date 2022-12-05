@@ -44,6 +44,7 @@ public class GameManager : MonoBehaviour
             player.GetComponent<Entity>().onDeath.RemoveListener(OnGameOver);
             Singleton.Instance.WaveManager.onWavesDone.RemoveListener(OnPlayerWin);
         }
+        Time.timeScale = 1f;
     }
 
     public void UpdateGameState(GameState newState)
