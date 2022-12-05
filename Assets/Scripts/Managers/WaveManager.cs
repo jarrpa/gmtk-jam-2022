@@ -24,7 +24,7 @@ public class WaveManager : MonoBehaviour
 
     public Transform[] enemies;
     public Wave[] waves;
-    public Transform[] spawnPoints;
+    public List<Transform> spawnPoints;
     private int _nextWave;
     
     public float timeBetweenWaves = 4f;
@@ -40,16 +40,12 @@ public class WaveManager : MonoBehaviour
     private void Start()
     {
         _waveCountDown = timeBetweenWaves;
-        if (spawnPoints.Length == 0)
-        {
-            Debug.Log("WaveManager: Error no spawn Points set");
-        }
     }
     private void Update()
     { 
         if(_state == SpawnState.Inactive)
         {
-            Debug.Log("WaveManager Inactive");
+            // Debug.Log("WaveManager Inactive");
             return;
         }
         
@@ -131,12 +127,23 @@ public class WaveManager : MonoBehaviour
         Debug.Log("Spawning Enemy: " + enemy.name);
         
         // Selects a random spawn point; 
-        Transform sp = spawnPoints[Random.Range(0, spawnPoints.Length)];
+        Transform sp = spawnPoints[Random.Range(0, spawnPoints.Count)];
         Instantiate(enemy, sp.position, sp.rotation);
     }
 
     public void StartWaves()
     {
+        _nextWave = 0;
+        spawnPoints.Clear();
+
+        var spawnPointObjects = GameObject.FindGameObjectsWithTag("SpawnPoint");
+        Debug.Log("Found points: " + spawnPointObjects.Length);
+        for (int i = 0; i < spawnPointObjects.Length; i++)
+        {
+            Debug.Log("add : " + spawnPointObjects[i].name);
+            spawnPoints.Add(spawnPointObjects[i].transform);
+        }
+
         onWaveChange?.Invoke(_nextWave);
         _state = SpawnState.Counting;
     }
