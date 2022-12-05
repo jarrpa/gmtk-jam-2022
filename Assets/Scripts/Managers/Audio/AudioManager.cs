@@ -14,17 +14,17 @@ public class AudioManager : MonoBehaviour
     public GameObject bazooka;
     public GameObject grenade;
 
-    public AK.Wwise.Event hit;
-    public AK.Wwise.Event sniper_hit;
-    public AK.Wwise.Event ranger_hit;
-    public AK.Wwise.Event charger_hit;
+    // public AK.Wwise.Event hit;
+    // public AK.Wwise.Event sniper_hit;
+    // public AK.Wwise.Event ranger_hit;
+    // public AK.Wwise.Event charger_hit;
 
-    public AK.Wwise.Event FootstepsSFX;
+    // public AK.Wwise.Event FootstepsSFX;
 
-    public AK.Wwise.Event ShotSingle;
-    public AK.Wwise.Event Shotgun;
-    public AK.Wwise.Event Baz;
-    public AK.Wwise.Event DoorOpen;
+    // public AK.Wwise.Event ShotSingle;
+    // public AK.Wwise.Event Shotgun;
+    // public AK.Wwise.Event Baz;
+    // public AK.Wwise.Event DoorOpen;
 
 
 
@@ -44,19 +44,19 @@ public class AudioManager : MonoBehaviour
 
     public void PlayerHit(int health)
     {
-        hit.Post(player);
+        // hit.Post(player);
     }
     public void SniperHit(int health)
     {
-        hit.Post(player);
+        // hit.Post(player);
     }
     public void RangerHit(int health)
     {
-        hit.Post(player);
+        // hit.Post(player);
     }
     public void ChargerHit(int health)
     {
-        hit.Post(player);
+        // hit.Post(player);
     }
 
     private void OnDisable()
@@ -69,14 +69,14 @@ public class AudioManager : MonoBehaviour
 
     void Footsteps()
     {
-        FootstepsSFX.Post(player);
+        // FootstepsSFX.Post(player);
     }
 
     void Shot()
     {
-        if (weapon1.activeSelf && Input.GetButton("Fire1")) ShotSingle.Post(weapon1);
-        if (shotgun.activeSelf && Input.GetMouseButtonDown(0)) Shotgun.Post(shotgun);
-        if (bazooka.activeSelf && Input.GetMouseButtonDown(0)) Baz.Post(bazooka);
+        // if (weapon1.activeSelf && Input.GetButton("Fire1")) ShotSingle.Post(weapon1);
+        // if (shotgun.activeSelf && Input.GetMouseButtonDown(0)) Shotgun.Post(shotgun);
+        // if (bazooka.activeSelf && Input.GetMouseButtonDown(0)) Baz.Post(bazooka);
     }
 
     void Update()
@@ -86,6 +86,6 @@ public class AudioManager : MonoBehaviour
 
     void Door()
     {
-        DoorOpen.Post(gameObject);
+        // DoorOpen.Post(gameObject);
     }
 }
