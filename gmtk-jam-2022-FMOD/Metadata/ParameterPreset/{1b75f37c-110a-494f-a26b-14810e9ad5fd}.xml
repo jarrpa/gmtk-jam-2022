@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.02.02.00">
+	<object class="ParameterPreset" id="{1b75f37c-110a-494f-a26b-14810e9ad5fd}">
+		<property name="name">
+			<value>MusicState</value>
+		</property>
+		<relationship name="folder">
+			<destination>{8a976c77-5cb8-4ff9-b7db-960bdaaec3df}</destination>
+		</relationship>
+		<relationship name="parameter">
+			<destination>{934ef7fc-fd61-4f4e-b0b0-ac4079a3a7e5}</destination>
+		</relationship>
+	</object>
+	<object class="GameParameter" id="{934ef7fc-fd61-4f4e-b0b0-ac4079a3a7e5}">
+		<property name="parameterType">
+			<value>2</value>
+		</property>
+		<property name="maximum">
+			<value>6</value>
+		</property>
+		<property name="enumerationLabels">
+			<value>Menu</value>
+			<value>Credits</value>
+			<value>Options</value>
+			<value>Room01</value>
+			<value>Room02</value>
+			<value>Room03</value>
+		</property>
+		<property name="initialValue">
+			<value>5</value>
+		</property>
+		<relationship name="automators">
+			<destination>{61360098-1dc5-46ea-b71f-663244f94cf4}</destination>
+		</relationship>
+	</object>
+	<object class="Automator" id="{61360098-1dc5-46ea-b71f-663244f94cf4}">
+		<property name="nameOfPropertyBeingAutomated">
+			<value>cursorPosition</value>
+		</property>
+	</object>
+</objects>
