@@ -1,70 +1,91 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using FMODUnity;
 
 public class AudioManager : MonoBehaviour
 {
-    public GameObject player;
-    public GameObject sniper;
-    public GameObject ranger;
-    public GameObject charger;
+    public FMODUnity.EventReference entityAttackSound;
+    public FMODUnity.EventReference entityHitSound;
+    public FMODUnity.EventReference entityDeathSound;
+    public FMODUnity.EventReference weaponFireSound;
 
-    public GameObject weapon1;
-    public GameObject shotgun;
-    public GameObject bazooka;
-    public GameObject grenade;
-
-    // public AK.Wwise.Event hit;
-    // public AK.Wwise.Event sniper_hit;
-    // public AK.Wwise.Event ranger_hit;
-    // public AK.Wwise.Event charger_hit;
-
-    // public AK.Wwise.Event FootstepsSFX;
-
-    // public AK.Wwise.Event ShotSingle;
-    // public AK.Wwise.Event Shotgun;
-    // public AK.Wwise.Event Baz;
-    // public AK.Wwise.Event DoorOpen;
-
-
+    public EntityEvent entityHitEvent;
+    public EntityEvent entityDeathEvent;
+    public AttackEvent enemyAttackEvent;
+    public AttackEvent weaponFireEvent;
+    public GameEvent explosionEvent;
 
     private void Awake()
     {
         DontDestroyOnLoad(this.gameObject);
+
+        // Events we listen
+        entityHitEvent ??= GameEventLoader.Load<EntityEvent>("EntityHitEvent");
+        entityDeathEvent ??= GameEventLoader.Load<EntityEvent>("EntityDeathEvent");
+        enemyAttackEvent ??= GameEventLoader.Load<AttackEvent>("EnemyAttackEvent");
+        weaponFireEvent ??= GameEventLoader.Load<AttackEvent>("WeaponFireEvent");
+        explosionEvent ??= GameEventLoader.Load<GameEvent>("GrenadeExplosionEvent");
     }
 
     private void OnEnable()
     {
-        player.GetComponent<Entity>().onHit.RemoveListener(PlayerHit);
-        sniper.GetComponent<Entity>().onHit.RemoveListener(SniperHit);
-        ranger.GetComponent<Entity>().onHit.RemoveListener(RangerHit);
-        charger.GetComponent<Entity>().onHit.RemoveListener(ChargerHit);
-
+        entityHitEvent.AddListener(OnDamageTaken);
+        entityDeathEvent.AddListener(OnDeath);
+        enemyAttackEvent.AddListener(OnEnemyAttack);
+        weaponFireEvent.AddListener(OnWeaponFire);
+        explosionEvent.AddListener(OnExplosion);
     }
 
-    public void PlayerHit(int health)
+    private void OnEnemyAttack(AttackPayload hit)
     {
-        // hit.Post(player);
+        //Debug.Log("OnDamageTaken Audio: " + hit.entity.name + " " + hit.damage);
+        PlayEntitySound(entityAttackSound, Enum.GetName(typeof(EntityKind), hit.attacker.kind));
     }
-    public void SniperHit(int health)
+
+    private void OnDamageTaken(EntityPayload hit)
     {
-        // hit.Post(player);
+        //Debug.Log("OnDamageTaken Audio: " + hit.entity.name + " " + hit.damage);
+        PlayEntitySound(entityHitSound, Enum.GetName(typeof(EntityKind), hit.entity.kind));
     }
-    public void RangerHit(int health)
+
+    private void OnDeath(EntityPayload hit)
     {
-        // hit.Post(player);
+        //Debug.Log("OnDeath Audio: " + hit.entity.name + " " + hit.damage);
+        PlayEntitySound(entityDeathSound, Enum.GetName(typeof(EntityKind), hit.entity.kind));
     }
-    public void ChargerHit(int health)
+
+    private void PlayEntitySound(FMODUnity.EventReference sound, string kind)
     {
-        // hit.Post(player);
+        var instance = FMODUnity.RuntimeManager.CreateInstance(sound);
+        instance.setParameterByNameWithLabel("EntityKind", kind);
+        instance.start();
+    }
+
+    private void OnWeaponFire(AttackPayload weapon)
+    {
+        //Debug.Log("WeaponFire Audio: " + weapon.weapon.name);
+        var instance = FMODUnity.RuntimeManager.CreateInstance(weaponFireSound);
+        instance.setParameterByNameWithLabel("WeaponKind", Enum.GetName(typeof(WeaponKind), weapon.kind));
+        instance.start();
+    }
+
+    private void OnExplosion()
+    {
+        //Debug.Log("Explosion Audio: " + weapon.weapon.name);
+        var instance = FMODUnity.RuntimeManager.CreateInstance(weaponFireSound);
+        instance.setParameterByNameWithLabel("WeaponKind", Enum.GetName(typeof(WeaponKind), WeaponKind.Explosion));
+        instance.start();
     }
 
     private void OnDisable()
     {
-        player.GetComponent<Entity>().onHit.AddListener(PlayerHit);
-        sniper.GetComponent<Entity>().onHit.AddListener(SniperHit);
-        ranger.GetComponent<Entity>().onHit.AddListener(RangerHit);
-        charger.GetComponent<Entity>().onHit.AddListener(ChargerHit);
+        entityHitEvent.RemoveListener(OnDamageTaken);
+        entityDeathEvent.RemoveListener(OnDeath);
+        enemyAttackEvent.RemoveListener(OnEnemyAttack);
+        weaponFireEvent.RemoveListener(OnWeaponFire);
+        explosionEvent.RemoveListener(OnExplosion);
     }
 
     void Footsteps()

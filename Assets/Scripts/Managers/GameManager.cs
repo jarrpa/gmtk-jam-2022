@@ -7,7 +7,7 @@ using UnityEngine.SceneManagement;
 
 public class GameManager : MonoBehaviour
 {
-    private bool _gameIsPaused;
+    public bool gameIsPaused;
 
     public static event Action<GameState> OnGameStateChanged;
     
@@ -15,35 +15,50 @@ public class GameManager : MonoBehaviour
 
     public GameObject player;
 
-    public UnityEvent onPlayerReady;
-    public UnityEvent onPlayerDeath;
-    public UnityEvent<bool> onPause;
+    public EntityEvent entityDeathEvent;
+    public GameEvent wavesDoneEvent;
+    public GameEvent gameOverEvent;
+    public GameEvent pauseEvent;
 
     private int _prevWaveCount;
 
     private void Awake()
     {
         player = GameObject.FindWithTag("Player");
+
+        // Events we trigger
+        gameOverEvent ??= GameEventLoader.Load<GameEvent>("GameOverEvent");
+        pauseEvent ??= GameEventLoader.Load<GameEvent>("PauseEvent");
+
+        // Events we listen
+        entityDeathEvent ??= GameEventLoader.Load<EntityEvent>("EntityDeathEvent");
+        wavesDoneEvent ??= GameEventLoader.Load<GameEvent>("WavesDoneEvent");
+        entityDeathEvent.AddListener(OnDeath);
+        wavesDoneEvent.AddListener(OnPlayerWin);
+
         _gameState = GameState.LevelOne;
-        _gameIsPaused = false;
+        gameIsPaused = false;
         PauseGame();
     }
 
-    private IEnumerator Start()
+    private void Start()
     {
-        yield return new WaitUntil( () => Singleton.Instance != null );
-        player.GetComponent<Entity>().onDeath.AddListener(OnGameOver);
-        Singleton.Instance.WaveManager.onWavesDone.AddListener(OnPlayerWin);
         UpdateGameState(GameState.LevelOne);
+    }
+
+    private void Update() {
+        if (Input.GetKeyDown(KeyCode.Escape) && _gameState == GameState.LevelOne)
+        {
+            gameIsPaused = !gameIsPaused;
+            PauseGame();
+        }
     }
 
     private void OnDisable()
     {
-        if (player != null)
-        {
-            player.GetComponent<Entity>().onDeath.RemoveListener(OnGameOver);
-            Singleton.Instance.WaveManager.onWavesDone.RemoveListener(OnPlayerWin);
-        }
+        entityDeathEvent.RemoveListener(OnDeath);
+        wavesDoneEvent.RemoveListener(OnPlayerWin);
+
         Time.timeScale = 1f;
     }
 
@@ -61,9 +76,6 @@ public class GameManager : MonoBehaviour
             case GameState.Death:
                 HandleGameOver();
                 break;
-            case GameState.Pause:
-                HandlePause();
-                break;
                 default:
                     throw new ArgumentOutOfRangeException(nameof(newState), newState, null);
         }
@@ -72,7 +84,7 @@ public class GameManager : MonoBehaviour
 
     private void PauseGame()
     {
-        if (_gameIsPaused)
+        if (gameIsPaused)
         {
             Time.timeScale = 0f;
         }
@@ -80,36 +92,25 @@ public class GameManager : MonoBehaviour
         {
             Time.timeScale = 1;
         }
-        onPause?.Invoke(_gameIsPaused);
-    }
-
-    private void Update() {
-        if (Input.GetKeyDown(KeyCode.Escape) && _gameState == GameState.LevelOne)
-        {
-            _gameIsPaused = !_gameIsPaused;
-            PauseGame();
-        }
-    }
-    
-    private void HandlePause()
-    {
-        throw new NotImplementedException();
+        pauseEvent?.Invoke();
     }
 
     private void HandleGameOver()
     {
-        onPlayerDeath?.Invoke();
+        gameOverEvent?.Invoke();
         SetPlayerMovement(false);
         Singleton.Instance.WaveManager.StopWaves();
     }
 
-    private void OnGameOver()
+    private void OnDeath(EntityPayload entityPayload)
     {
-        UpdateGameState(GameState.Death);
+        if (entityPayload.entity.CompareTag("Player"))
+            UpdateGameState(GameState.Death);
     }
     
     private void HandleVictory()
     {
+        SetPlayerMovement(false);
         Singleton.Instance.WaveManager.StopWaves();
     }
 
@@ -124,6 +125,7 @@ public class GameManager : MonoBehaviour
     {
         player.GetComponent<PlayerController>().enabled = enable;
         player.GetComponent<PlayerAim>().enabled = enable;
+        player.GetComponent<AbilityHolder>().enabled = enable;
         player.GetComponentInChildren<Weapon>().enabled = enable;
     }
 
@@ -145,5 +147,4 @@ public enum GameState
     NextLevel,
     Victory,
     Death,
-    Pause,
 }

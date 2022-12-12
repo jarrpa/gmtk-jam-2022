@@ -25,7 +25,7 @@ public class WaveManager : MonoBehaviour
     public Transform[] enemies;
     public Wave[] waves;
     public List<Transform> spawnPoints;
-    private int _nextWave;
+    public int currentWave = 0;
     
     public float timeBetweenWaves = 4f;
     private float _waveCountDown;
@@ -34,18 +34,21 @@ public class WaveManager : MonoBehaviour
     private float _searchCountDown;
     private SpawnState _state = SpawnState.Inactive;
 
-    public UnityEvent<int> onWaveChange;
-    public UnityEvent onWavesDone;
+    public GameEvent waveChangeEvent;
+    public GameEvent wavesDoneEvent;
 
     private void Start()
     {
         _waveCountDown = timeBetweenWaves;
+
+        // Events we trigger
+        waveChangeEvent ??= GameEventLoader.Load<GameEvent>("WaveChangeEvent");
+        wavesDoneEvent ??= GameEventLoader.Load<GameEvent>("WavesDoneEvent");
     }
     private void Update()
     { 
         if(_state == SpawnState.Inactive)
         {
-            // Debug.Log("WaveManager Inactive");
             return;
         }
         
@@ -57,16 +60,16 @@ public class WaveManager : MonoBehaviour
                 return;
         }
 
-        if (_waveCountDown <= 0)
+        if (_state == SpawnState.Counting)
         {
-            if (_state != SpawnState.Spawning)
+            if (_waveCountDown > 0)
             {
-                StartCoroutine(SpawnWave(waves[_nextWave]));
+                _waveCountDown -= Time.deltaTime;
             }
-        }
-        else
-        {
-            _waveCountDown -= Time.deltaTime;
+            else if (_state != SpawnState.Spawning)
+            {
+                StartCoroutine(SpawnWave(waves[currentWave - 1]));
+            }
         }
     }
 
@@ -105,20 +108,20 @@ public class WaveManager : MonoBehaviour
 
     private void WaveCompleted()
     {
-        Debug.Log("Wave Complete, wave number was " + _nextWave);
+        Debug.Log("Wave Complete, wave number was " + currentWave);
         
         _state = SpawnState.Counting;
         _waveCountDown = timeBetweenWaves;
 
-        if (_nextWave + 1 >= waves.Length)
+        if (currentWave >= waves.Length)
         {
-            onWavesDone?.Invoke();
             _state = SpawnState.Inactive;
+            wavesDoneEvent?.Invoke();
         }
         else
         {
-            _nextWave++;
-            onWaveChange?.Invoke(_nextWave);
+            currentWave++;
+            waveChangeEvent?.Invoke();
         }
     }
     
@@ -133,7 +136,7 @@ public class WaveManager : MonoBehaviour
 
     public void StartWaves()
     {
-        _nextWave = 0;
+        currentWave = 1;
         spawnPoints.Clear();
 
         var spawnPointObjects = GameObject.FindGameObjectsWithTag("SpawnPoint");
@@ -144,7 +147,7 @@ public class WaveManager : MonoBehaviour
             spawnPoints.Add(spawnPointObjects[i].transform);
         }
 
-        onWaveChange?.Invoke(_nextWave);
+        waveChangeEvent?.Invoke();
         _state = SpawnState.Counting;
     }
 

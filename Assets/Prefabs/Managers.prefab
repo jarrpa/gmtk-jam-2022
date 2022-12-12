@@ -144,20 +144,17 @@ MonoBehaviour:
     counts: 0200000001000000
     rate: 2
   - name: wave 2
-    counts: 0200000002000000
+    counts: 0300000002000000
     rate: 2
   - name: wave 3
-    counts: 0300000002000000
+    counts: 0500000003000000
     rate: 2
   spawnPoints:
   - {fileID: 0}
+  currentWave: 0
   timeBetweenWaves: 4
-  onWaveChange:
-    m_PersistentCalls:
-      m_Calls: []
-  onWavesDone:
-    m_PersistentCalls:
-      m_Calls: []
+  waveChangeEvent: {fileID: 0}
+  wavesDoneEvent: {fileID: 0}
 --- !u!1 &8677417863645099855
 GameObject:
   m_ObjectHideFlags: 0
@@ -216,6 +213,11 @@ MonoBehaviour:
   pausePanel: {fileID: 0}
   pauseTitle: {fileID: 0}
   pauseTitleSprites: []
+  gameOverEvent: {fileID: 0}
+  pauseEvent: {fileID: 0}
+  waveChangeEvent: {fileID: 0}
+  wavesDoneEvent: {fileID: 0}
+  entityHitEvent: {fileID: 0}
 --- !u!1 &8677417863660078791
 GameObject:
   m_ObjectHideFlags: 0
@@ -260,13 +262,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 97e170e1f143cdb47890ed9f93b850a3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  gameIsPaused: 0
   player: {fileID: 0}
-  onPlayerReady:
-    m_PersistentCalls:
-      m_Calls: []
-  onPlayerDeath:
-    m_PersistentCalls:
-      m_Calls: []
-  onPause:
-    m_PersistentCalls:
-      m_Calls: []
+  entityDeathEvent: {fileID: 0}
+  wavesDoneEvent: {fileID: 0}
+  gameOverEvent: {fileID: 0}
+  pauseEvent: {fileID: 0}

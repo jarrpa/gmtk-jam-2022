@@ -22,22 +22,36 @@ public class UIManager : MonoBehaviour
     public GameObject pauseTitle;
     private Image pauseTitleImage;
     public Sprite[] pauseTitleSprites;
+    public GameEvent gameOverEvent;
+    public GameEvent pauseEvent;
+    public GameEvent waveChangeEvent;
+    public GameEvent wavesDoneEvent;
+    public EntityEvent entityHitEvent;
 
     private void Start()
     {
         player = GameObject.FindWithTag("Player");
+
+        // Events we listen
+        waveChangeEvent ??= GameEventLoader.Load<GameEvent>("WaveChangeEvent");
+        wavesDoneEvent ??= GameEventLoader.Load<GameEvent>("WavesDoneEvent");
+        gameOverEvent ??= GameEventLoader.Load<GameEvent>("GameOverEvent");
+        pauseEvent ??= GameEventLoader.Load<GameEvent>("PauseEvent");
+        entityHitEvent ??= GameEventLoader.Load<EntityEvent>("EntityHitEvent");
+
+        waveChangeEvent?.AddListener(UpdateWaveCount);
+        wavesDoneEvent?.AddListener(WinPanel);
+        gameOverEvent?.AddListener(GameOverPanel);
+        pauseEvent?.AddListener(PauseGame);
+        entityHitEvent.AddListener(UpdatePlayerHealth);
+
         wavesText.text = "0 / " + Singleton.Instance.WaveManager.waves.Length;
-        Singleton.Instance.WaveManager.onWaveChange.AddListener(UpdateWaveCount);
-        Singleton.Instance.GameManager.onPause.AddListener(PauseGame);
-        Singleton.Instance.GameManager.onPlayerDeath.AddListener(GameOverPanel);
-        Singleton.Instance.WaveManager.onWavesDone.AddListener(WinPanel);
         pauseTitleImage = pauseTitle.GetComponent<Image>();
     }
 
     private void OnEnable()
     {
         player.GetComponent<PlayerAbilityController>().OnAbilityChange += PlayCardAnimations;
-        player.GetComponent<Entity>().onHit.AddListener(UpdatePlayerHealth);
     }
 
     private void OnDisable()
@@ -45,29 +59,34 @@ public class UIManager : MonoBehaviour
         if (player != null)
         {
             player.GetComponent<PlayerAbilityController>().OnAbilityChange -= PlayCardAnimations;
-            player.GetComponent<Entity>().onHit.RemoveListener(UpdatePlayerHealth);
         }
-        Singleton.Instance.WaveManager.onWaveChange.RemoveListener(UpdateWaveCount);
-        Singleton.Instance.GameManager.onPause.RemoveListener(PauseGame);
-        Singleton.Instance.GameManager.onPlayerDeath.RemoveListener(GameOverPanel);
-        Singleton.Instance.WaveManager.onWavesDone.RemoveListener(WinPanel);
+        waveChangeEvent?.RemoveListener(UpdateWaveCount);
+        wavesDoneEvent?.RemoveListener(WinPanel);
+        gameOverEvent?.RemoveListener(GameOverPanel);
+        pauseEvent?.RemoveListener(PauseGame);
+        entityHitEvent.RemoveListener(UpdatePlayerHealth);
+
         Time.timeScale = 1f;
     }
 
-    private void UpdatePlayerHealth(int health)
+    private void UpdatePlayerHealth(EntityPayload hitData)
     {
-        for (int i = 100; i >= 0; i -= 20)
+        if (hitData.entity.CompareTag("Player"))
         {
-            if (health > i - 20 && health < i)
+            var health = hitData.entity.currentHealth;
+            for (int i = 100; i >= 0; i -= 20)
             {
-                healthImage.sprite = healthSprites[((100 - i) / 20)%healthSprites.Length];
+                if (health > i - 20 && health < i)
+                {
+                    healthImage.sprite = healthSprites[((100 - i) / 20) % healthSprites.Length];
+                }
             }
         }
     }
 
-    private void UpdateWaveCount(int count)
+    private void UpdateWaveCount()
     {
-        wavesText.text = count+1 + " / " + Singleton.Instance.WaveManager.waves.Length;
+        wavesText.text = Singleton.Instance.WaveManager.currentWave + " / " + Singleton.Instance.WaveManager.waves.Length;
     }
 
     private void PlayCardAnimations(int ability, int weapon)
@@ -76,12 +95,13 @@ public class UIManager : MonoBehaviour
         moveCardAnimator.Play("card_" + ability);
     }
 
-    private void PauseGame(bool pause)
+    private void PauseGame()
     {
+        var isPaused = Singleton.Instance.GameManager.gameIsPaused;
         pauseTitleImage.sprite = pauseTitleSprites[0];
-        pausePanel.SetActive(pause);
+        pausePanel.SetActive(isPaused);
     }
-    
+
     private void GameOverPanel()
     {
         pauseTitleImage.sprite = pauseTitleSprites[1];
@@ -93,11 +113,11 @@ public class UIManager : MonoBehaviour
         pauseTitleImage.sprite = pauseTitleSprites[2];
         pausePanel.SetActive(true);
     }
-    
+
 
     public void Exit()
     {
-        
+
     }
-    
+
 }
