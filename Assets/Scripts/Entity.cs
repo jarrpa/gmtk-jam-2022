@@ -27,6 +27,7 @@ public class Entity : MonoBehaviour
 
     public void TakeDamage(int amount)
     {
+        animator.Play("Blinking", animator.GetLayerIndex("Blinking"));
         currentHealth = Mathf.Clamp(currentHealth - amount, 0, 100);
         onHit?.Invoke(currentHealth);
         if (currentHealth <= 0)
