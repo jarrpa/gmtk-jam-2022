@@ -5,6 +5,13 @@ using UnityEngine;
 using UnityEngine.Events;
 using UnityEngine.Serialization;
 
+public enum EntityKind {
+    Unknown,
+    Player,
+    Charger,
+    Ranger,
+}
+
 public class Entity : MonoBehaviour
 {
     [SerializeField] private int maxHealth = 100;
