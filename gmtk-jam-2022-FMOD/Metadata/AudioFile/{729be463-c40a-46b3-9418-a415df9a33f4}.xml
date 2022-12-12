@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.02.02.00">
+	<object class="AudioFile" id="{729be463-c40a-46b3-9418-a415df9a33f4}">
+		<property name="assetPath">
+			<value>SFX/Voices, Female, Anime, Schoolgirl, Fight Exhale 07 SND68075 1.wav</value>
+		</property>
+		<property name="frequencyInKHz">
+			<value>96</value>
+		</property>
+		<property name="channelCount">
+			<value>2</value>
+		</property>
+		<property name="length">
+			<value>1.0912708333333334</value>
+		</property>
+		<relationship name="masterAssetFolder">
+			<destination>{0cfb9dd3-c643-46da-8378-033552cd5e42}</destination>
+		</relationship>
+	</object>
+</objects>

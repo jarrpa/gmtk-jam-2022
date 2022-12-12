@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.02.02.00">
+	<object class="ParameterPreset" id="{dc4d3f03-1254-465c-9ce9-18cd89100d96}">
+		<property name="name">
+			<value>WeaponKind</value>
+		</property>
+		<relationship name="folder">
+			<destination>{8a976c77-5cb8-4ff9-b7db-960bdaaec3df}</destination>
+		</relationship>
+		<relationship name="parameter">
+			<destination>{9eda8307-06d0-47a6-b4bc-40315e2f98c5}</destination>
+		</relationship>
+	</object>
+	<object class="GameParameter" id="{9eda8307-06d0-47a6-b4bc-40315e2f98c5}">
+		<property name="parameterType">
+			<value>2</value>
+		</property>
+		<property name="maximum">
+			<value>4</value>
+		</property>
+		<property name="enumerationLabels">
+			<value>Single</value>
+			<value>Shotgun</value>
+			<value>Grenade</value>
+			<value>Explosion</value>
+		</property>
+		<property name="initialValue">
+			<value>0</value>
+		</property>
+	</object>
+</objects>

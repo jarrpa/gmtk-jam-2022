@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.02.02.00">
+	<object class="AudioFile" id="{3c564397-0954-4022-ba96-44bce2067ac2}">
+		<property name="assetPath">
+			<value>SFX/SniperStationaryAttack-001.wav</value>
+		</property>
+		<property name="frequencyInKHz">
+			<value>48</value>
+		</property>
+		<property name="channelCount">
+			<value>2</value>
+		</property>
+		<property name="length">
+			<value>0.42499999999999999</value>
+		</property>
+		<relationship name="masterAssetFolder">
+			<destination>{0cfb9dd3-c643-46da-8378-033552cd5e42}</destination>
+		</relationship>
+	</object>
+</objects>

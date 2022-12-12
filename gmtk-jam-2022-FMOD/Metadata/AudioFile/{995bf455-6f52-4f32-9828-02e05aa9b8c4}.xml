@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.02.02.00">
+	<object class="AudioFile" id="{995bf455-6f52-4f32-9828-02e05aa9b8c4}">
+		<property name="assetPath">
+			<value>SFX/Voices, Female, Anime, Warrior, Elf Princess, Aggressive Yell 01 SND68059.wav</value>
+		</property>
+		<property name="frequencyInKHz">
+			<value>96</value>
+		</property>
+		<property name="channelCount">
+			<value>2</value>
+		</property>
+		<property name="length">
+			<value>0.87333333333333329</value>
+		</property>
+		<relationship name="masterAssetFolder">
+			<destination>{0cfb9dd3-c643-46da-8378-033552cd5e42}</destination>
+		</relationship>
+	</object>
+</objects>

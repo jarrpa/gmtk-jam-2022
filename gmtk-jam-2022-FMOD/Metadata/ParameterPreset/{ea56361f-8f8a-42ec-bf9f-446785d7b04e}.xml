@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.02.02.00">
+	<object class="ParameterPreset" id="{ea56361f-8f8a-42ec-bf9f-446785d7b04e}">
+		<property name="name">
+			<value>EnemyKind</value>
+		</property>
+		<relationship name="folder">
+			<destination>{8a976c77-5cb8-4ff9-b7db-960bdaaec3df}</destination>
+		</relationship>
+		<relationship name="parameter">
+			<destination>{239c3c3e-faee-4031-bbf9-a14a5098eb21}</destination>
+		</relationship>
+	</object>
+	<object class="GameParameter" id="{239c3c3e-faee-4031-bbf9-a14a5098eb21}">
+		<property name="parameterType">
+			<value>2</value>
+		</property>
+		<property name="maximum">
+			<value>3</value>
+		</property>
+		<property name="enumerationLabels">
+			<value>Value A</value>
+			<value>Value B</value>
+			<value>Value C</value>
+		</property>
+		<property name="initialValue">
+			<value>0</value>
+		</property>
+	</object>
+</objects>
