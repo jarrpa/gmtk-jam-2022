@@ -9,24 +9,24 @@ public class AbilityHolder : MonoBehaviour
     private float _cooldown;
     private float _activeTime;
 
-    public Material material; 
+    public Material material;
 
-    public ParticleSystem smashParticle; 
-    
+    public ParticleSystem smashParticle;
+
     enum AbilityState
     {
         Ready,
         Active,
         Cooldown
     }
-    
+
     private AbilityState _state = AbilityState.Ready;
     public KeyCode key;
     private static readonly int GrayscaleAmount = Shader.PropertyToID("_GrayscaleAmount");
 
     public void Update()
     {
-        switch(_state)
+        switch (_state)
         {
             case AbilityState.Ready:
                 if (Input.GetKeyDown(key))
@@ -36,11 +36,11 @@ public class AbilityHolder : MonoBehaviour
                     _activeTime = ability.activeTime;
                     switch (ability.name)
                     {
-                        case "smash":
+                        case "Smash":
                             smashParticle.Play();
                             break;
-                        case "teleport":
-                            material.SetFloat(GrayscaleAmount,1);
+                        case "Teleport":
+                            material.SetFloat(GrayscaleAmount, 1);
                             break;
                     }
                 }
@@ -49,9 +49,9 @@ public class AbilityHolder : MonoBehaviour
                 if (_activeTime > 0)
                 {
                     _activeTime -= Time.deltaTime;
-                    if (ability.name.Equals("teleport") && Input.GetKeyDown(key))
+                    if (ability.name.Equals("Teleport") && Input.GetKeyDown(key))
                     {
-                        var teleportAbility = (TeleportAbility) ability;
+                        var teleportAbility = (TeleportAbility)ability;
                         teleportAbility.KeepActive(gameObject);
                         _activeTime = 0;
                     }
@@ -59,8 +59,8 @@ public class AbilityHolder : MonoBehaviour
                 else
                 {
                     ability.Deactivate();
-                    if (ability.name.Equals("teleport"))
-                        material.SetFloat(GrayscaleAmount,0);
+                    if (ability.name.Equals("Teleport"))
+                        material.SetFloat(GrayscaleAmount, 0);
 
                     _state = AbilityState.Cooldown;
                     _cooldown = ability.cooldown;
@@ -84,17 +84,32 @@ public class AbilityHolder : MonoBehaviour
         return _state == AbilityState.Active;
     }
 
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        if (ability.name.Equals("Dash") && IsActive())
+        {
+            var dash = (ability as DashAbility);
+            if (collision.gameObject == null || collision.gameObject.CompareTag(gameObject.tag))
+                return;
+            var entity = collision.gameObject.GetComponent<Entity>();
+            if (entity != null)
+            {
+                dash.DashAttack(gameObject, collision.gameObject);
+            }
+        }
+    }
+
     private void OnDrawGizmos()
     {
 
         switch (ability.name)
         {
-            case "smash":
-                var smashAbility = (SmashAbility) ability;
+            case "Smash":
+                var smashAbility = (SmashAbility)ability;
                 Gizmos.DrawWireSphere(gameObject.transform.position, smashAbility.radius);
                 break;
-            case "teleport":
-                var teleportAbility = (TeleportAbility) ability;
+            case "Teleport":
+                var teleportAbility = (TeleportAbility)ability;
                 Gizmos.DrawWireSphere(gameObject.transform.position, teleportAbility.radius);
                 break;
         }

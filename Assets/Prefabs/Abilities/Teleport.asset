@@ -12,7 +12,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c9ef4c181cb8a4ca092f28032702eb50, type: 3}
   m_Name: Teleport
   m_EditorClassIdentifier: 
-  name: teleport
-  cooldown: 0.5
-  activeTime: 0.2
+  name: Teleport
+  cooldown: 0.6
+  activeTime: 0.1
+  abilitySound:
+    Guid:
+      Data1: 1325843126
+      Data2: 1134330752
+      Data3: 1527717811
+      Data4: 776827646
+    Path: event:/SFX/Player/PlayerAbility
   radius: 5

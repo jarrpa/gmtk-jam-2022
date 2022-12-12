@@ -12,10 +12,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bcf386e0a3d85462686578aad8271815, type: 3}
   m_Name: Smash
   m_EditorClassIdentifier: 
-  name: smash
-  cooldown: 0.5
-  activeTime: 1
-  knockback: 60
-  radius: 2
-  jumpingAnimationTime: 1
+  name: Smash
+  cooldown: 1
+  activeTime: 0.3
+  abilitySound:
+    Guid:
+      Data1: 1325843126
+      Data2: 1134330752
+      Data3: 1527717811
+      Data4: 776827646
+    Path: event:/SFX/Player/PlayerAbility
+  knockback: 300
+  radius: 3
   damage: 5
+  stunDuration: 1
