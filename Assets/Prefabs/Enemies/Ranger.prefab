@@ -147,7 +147,7 @@ MonoBehaviour:
   rightAngleOffset: 45
   leftAngleOffset: 135
   player: {fileID: 0}
-  bulletPrefab: {fileID: 5196141513470838171, guid: 8b4e0c0b7479f4946b14f44816cc8a95, type: 3}
+  bulletPrefab: {fileID: 5196141513470838171, guid: 97a96cfbd89fbbb449262eaa526f101b, type: 3}
 --- !u!120 &2005655035718315657
 LineRenderer:
   m_ObjectHideFlags: 0

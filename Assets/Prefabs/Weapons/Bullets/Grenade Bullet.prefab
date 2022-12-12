@@ -13,9 +13,9 @@ GameObject:
   - component: {fileID: 3415060967221119802}
   - component: {fileID: 1239149235493021589}
   - component: {fileID: 419498739033092090}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Grenade Bullet
-  m_TagString: PlayerProjectile
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -99,9 +99,9 @@ Rigidbody2D:
   m_Simulated: 1
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
-  m_Mass: 1
+  m_Mass: 0.1
   m_LinearDrag: 0
-  m_AngularDrag: 0.05
+  m_AngularDrag: 0.5
   m_GravityScale: 0
   m_Material: {fileID: 0}
   m_Interpolate: 0
@@ -136,11 +136,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ecf2dbdde1d8c4dba9e2cbd3849f0769, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  bulletSpeed: 4
+  bulletSpeed: 80
   rb: {fileID: 3415060967221119802}
-  bulletDamage: 20
+  bulletDamage: 30
+  isStun: 1
+  stunDuration: 0.5
   range: 5
-  explosionRadius: 1.2
+  explosionRadius: 1.5
   explosionEffect: {fileID: 228922861371978889, guid: 762b510f416fe3942b4b795eb989e022, type: 3}
-  timeUntilExplosion: 10
-  explosionForce: 20
+  explosionForce: 500
+  explosionEvent: {fileID: 0}

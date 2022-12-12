@@ -4,12 +4,19 @@ using System.Collections.Generic;
 using System.Security.Cryptography;
 using UnityEngine;
 
+public enum WeaponKind {
+    Unknown,
+    Single,
+    Shotgun,
+    Grenade,
+    Explosion,
+}
+
 public class Weapon : MonoBehaviour
 {
-    public new String name = "weapon";
-
     #region Weapon Attributes
-    
+
+    public WeaponKind kind = WeaponKind.Unknown;
     public float fireRate = 1f;
     public float spread;
     public int numberOfBullets = 4;
@@ -27,15 +34,21 @@ public class Weapon : MonoBehaviour
 
     public Transform firePosition;
     public GameObject bulletPrefab;
+    public GameObject player;
 
     #endregion
-    
 
-    public static event Action<String> OnShoot;
+
+    public AttackEvent weaponFireEvent;
+    private AttackPayload weaponAttack = new AttackPayload();
 
     public void Start()
     {
         _canShoot = true;
+        player = GameObject.FindWithTag("Player");
+        weaponAttack.attacker = player.GetComponent<Entity>();
+        weaponAttack.kind = this.kind;
+        weaponFireEvent ??= GameEventLoader.Load<AttackEvent>("WeaponFireEvent");
     }
 
     public void FixedUpdate()
@@ -45,7 +58,7 @@ public class Weapon : MonoBehaviour
             var main = muzzleFlash.main;
             main.startRotation = transform.rotation.eulerAngles.y * Mathf.Deg2Rad;
             muzzleFlash.Play();
-            OnShoot?.Invoke(name);
+            weaponFireEvent?.Invoke(weaponAttack);
             StartCoroutine(FireWeapon());
         }
     }
@@ -63,7 +76,8 @@ public class Weapon : MonoBehaviour
             {
                 var rot = startRotation - angleIncrease * i;
                 var bullet = Instantiate(bulletPrefab, firePosition.position, Quaternion.Euler(0f, 0f, rot));
-                bullet.GetComponent<Bullet>().Setup(new Vector2(Mathf.Cos(rot*Mathf.Deg2Rad), Mathf.Sin(rot*Mathf.Deg2Rad)));
+                var startPosition = new Vector2(Mathf.Cos(rot * Mathf.Deg2Rad), Mathf.Sin(rot * Mathf.Deg2Rad));
+                bullet.GetComponent<Bullet>().Setup(startPosition, weaponAttack);
             }
         }
         else
@@ -83,6 +97,6 @@ public class Weapon : MonoBehaviour
     private void InstantiateBullet()
     {
         var bullet = Instantiate(bulletPrefab, firePosition.position, Quaternion.identity);
-        bullet.GetComponent<Bullet>().Setup(firePosition.right);
+        bullet.GetComponent<Bullet>().Setup(firePosition.right, weaponAttack);
     }
 }

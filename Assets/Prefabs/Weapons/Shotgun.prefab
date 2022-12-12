@@ -130,14 +130,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e5f28514bb0e9428e9806f3e45812ef6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  name: shotgun
-  fireRate: 1
+  kind: 2
+  fireRate: 0.6
   spread: 30
   numberOfBullets: 5
   isMultiShot: 1
   muzzleFlash: {fileID: 5699478207470873806}
   firePosition: {fileID: 821560843024096629}
-  bulletPrefab: {fileID: 5196141513470838171, guid: 8b4e0c0b7479f4946b14f44816cc8a95, type: 3}
+  bulletPrefab: {fileID: 5196141513470838171, guid: dc74117520579db449ddd63e75278f15, type: 3}
+  player: {fileID: 0}
+  weaponFireEvent: {fileID: 0}
 --- !u!1001 &2857101758994418418
 PrefabInstance:
   m_ObjectHideFlags: 0

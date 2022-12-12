@@ -99,14 +99,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e5f28514bb0e9428e9806f3e45812ef6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  name: grenade
-  fireRate: 2
+  kind: 3
+  fireRate: 1
   spread: 0
   numberOfBullets: 1
   isMultiShot: 0
   muzzleFlash: {fileID: 5788757418792019318}
   firePosition: {fileID: 2557360152347814320}
   bulletPrefab: {fileID: 5913207735553918041, guid: 1136f0b89756c481cbc9226c4a9acf10, type: 3}
+  player: {fileID: 0}
+  weaponFireEvent: {fileID: 0}
 --- !u!1 &7869165293207159245
 GameObject:
   m_ObjectHideFlags: 0

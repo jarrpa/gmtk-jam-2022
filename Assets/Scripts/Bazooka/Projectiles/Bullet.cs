@@ -8,8 +8,10 @@ public class Bullet : MonoBehaviour
     [SerializeField] private float bulletSpeed;
     [SerializeField] private Rigidbody2D rb;
     [SerializeField] private int bulletDamage;
+    [SerializeField] private bool isStun;
+    [SerializeField] private float stunDuration;
     protected Vector2 startPosition;
-    private Transform player;
+    protected AttackPayload attack;
     private Vector2 shootDirection;
 
     public float range;
@@ -21,9 +23,14 @@ public class Bullet : MonoBehaviour
         rb = GetComponent<Rigidbody2D>();
     }
 
-    public void Setup(Vector2 direction)
+    public void Setup(Vector2 direction, AttackPayload attackPayload)
     {
         shootDirection = direction;
+        attack = attackPayload;
+        attack.damage = bulletDamage;
+        attack.isStun = isStun;
+        attack.stunDuration = stunDuration;
+        rb.AddForce(shootDirection * bulletSpeed);
     }
 
     // Update is called once per frame
@@ -31,8 +38,6 @@ public class Bullet : MonoBehaviour
     {
         if (Vector2.Distance(startPosition, transform.position) >= range)
             DestroyBullet();
-
-        transform.position = (Vector2) transform.position + shootDirection * bulletSpeed * Time.deltaTime;
     }
 
     protected virtual void DestroyBullet()
@@ -42,10 +47,12 @@ public class Bullet : MonoBehaviour
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        if (collision.gameObject.CompareTag("Player") || collision.gameObject.CompareTag("Enemy"))
+        if (collision.gameObject == null)
+            return;
+        var entity = collision.gameObject.GetComponent<Entity>();
+        if (entity != null && !collision.gameObject.CompareTag(attack.attacker.tag))
         {
-            collision.gameObject.GetComponent<Entity>().TakeDamage(bulletDamage);
-            
+            entity.TakeDamage(attack);
         }
         DestroyBullet();
     }
