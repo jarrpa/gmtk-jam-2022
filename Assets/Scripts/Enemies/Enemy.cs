@@ -5,11 +5,11 @@ using UnityEngine;
 
 public abstract class Enemy : MonoBehaviour
 {
+    public static string kind = "Enemy";
     [SerializeField] protected float speed;
     [SerializeField] protected float stoppingDistance;
     [SerializeField] protected float attackRate;
-    [SerializeField] protected float preAttackAudioDuration = 0f; // this should be the length of pre attack audio
-    [SerializeField] protected float timeBeforeMoveAgain = 0.5f;
+
     protected Rigidbody2D rb;
 
     public float nextWaypointDistance = 3f;
@@ -19,9 +19,6 @@ public abstract class Enemy : MonoBehaviour
 
     public Seeker seeker;
     
-    protected bool canAttack = true;
-    protected bool canMove = true;
-
     private float _dirAngle;
     protected AIPath AIPath;
 
@@ -41,6 +38,9 @@ public abstract class Enemy : MonoBehaviour
     #endregion
 
     public Transform player;
+    protected AttackEvent enemyAttackEvent;
+    protected AttackPayload attack =  new AttackPayload();
+    protected Entity entity;
 
     public abstract void Attack();
     public abstract void Move();
@@ -92,7 +92,10 @@ public abstract class Enemy : MonoBehaviour
     {
         rb = GetComponent<Rigidbody2D>();
         seeker.GetComponent<Seeker>();
-        
+        entity = GetComponent<Entity>();
+        attack.attacker = entity;
+        enemyAttackEvent ??= GameEventLoader.Load<AttackEvent>("EnemyAttackEvent");
+
         InvokeRepeating(nameof(UpdatePath), 0f, 0.5f);
     
         player = PlayerController.instance.gameObject.transform;
@@ -102,9 +105,9 @@ public abstract class Enemy : MonoBehaviour
     private void UpdatePath()
     {
         if(seeker.IsDone())
-            seeker.StartPath(rb.position, player.transform.position, OnPathComplete);
+            seeker.StartPath(rb.position, player.position, OnPathComplete);
     }
-    
+
     protected void OnPathComplete(Path p)
     {
         if (!p.error)
@@ -112,17 +115,5 @@ public abstract class Enemy : MonoBehaviour
             path = p;
             currentWaypoint = 0;
         }
-    }
-
-    protected void OnHit(int health)
-    {
-        StartCoroutine(WaitBeforeMove());
-    }
-
-    protected IEnumerator WaitBeforeMove()
-    {
-        canMove = false;
-        yield return new WaitForSeconds(timeBeforeMoveAgain);
-        canMove = true;
     }
 }

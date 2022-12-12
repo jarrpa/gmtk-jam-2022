@@ -11,6 +11,7 @@ public class Ranger : Enemy
     private bool _canShoot = true;
     public override void Attack()
     {
+        enemyAttackEvent?.Invoke(attack);
         InstantiateBullet();
     }
     
@@ -18,7 +19,7 @@ public class Ranger : Enemy
     {
         var shootDir = ((Vector2) player.position - rb.position).normalized;
         var bullet = Instantiate(bulletPrefab, (Vector2)transform.position + shootDir * 0.8f, Quaternion.identity);
-        bullet.GetComponent<Bullet>().Setup(shootDir);
+        bullet.GetComponent<Bullet>().Setup(shootDir, attack);
     }
 
     private void Update()
@@ -47,7 +48,12 @@ public class Ranger : Enemy
 
     public override void Move()
     {
-        if (Vector2.Distance(player.position, rb.position) > stoppingDistance)
+        if (entity.isStunned) return;
+
+        var playerDistance = Vector2.Distance(player.position, rb.position);
+        RaycastHit2D hit = Physics2D.CircleCast(transform.position, 0.1f, player.transform.position - transform.position, playerDistance, LayerMask.GetMask("Obstacle"));
+
+        if (playerDistance > stoppingDistance || hit.collider != null)
         {
             rb.velocity = _movement * speed;
         }

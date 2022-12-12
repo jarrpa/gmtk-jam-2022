@@ -114,11 +114,11 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7631386585506045725}
-  - component: {fileID: 7631386585506045726}
-  - component: {fileID: 7631386585506045713}
   - component: {fileID: 7631386585506045715}
+  - component: {fileID: 2604804876619101708}
+  - component: {fileID: 7631386585506045726}
   - component: {fileID: 7631386585506045723}
-  - component: {fileID: 7631386585506045722}
+  - component: {fileID: 7631386585506045713}
   - component: {fileID: 9085161589874492699}
   m_Layer: 0
   m_Name: Charger
@@ -135,7 +135,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7631386585506045716}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 2.51, y: 5.91, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -143,6 +143,43 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!50 &7631386585506045715
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7631386585506045716}
+  m_BodyType: 0
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 1.5
+  m_AngularDrag: 0.05
+  m_GravityScale: 0
+  m_Material: {fileID: 0}
+  m_Interpolate: 1
+  m_SleepingMode: 0
+  m_CollisionDetection: 1
+  m_Constraints: 4
+--- !u!70 &2604804876619101708
+CapsuleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7631386585506045716}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: -0.01, y: 0.01}
+  m_Size: {x: 0.3, y: 1.27}
+  m_Direction: 0
 --- !u!114 &7631386585506045726
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -171,6 +208,29 @@ MonoBehaviour:
   tagPenalties: 0000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000
   graphMask:
     value: -1
+--- !u!114 &7631386585506045723
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7631386585506045716}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c3bf5d332269a468dbda05ee4b43a8e4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  kind: 2
+  maxHealth: 100
+  currentHealth: 100
+  onHit: {fileID: 11400000, guid: 6cd7351d95e093e4a854732ee82b5dba, type: 2}
+  onDeath: {fileID: 11400000, guid: fb04ab02d8409e142af96da2410baa87, type: 2}
+  entityPayload:
+    entity: {fileID: 0}
+    damage: 0
+  animator: {fileID: 7274787639186830833}
+  isInvuln: 0
+  isStunned: 0
 --- !u!114 &7631386585506045713
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -185,9 +245,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speed: 4
   stoppingDistance: 2
-  attackRate: 0
-  preAttackAudioDuration: 0
-  timeBeforeMoveAgain: 1
+  attackRate: 0.5
   nextWaypointDistance: 0.5
   seeker: {fileID: 7631386585506045726}
   animator: {fileID: 7274787639186830833}
@@ -197,65 +255,6 @@ MonoBehaviour:
   meleeDamage: 5
   chargeTime: 0.3
   chargePower: 20
-  waitTime: 0.5
---- !u!50 &7631386585506045715
-Rigidbody2D:
-  serializedVersion: 4
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7631386585506045716}
-  m_BodyType: 0
-  m_Simulated: 1
-  m_UseFullKinematicContacts: 0
-  m_UseAutoMass: 0
-  m_Mass: 1
-  m_LinearDrag: 1.5
-  m_AngularDrag: 0.05
-  m_GravityScale: 0
-  m_Material: {fileID: 0}
-  m_Interpolate: 1
-  m_SleepingMode: 0
-  m_CollisionDetection: 1
-  m_Constraints: 4
---- !u!114 &7631386585506045723
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7631386585506045716}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c3bf5d332269a468dbda05ee4b43a8e4, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  maxHealth: 100
-  currentHealth: 100
-  onDeath:
-    m_PersistentCalls:
-      m_Calls: []
-  onHit:
-    m_PersistentCalls:
-      m_Calls: []
-  nextWaypointDistance: 3
---- !u!58 &7631386585506045722
-CircleCollider2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7631386585506045716}
-  m_Enabled: 1
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
-  serializedVersion: 2
-  m_Radius: 0.24
 --- !u!120 &9085161589874492699
 LineRenderer:
   m_ObjectHideFlags: 0

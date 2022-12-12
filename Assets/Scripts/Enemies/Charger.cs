@@ -7,7 +7,6 @@ public class Charger : Enemy
     [SerializeField] private int meleeDamage = 10;
     [SerializeField] private float chargeTime = 2f;
     [SerializeField] private float chargePower = 20f;
-    [SerializeField] private float waitTime = 0.5f;
 
     private float _chargeTimer;
     private float _waitTimer;
@@ -24,18 +23,14 @@ public class Charger : Enemy
     private Vector2 _movement;
     public override void Attack()
     {
+        attack.damage = meleeDamage;
+        enemyAttackEvent?.Invoke(attack);
         rb.velocity = _movement * chargePower;
-    }
-
-    private void Start()
-    {
-        gameObject.GetComponent<Entity>().onHit.AddListener(OnHit);
     }
 
     public void Update()
     {
-        Debug.LogFormat("{0}[{1}].canMove: {2}", this.name, this.GetInstanceID(), canMove);
-        if(!canMove)
+        if(entity.isStunned)
             return;
         
         if (path == null)
@@ -53,8 +48,6 @@ public class Charger : Enemy
         float angle = Mathf.Atan2(_movement.y, _movement.x) * Mathf.Rad2Deg;
         ChangeAnimationFromAngle(angle);
         
-        //Vector2.Distance(path.vectorPath[currentWaypoint], player.position);
-        
         if (Vector2.Distance(path.vectorPath[currentWaypoint], rb.position) < nextWaypointDistance)
             currentWaypoint++;
 
@@ -69,7 +62,7 @@ public class Charger : Enemy
                 {
                     rb.velocity = Vector2.zero;
                     _state = ChargerState.Ready;
-                    _waitTimer = waitTime;
+                    _waitTimer = attackRate;
                 }
                 break;
             case ChargerState.Ready:
@@ -96,8 +89,9 @@ public class Charger : Enemy
 
     private void OnCollisionEnter2D(Collision2D col)
     {
-        if (col.collider.CompareTag("Player"))
-            col.gameObject.GetComponent<Entity>().TakeDamage(meleeDamage);
+        var entity = col.gameObject.GetComponent<Entity>();
+        if (entity != null && entity.kind == EntityKind.Player)
+            entity.TakeDamage(attack);
     }
 
     public override void Move()
