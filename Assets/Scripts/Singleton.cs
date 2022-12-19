@@ -11,10 +11,11 @@ public class Singleton : MonoBehaviour
     {
         if (Instance != null && Instance != this)
         {
-            Destroy(this);
+            DestroyImmediate(this.gameObject);
             return;
         }
         Instance = this;
+        DontDestroyOnLoad(Instance);
 
         GameManager = GetComponentInChildren<GameManager>();
         WaveManager = GetComponentInChildren<WaveManager>();

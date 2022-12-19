@@ -9,11 +9,13 @@ public class MenuAudioManager : MonoBehaviour
     public FMODUnity.EventReference cardClickSound;
 
     private MenuAudioManager Instance;
+
+    // Self-initialization with no references to other GameObjects
     private void Awake()
     {
         if (Instance != null && Instance != this)
         {
-            Destroy(this);
+            DestroyImmediate(this);
             return;
         }
         Instance = this;

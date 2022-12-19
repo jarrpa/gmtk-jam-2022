@@ -28,9 +28,17 @@ public class UIManager : MonoBehaviour
     public GameEvent wavesDoneEvent;
     public EntityEvent entityHitEvent;
 
-    private void Start()
+    private static UIManager Instance;
+
+    // Self-initialization with no references to other GameObjects
+    private void Awake()
     {
-        player = GameObject.FindWithTag("Player");
+        if (Instance != null && Instance != this)
+        {
+            DestroyImmediate(this);
+            return;
+        }
+        Instance = this;
 
         // Events we listen
         waveChangeEvent ??= GameEventLoader.Load<GameEvent>("WaveChangeEvent");

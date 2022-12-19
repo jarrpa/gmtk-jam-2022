@@ -22,15 +22,15 @@ public class MusicController : MonoBehaviour
 
     Scene m_Scene;
 
+    // Self-initialization with no references to other GameObjects
     private void Awake()
     {
-        if (Instance)
-		{
-			DestroyImmediate(this.gameObject);
-			return;
-		}
-		Instance = this;
-        DontDestroyOnLoad(Instance.gameObject);
+        if (Instance != null && Instance != this)
+        {
+            DestroyImmediate(this);
+            return;
+        }
+        Instance = this;
     }
 
     void Start()

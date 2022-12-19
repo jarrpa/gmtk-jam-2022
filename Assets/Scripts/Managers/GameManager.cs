@@ -10,7 +10,7 @@ public class GameManager : MonoBehaviour
     public bool gameIsPaused;
 
     public static event Action<GameState> OnGameStateChanged;
-    
+
     private GameState _gameState;
 
     public GameObject player;
@@ -22,9 +22,17 @@ public class GameManager : MonoBehaviour
 
     private int _prevWaveCount;
 
+    private static GameManager Instance;
+
+    // Self-initialization with no references to other GameObjects
     private void Awake()
     {
-        player = GameObject.FindWithTag("Player");
+        if (Instance != null && Instance != this)
+        {
+            DestroyImmediate(this);
+            return;
+        }
+        Instance = this;
 
         // Events we trigger
         gameOverEvent ??= GameEventLoader.Load<GameEvent>("GameOverEvent");
@@ -76,8 +84,8 @@ public class GameManager : MonoBehaviour
             case GameState.Death:
                 HandleGameOver();
                 break;
-                default:
-                    throw new ArgumentOutOfRangeException(nameof(newState), newState, null);
+            default:
+                throw new ArgumentOutOfRangeException(nameof(newState), newState, null);
         }
         OnGameStateChanged?.Invoke(_gameState);
     }
@@ -107,7 +115,7 @@ public class GameManager : MonoBehaviour
         if (entityPayload.entity.CompareTag("Player"))
             UpdateGameState(GameState.Death);
     }
-    
+
     private void HandleVictory()
     {
         SetPlayerMovement(false);
@@ -120,7 +128,7 @@ public class GameManager : MonoBehaviour
         yield return new WaitForSeconds(2f);
         Singleton.Instance.WaveManager.StartWaves();
     }
-    
+
     private void SetPlayerMovement(bool enable)
     {
         player.GetComponent<PlayerController>().enabled = enable;
@@ -133,7 +141,7 @@ public class GameManager : MonoBehaviour
     {
         UpdateGameState(GameState.Victory);
     }
-    
+
     public void RestartLevel()
     {
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);

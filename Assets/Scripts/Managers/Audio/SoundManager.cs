@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using FMODUnity;
 
-public class AudioManager : MonoBehaviour
+public class SoundManager : MonoBehaviour
 {
     public FMODUnity.EventReference entityAttackSound;
     public FMODUnity.EventReference entityHitSound;
@@ -17,9 +17,17 @@ public class AudioManager : MonoBehaviour
     public AttackEvent weaponFireEvent;
     public GameEvent explosionEvent;
 
+    private static SoundManager Instance;
+
+    // Self-initialization with no references to other GameObjects
     private void Awake()
     {
-        DontDestroyOnLoad(this.gameObject);
+        if (Instance != null && Instance != this)
+        {
+            DestroyImmediate(this);
+            return;
+        }
+        Instance = this;
 
         // Events we listen
         entityHitEvent ??= GameEventLoader.Load<EntityEvent>("EntityHitEvent");

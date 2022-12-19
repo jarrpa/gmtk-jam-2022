@@ -37,8 +37,18 @@ public class WaveManager : MonoBehaviour
     public GameEvent waveChangeEvent;
     public GameEvent wavesDoneEvent;
 
-    private void Start()
+    private static WaveManager Instance;
+
+    // Self-initialization with no references to other GameObjects
+    private void Awake()
     {
+        if (Instance != null && Instance != this)
+        {
+            DestroyImmediate(this);
+            return;
+        }
+        Instance = this;
+
         _waveCountDown = timeBetweenWaves;
 
         // Events we trigger
