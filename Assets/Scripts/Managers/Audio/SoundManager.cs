@@ -1,8 +1,5 @@
 using System;
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
-using FMODUnity;
 
 public class SoundManager : MonoBehaviour
 {
@@ -94,27 +91,5 @@ public class SoundManager : MonoBehaviour
         enemyAttackEvent.RemoveListener(OnEnemyAttack);
         weaponFireEvent.RemoveListener(OnWeaponFire);
         explosionEvent.RemoveListener(OnExplosion);
-    }
-
-    void Footsteps()
-    {
-        // FootstepsSFX.Post(player);
-    }
-
-    void Shot()
-    {
-        // if (weapon1.activeSelf && Input.GetButton("Fire1")) ShotSingle.Post(weapon1);
-        // if (shotgun.activeSelf && Input.GetMouseButtonDown(0)) Shotgun.Post(shotgun);
-        // if (bazooka.activeSelf && Input.GetMouseButtonDown(0)) Baz.Post(bazooka);
-    }
-
-    void Update()
-    {
-        Shot();
-    }
-
-    void Door()
-    {
-        // DoorOpen.Post(gameObject);
     }
 }

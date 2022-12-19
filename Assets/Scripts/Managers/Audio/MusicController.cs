@@ -1,4 +1,3 @@
-using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
@@ -7,20 +6,15 @@ using FMODUnity;
 
 public class MusicController : MonoBehaviour
 {
-    public string MusicStateParameterName = "MusicState";
-    public FMODUnity.EventReference fmodEvent;
-    string sceneName;
-    private FMOD.Studio.EventInstance musicEventInstance;
-    private FMOD.Studio.PARAMETER_DESCRIPTION paramDesc;
     private static MusicController Instance;
+    public string MusicStateParameterName = "MusicState";
     public string DefaultMusicState;
-    [SerializeField]
-    private List<string> musicStates;
-    [SerializeField]
-    private string currentMusicState;
-    // Music States
-
-    Scene m_Scene;
+    [SerializeField] private List<string> musicStates;
+    [SerializeField] private string currentMusicState;
+    [SerializeField] private StudioEventEmitter musicEmitter;
+    [SerializeField] private FMODUnity.EventReference fmodEvent;
+    [SerializeField] private FMOD.Studio.EventInstance musicEventInstance;
+    [SerializeField] private FMOD.Studio.PARAMETER_DESCRIPTION paramDesc;
 
     // Self-initialization with no references to other GameObjects
     private void Awake()
@@ -33,9 +27,8 @@ public class MusicController : MonoBehaviour
         Instance = this;
     }
 
-    void Start()
-    {
-        var musicEmitter = Instance.GetComponent<FMODUnity.StudioEventEmitter>();
+    private void Start() {
+        musicEmitter = Instance.gameObject.GetComponent<FMODUnity.StudioEventEmitter>();
         musicEventInstance = musicEmitter.EventInstance;
         fmodEvent = musicEmitter.EventReference;
 
@@ -71,8 +64,7 @@ public class MusicController : MonoBehaviour
 
     public void SetMusicState()
     {
-        m_Scene = SceneManager.GetActiveScene();
-        sceneName = m_Scene.name;
+        var sceneName = SceneManager.GetActiveScene().name;
 
         if (musicEventInstance.Equals(null) || musicStates.Count == 0) return;
 
