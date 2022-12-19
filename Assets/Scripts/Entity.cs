@@ -35,7 +35,7 @@ public class Entity : MonoBehaviour
 
     public void TakeDamage(AttackPayload attack)
     {
-        if (isInvuln) return;
+        if (isInvuln || !this.isActiveAndEnabled) return;
 
         animator.Play("Blinking", animator.GetLayerIndex("Blinking"));
         currentHealth = Mathf.Clamp(currentHealth - attack.damage, 0, 100);
