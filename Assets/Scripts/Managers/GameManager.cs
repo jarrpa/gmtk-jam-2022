@@ -39,8 +39,8 @@ public class GameManager : MonoBehaviour
         // Events we listen
         entityDeathEvent ??= GameEventLoader.Load<EntityEvent>("EntityDeathEvent");
         wavesDoneEvent ??= GameEventLoader.Load<GameEvent>("WavesDoneEvent");
-        entityDeathEvent.AddListener(OnDeath);
-        wavesDoneEvent.AddListener(OnPlayerWin);
+        entityDeathEvent?.AddListener(OnDeath);
+        wavesDoneEvent?.AddListener(OnPlayerWin);
 
         _gameState = GameState.LevelOne;
         gameIsPaused = false;
@@ -60,10 +60,10 @@ public class GameManager : MonoBehaviour
         }
     }
 
-    private void OnDisable()
+    private void OnDestroy()
     {
-        entityDeathEvent.RemoveListener(OnDeath);
-        wavesDoneEvent.RemoveListener(OnPlayerWin);
+        entityDeathEvent?.RemoveListener(OnDeath);
+        wavesDoneEvent?.RemoveListener(OnPlayerWin);
 
         Time.timeScale = 1f;
     }

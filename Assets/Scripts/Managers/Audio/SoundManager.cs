@@ -32,15 +32,12 @@ public class SoundManager : MonoBehaviour
         enemyAttackEvent ??= GameEventLoader.Load<AttackEvent>("EnemyAttackEvent");
         weaponFireEvent ??= GameEventLoader.Load<AttackEvent>("WeaponFireEvent");
         explosionEvent ??= GameEventLoader.Load<GameEvent>("GrenadeExplosionEvent");
-    }
 
-    private void OnEnable()
-    {
-        entityHitEvent.AddListener(OnDamageTaken);
-        entityDeathEvent.AddListener(OnDeath);
-        enemyAttackEvent.AddListener(OnEnemyAttack);
-        weaponFireEvent.AddListener(OnWeaponFire);
-        explosionEvent.AddListener(OnExplosion);
+        entityHitEvent?.AddListener(OnDamageTaken);
+        entityDeathEvent?.AddListener(OnDeath);
+        enemyAttackEvent?.AddListener(OnEnemyAttack);
+        weaponFireEvent?.AddListener(OnWeaponFire);
+        explosionEvent?.AddListener(OnExplosion);
     }
 
     private void OnEnemyAttack(AttackPayload hit)
@@ -84,12 +81,12 @@ public class SoundManager : MonoBehaviour
         instance.start();
     }
 
-    private void OnDisable()
+    private void OnDestroy()
     {
-        entityHitEvent.RemoveListener(OnDamageTaken);
-        entityDeathEvent.RemoveListener(OnDeath);
-        enemyAttackEvent.RemoveListener(OnEnemyAttack);
-        weaponFireEvent.RemoveListener(OnWeaponFire);
-        explosionEvent.RemoveListener(OnExplosion);
+        entityHitEvent?.RemoveListener(OnDamageTaken);
+        entityDeathEvent?.RemoveListener(OnDeath);
+        enemyAttackEvent?.RemoveListener(OnEnemyAttack);
+        weaponFireEvent?.RemoveListener(OnWeaponFire);
+        explosionEvent?.RemoveListener(OnExplosion);
     }
 }

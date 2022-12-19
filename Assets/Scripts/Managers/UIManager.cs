@@ -48,7 +48,7 @@ public class UIManager : MonoBehaviour
         wavesDoneEvent?.AddListener(WinPanel);
         gameOverEvent?.AddListener(GameOverPanel);
         pauseEvent?.AddListener(PauseGame);
-        entityHitEvent.AddListener(UpdatePlayerHealth);
+        entityHitEvent?.AddListener(UpdatePlayerHealth);
 
         wavesText.text = "0 / " + Singleton.Instance.WaveManager.waves.Length;
         pauseTitleImage = pauseTitle.GetComponent<Image>();
@@ -62,14 +62,16 @@ public class UIManager : MonoBehaviour
     private void OnDisable()
     {
         if (player != null)
-        {
             player.GetComponent<PlayerAbilityController>().OnAbilityChange -= PlayCardAnimations;
-        }
+    }
+
+    private void OnDestroy()
+    {
         waveChangeEvent?.RemoveListener(UpdateWaveCount);
         wavesDoneEvent?.RemoveListener(WinPanel);
         gameOverEvent?.RemoveListener(GameOverPanel);
         pauseEvent?.RemoveListener(PauseGame);
-        entityHitEvent.RemoveListener(UpdatePlayerHealth);
+        entityHitEvent?.RemoveListener(UpdatePlayerHealth);
 
         Time.timeScale = 1f;
     }
