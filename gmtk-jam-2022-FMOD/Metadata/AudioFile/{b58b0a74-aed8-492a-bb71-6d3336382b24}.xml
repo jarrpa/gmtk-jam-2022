@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.02.02.00">
+	<object class="AudioFile" id="{b58b0a74-aed8-492a-bb71-6d3336382b24}">
+		<property name="assetPath">
+			<value>Music/Room 2 Loop Cycle.ogg</value>
+		</property>
+		<property name="isStreaming">
+			<value>true</value>
+		</property>
+		<property name="frequencyInKHz">
+			<value>44.0999985</value>
+		</property>
+		<property name="channelCount">
+			<value>2</value>
+		</property>
+		<property name="length">
+			<value>115.21741496598639</value>
+		</property>
+		<relationship name="masterAssetFolder">
+			<destination>{0cfb9dd3-c643-46da-8378-033552cd5e42}</destination>
+		</relationship>
+	</object>
+</objects>
