@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class WaveManager : MonoBehaviour
 {
@@ -32,6 +33,7 @@ public class WaveManager : MonoBehaviour
     private float _searchTimer;
     private float _searchCountDown;
     private SpawnState _state = SpawnState.Inactive;
+    private IEnumerator spawningCoroutine;
 
     public GameEvent waveChangeEvent;
     public GameEvent wavesDoneEvent;
@@ -53,7 +55,15 @@ public class WaveManager : MonoBehaviour
         // Events we trigger
         waveChangeEvent ??= GameEventLoader.Load<GameEvent>("WaveChangeEvent");
         wavesDoneEvent ??= GameEventLoader.Load<GameEvent>("WavesDoneEvent");
+        SceneManager.sceneLoaded += OnSceneLoaded;
     }
+
+    private void OnSceneLoaded(Scene scene, LoadSceneMode mode) {
+        if (spawningCoroutine != null) StopCoroutine(spawningCoroutine);
+        spawnPoints.Clear();
+    }
+
+
     private void Update()
     { 
         if(_state == SpawnState.Inactive)
@@ -77,7 +87,8 @@ public class WaveManager : MonoBehaviour
             }
             else if (_state != SpawnState.Spawning)
             {
-                StartCoroutine(SpawnWave(waves[currentWave - 1]));
+                spawningCoroutine = SpawnWave(waves[currentWave - 1]);
+                StartCoroutine(spawningCoroutine);
             }
         }
     }
@@ -107,6 +118,9 @@ public class WaveManager : MonoBehaviour
         {
             for (int count = 0; count < wave.counts[i]; count++)
             {
+                if (spawnPoints.Count <= 0)
+                    yield break;
+
                 SpawnEnemy(enemies[i]);
                 yield return new WaitForSeconds(1f / wave.rate);
             }
@@ -145,14 +159,15 @@ public class WaveManager : MonoBehaviour
 
     public void StartWaves()
     {
+        if (spawningCoroutine != null) StopCoroutine(spawningCoroutine);
         currentWave = 1;
         spawnPoints.Clear();
 
         var spawnPointObjects = GameObject.FindGameObjectsWithTag("SpawnPoint");
-        Debug.Log("Found points: " + spawnPointObjects.Length);
+        //Debug.Log("Found points: " + spawnPointObjects.Length);
         for (int i = 0; i < spawnPointObjects.Length; i++)
         {
-            Debug.Log("add : " + spawnPointObjects[i].name);
+            //Debug.Log("add : " + spawnPointObjects[i].name);
             spawnPoints.Add(spawnPointObjects[i].transform);
         }
 

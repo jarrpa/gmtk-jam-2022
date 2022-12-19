@@ -42,22 +42,26 @@ public class GameManager : MonoBehaviour
         entityDeathEvent?.AddListener(OnDeath);
         wavesDoneEvent?.AddListener(OnPlayerWin);
 
-        _gameState = GameState.LevelOne;
-        gameIsPaused = false;
-        PauseGame();
+        SceneManager.sceneLoaded += OnSceneLoaded;
     }
 
-    private void Start()
+    private void OnSceneLoaded(Scene scene, LoadSceneMode mode)
     {
-        UpdateGameState(GameState.LevelOne);
+        var startGameState = GameState.MainMenu;
+        player = GameObject.FindWithTag("Player");
+        if (player != null)
+        {
+            startGameState = GameState.LevelOne;
+        }
+
+        UnpauseGame();
+        UpdateGameState(startGameState);
     }
 
-    private void Update() {
+    private void Update()
+    {
         if (Input.GetKeyDown(KeyCode.Escape) && _gameState == GameState.LevelOne)
-        {
-            gameIsPaused = !gameIsPaused;
-            PauseGame();
-        }
+            TogglePause();
     }
 
     private void OnDestroy()
@@ -73,6 +77,8 @@ public class GameManager : MonoBehaviour
         _gameState = newState;
         switch (newState)
         {
+            case GameState.MainMenu:
+                break;
             case GameState.LevelOne:
                 StartCoroutine(HandleLevelOne());
                 break;
@@ -88,17 +94,26 @@ public class GameManager : MonoBehaviour
         OnGameStateChanged?.Invoke(_gameState);
     }
 
-    private void PauseGame()
+    private void TogglePause()
     {
         if (gameIsPaused)
-        {
-            Time.timeScale = 0f;
-        }
+            UnpauseGame();
         else
-        {
-            Time.timeScale = 1;
-        }
+            PauseGame();
+
         pauseEvent?.Invoke();
+    }
+
+    private void PauseGame()
+    {
+        gameIsPaused = true;
+        Time.timeScale = 0f;
+    }
+
+    private void UnpauseGame()
+    {
+        gameIsPaused = false;
+        Time.timeScale = 1f;
     }
 
     private void HandleGameOver()

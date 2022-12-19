@@ -49,14 +49,33 @@ public class UIManager : MonoBehaviour
         gameOverEvent?.AddListener(GameOverPanel);
         pauseEvent?.AddListener(PauseGame);
         entityHitEvent?.AddListener(UpdatePlayerHealth);
-
-        wavesText.text = "0 / " + Singleton.Instance.WaveManager.waves.Length;
-        pauseTitleImage = pauseTitle.GetComponent<Image>();
+        SceneManager.sceneLoaded += OnSceneLoaded;
     }
 
-    private void OnEnable()
-    {
-        player.GetComponent<PlayerAbilityController>().OnAbilityChange += PlayCardAnimations;
+    private void OnSceneLoaded(Scene scene, LoadSceneMode mode) {
+        FindObjects();
+    }
+
+    private void FindObjects() {
+        player = GameObject.FindWithTag("Player");
+        if (player != null)
+        {
+            player.GetComponent<PlayerAbilityController>().OnAbilityChange += PlayCardAnimations;
+
+            var canvas = GameObject.Find("Canvas");
+            var abilityPanel = canvas.transform.Find("Ability Panel")?.gameObject;
+            attackCardAnimator = abilityPanel.transform.Find("Attack Card Holder").GetComponent<Animator>();
+            moveCardAnimator = abilityPanel.transform.Find("Movement Card Holder").GetComponent<Animator>();
+
+            var healthBar = canvas.transform.Find("HealthBar")?.gameObject;
+            healthImage = healthBar.GetComponent<Image>();
+
+            var wavesPanel = canvas.transform.Find("Waves Panel")?.gameObject;
+            wavesText = wavesPanel.transform.Find("Waves Count Text").GetComponent<TextMeshProUGUI>();
+
+            pausePanel = canvas.transform.Find("Pause Panel")?.gameObject;
+            pauseTitle = pausePanel.transform.Find("Pause Title")?.gameObject;
+        }
     }
 
     private void OnDisable()
@@ -104,20 +123,19 @@ public class UIManager : MonoBehaviour
 
     private void PauseGame()
     {
-        var isPaused = Singleton.Instance.GameManager.gameIsPaused;
-        pauseTitleImage.sprite = pauseTitleSprites[0];
-        pausePanel.SetActive(isPaused);
+        pauseTitle.GetComponent<Image>().sprite = pauseTitleSprites[0];
+        pausePanel.SetActive(Singleton.Instance.GameManager.gameIsPaused);
     }
 
     private void GameOverPanel()
     {
-        pauseTitleImage.sprite = pauseTitleSprites[1];
+        pauseTitle.GetComponent<Image>().sprite = pauseTitleSprites[1];
         pausePanel.SetActive(true);
     }
 
     private void WinPanel()
     {
-        pauseTitleImage.sprite = pauseTitleSprites[2];
+        pauseTitle.GetComponent<Image>().sprite = pauseTitleSprites[2];
         pausePanel.SetActive(true);
     }
 
