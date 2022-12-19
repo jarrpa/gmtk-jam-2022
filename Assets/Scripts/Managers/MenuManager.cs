@@ -4,6 +4,8 @@ using UnityEngine.UI;
 
 public class MenuManager : MonoBehaviour
 {
+    //private Dictionary<string, AsyncOperation> loadOperations = new Dictionary<string, AsyncOperation>();
+
     private static MenuManager Instance;
 
     // Self-initialization with no references to other GameObjects
@@ -21,6 +23,15 @@ public class MenuManager : MonoBehaviour
 
     private void OnSceneLoaded(Scene scene, LoadSceneMode mode)
     {
+        // TODO: Figure out async loading...
+        //menuScene = SceneManager.GetSceneByName("Menu");
+        //creditsScene = SceneManager.GetSceneByName("Credits");
+        //optionsScene = SceneManager.GetSceneByName("Options");
+
+        //StartCoroutine(LoadSceneAsyncProcess("Menu"));
+        //StartCoroutine(LoadSceneAsyncProcess("Credits"));
+        //StartCoroutine(LoadSceneAsyncProcess("Options"));
+
         FindObjects();
     }
 
@@ -76,6 +87,25 @@ public class MenuManager : MonoBehaviour
             }
         }
     }
+
+    // TODO: Figure out async loading...
+    // private IEnumerator LoadSceneAsyncProcess(string sceneName)
+    // {
+    //     if (SceneManager.GetSceneByName(sceneName).IsValid()) yield break;
+
+    //     var asyncLoad = SceneManager.LoadSceneAsync(sceneName); //, LoadSceneMode.Additive);
+    //     asyncLoad.allowSceneActivation = false;
+    //     //asyncLoad.completed += ;
+
+    //     loadOperations.Add(sceneName, asyncLoad);
+
+    //     while (!asyncLoad.isDone)
+    //     {
+    //         //Debug.Log($"[scene]:{sceneName} [load progress]: {asyncLoad.progress}");
+    //         yield return null;
+    //     }
+    //     Debug.Log($"[scene]:{sceneName} [load progress]: {asyncLoad.progress}");
+    // }
 
     public void NextScene(string sceneName)
     {
