@@ -9,9 +9,9 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2661875632429023501}
-  - component: {fileID: 2661875632429023490}
   - component: {fileID: 2661875632429023491}
   - component: {fileID: 2356487143194410934}
+  - component: {fileID: 2941893303923998437}
   m_Layer: 0
   m_Name: Audio Manager
   m_TagString: Untagged
@@ -34,7 +34,76 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &2661875632429023490
+--- !u!114 &2661875632429023491
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2661875632429023500}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ad82e8fb190048c47b0916762db81086, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  MusicStateParameterName: MusicState
+  DefaultMusicState: 
+  musicStates: []
+  currentMusicState: 
+  musicEmitter: {fileID: 0}
+  fmodEvent:
+    Guid:
+      Data1: -1511789891
+      Data2: 1134267467
+      Data3: 94971787
+      Data4: 2104981772
+    Path: event:/Music/BG Music
+--- !u!114 &2356487143194410934
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2661875632429023500}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 18bda127ef32a954f9015b7859375915, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  entityAttackSound:
+    Guid:
+      Data1: -1154486192
+      Data2: 1341688484
+      Data3: 1135189915
+      Data4: -1624104195
+    Path: event:/SFX/EnemyAttack
+  entityHitSound:
+    Guid:
+      Data1: 2016650526
+      Data2: 1318446262
+      Data3: 1428597654
+      Data4: 1397590330
+    Path: event:/SFX/DamageTaken
+  entityDeathSound:
+    Guid:
+      Data1: 145136673
+      Data2: 1336880629
+      Data3: -102379885
+      Data4: -422907780
+    Path: event:/SFX/Death
+  weaponFireSound:
+    Guid:
+      Data1: -198220999
+      Data2: 1136163337
+      Data3: 1888063410
+      Data4: -1133147654
+    Path: event:/SFX/Player/WeaponFire
+  entityHitEvent: {fileID: 0}
+  entityDeathEvent: {fileID: 0}
+  enemyAttackEvent: {fileID: 0}
+  weaponFireEvent: {fileID: 0}
+  explosionEvent: {fileID: 0}
+--- !u!114 &2941893303923998437
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -64,79 +133,3 @@ MonoBehaviour:
   OverrideAttenuation: 0
   OverrideMinDistance: 1
   OverrideMaxDistance: 20
---- !u!114 &2661875632429023491
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2661875632429023500}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ad82e8fb190048c47b0916762db81086, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  MusicStateParameterName: MusicState
-  fmodEvent:
-    Guid:
-      Data1: -1511789891
-      Data2: 1134267467
-      Data3: 94971787
-      Data4: 2104981772
-    Path: event:/Music/BG Music
-  DefaultMusicState: 
-  musicStates: []
-  currentMusicState: 
---- !u!114 &2356487143194410934
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2661875632429023500}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: bfd9a9510472e564ebca5b0026ddeab9, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  player: {fileID: 0}
-  sniper: {fileID: 0}
-  ranger: {fileID: 0}
-  charger: {fileID: 0}
-  weapon1: {fileID: 0}
-  shotgun: {fileID: 0}
-  bazooka: {fileID: 0}
-  grenade: {fileID: 0}
-  entityAttackSound:
-    Guid:
-      Data1: -1154486192
-      Data2: 1341688484
-      Data3: 1135189915
-      Data4: -1624104195
-    Path: event:/SFX/EnemyAttack
-  entityHitSound:
-    Guid:
-      Data1: 2016650526
-      Data2: 1318446262
-      Data3: 1428597654
-      Data4: 1397590330
-    Path: event:/SFX/DamageTaken
-  entityDeathSound:
-    Guid:
-      Data1: 145136673
-      Data2: 1336880629
-      Data3: -102379885
-      Data4: -422907780
-    Path: event:/SFX/Death
-  weaponFireSound:
-    Guid:
-      Data1: -198220999
-      Data2: 1136163337
-      Data3: 1888063410
-      Data4: -1133147654
-    Path: event:/SFX/Player/WeaponFire
-  enemyAttackEvent: {fileID: 0}
-  entityHitEvent: {fileID: 0}
-  entityDeathEvent: {fileID: 0}
-  weaponFireEvent: {fileID: 0}
-  explosionEvent: {fileID: 0}
