@@ -65,6 +65,14 @@ public class MenuManager : MonoBehaviour
             }
         }
 
+        var fullscreenOption = canvas.transform.Find("Fullscreen Toggle")?.gameObject;
+        var fullscreenToggle = fullscreenOption?.GetComponent<Toggle>();
+        if (fullscreenToggle != null)
+        {
+            fullscreenToggle.isOn = Screen.fullScreen;
+            fullscreenToggle.onValueChanged.AddListener(ToggleFullscreen);
+        }
+
         var player = GameObject.FindWithTag("Player");
         if (player != null)
         {
@@ -106,6 +114,11 @@ public class MenuManager : MonoBehaviour
     //     }
     //     Debug.Log($"[scene]:{sceneName} [load progress]: {asyncLoad.progress}");
     // }
+
+    public void ToggleFullscreen(bool value)
+    {
+        Screen.fullScreen = value;
+    }
 
     public void NextScene(string sceneName)
     {
