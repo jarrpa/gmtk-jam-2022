@@ -1,6 +1,7 @@
 using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 public class MenuAudioManager : MonoBehaviour
 {
@@ -49,7 +50,28 @@ public class MenuAudioManager : MonoBehaviour
             }
         }
 
+        var audioOptions = canvas.transform.Find("AudioOptions")?.gameObject;
+        var audioSliders = audioOptions?.GetComponentsInChildren<Slider>();
 
+        if (audioSliders != null) {
+            foreach (Slider slider in audioSliders) {
+
+                switch (slider.name) {
+                    case "Master Volume Slider":
+                        slider.value = SoundManager.Instance.MasterVolume;
+                        slider.onValueChanged.AddListener(SoundManager.Instance.SetMasterVolumeLevel);
+                        break;
+                    case "Music Volume Slider":
+                        slider.value = SoundManager.Instance.MusicVolume;
+                        slider.onValueChanged.AddListener(SoundManager.Instance.SetMusicVolumeLevel);
+                        break;
+                    case "SFX Volume Slider":
+                        slider.value = SoundManager.Instance.SfxVolume;
+                        slider.onValueChanged.AddListener(SoundManager.Instance.SetSfxVolumeLevel);
+                        break;
+                }
+            }
+        }
     }
 
     public void OnCardShuffle()

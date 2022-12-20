@@ -3,6 +3,13 @@ using UnityEngine;
 
 public class SoundManager : MonoBehaviour
 {
+    public FMOD.Studio.Bus MasterBus;
+    public FMOD.Studio.Bus MusicBus;
+    public FMOD.Studio.Bus SfxBus;
+    [Range(0f,1f)] public float MasterVolume = 1f;
+    [Range(0f,1f)] public float MusicVolume = 1f;
+    [Range(0f,1f)] public float SfxVolume = 1f;
+
     public FMODUnity.EventReference entityAttackSound;
     public FMODUnity.EventReference entityHitSound;
     public FMODUnity.EventReference entityDeathSound;
@@ -14,7 +21,7 @@ public class SoundManager : MonoBehaviour
     public AttackEvent weaponFireEvent;
     public GameEvent explosionEvent;
 
-    private static SoundManager Instance;
+    public static SoundManager Instance;
 
     // Self-initialization with no references to other GameObjects
     private void Awake()
@@ -25,6 +32,10 @@ public class SoundManager : MonoBehaviour
             return;
         }
         Instance = this;
+
+        MasterBus = FMODUnity.RuntimeManager.GetBus("bus:/Master");
+        MusicBus = FMODUnity.RuntimeManager.GetBus("bus:/Master/Music");
+        SfxBus = FMODUnity.RuntimeManager.GetBus("bus:/Master/SFX");
 
         // Events we listen
         entityHitEvent ??= GameEventLoader.Load<EntityEvent>("EntityHitEvent");
@@ -38,6 +49,25 @@ public class SoundManager : MonoBehaviour
         enemyAttackEvent?.AddListener(OnEnemyAttack);
         weaponFireEvent?.AddListener(OnWeaponFire);
         explosionEvent?.AddListener(OnExplosion);
+    }
+
+    void Update()
+    {
+        MasterBus.setVolume(MasterVolume);
+        MusicBus.setVolume(MusicVolume);
+        SfxBus.setVolume(SfxVolume);
+    }
+
+    public void SetMasterVolumeLevel (float volume) {
+        MasterVolume = volume;
+    }
+
+    public void SetMusicVolumeLevel (float volume) {
+        MusicVolume = volume;
+    }
+
+    public void SetSfxVolumeLevel (float volume) {
+        SfxVolume = volume;
     }
 
     private void OnEnemyAttack(AttackPayload hit)
