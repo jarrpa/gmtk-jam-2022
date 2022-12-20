@@ -77,30 +77,31 @@ public class MenuManager : MonoBehaviour
         }
     }
 
+    public void NextScene(string sceneName)
+    {
+        MusicController.Instance.SetMusicState(sceneName);
+        SceneManager.LoadScene(sceneName);
+    }
+
     public void PlayGame()
     {
         // TODO: Probably expose this somewhere...
-        StartLevel("demo-level-jarrpa");
-    }
-
-    public void StartLevel(string level)
-    {
-        SceneManager.LoadScene(level);
+        NextScene("demo-level-jarrpa");
     }
 
     public void ShowCredits()
     {
-        SceneManager.LoadScene("Credits");
+        NextScene("Credits");
     }
 
     public void ShowOptions()
     {
-        SceneManager.LoadScene("Options");
+        NextScene("Options");
     }
 
     public void MainMenu()
     {
-        SceneManager.LoadScene("Menu");
+        NextScene("Menu");
     }
 
     public void ExitGame()

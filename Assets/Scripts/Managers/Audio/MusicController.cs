@@ -6,7 +6,7 @@ using FMODUnity;
 
 public class MusicController : MonoBehaviour
 {
-    private static MusicController Instance;
+    public static MusicController Instance;
     public string MusicStateParameterName = "MusicState";
     public string DefaultMusicState;
     [SerializeField] private List<string> musicStates;
@@ -33,7 +33,7 @@ public class MusicController : MonoBehaviour
         fmodEvent = musicEmitter.EventReference;
 
         GetMusicStates(musicEmitter);
-        SetMusicState();
+        SetMusicState(SceneManager.GetActiveScene().name);
     }
 
     void GetMusicStates(StudioEventEmitter musicEmitter)
@@ -56,16 +56,8 @@ public class MusicController : MonoBehaviour
         }
     }
 
-    // Update is called once per frame
-    void Update()
+    public void SetMusicState(string sceneName)
     {
-        SetMusicState();
-    }
-
-    public void SetMusicState()
-    {
-        var sceneName = SceneManager.GetActiveScene().name;
-
         if (musicEventInstance.Equals(null) || musicStates.Count == 0) return;
 
         int idx = musicStates.FindIndex(a => a.Contains(sceneName));
