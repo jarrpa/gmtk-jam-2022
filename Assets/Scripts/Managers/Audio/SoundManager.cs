@@ -1,4 +1,5 @@
 using System;
+using System.Collections;
 using UnityEngine;
 
 public class SoundManager : MonoBehaviour
@@ -33,10 +34,6 @@ public class SoundManager : MonoBehaviour
         }
         Instance = this;
 
-        MasterBus = FMODUnity.RuntimeManager.GetBus("bus:/Master");
-        MusicBus = FMODUnity.RuntimeManager.GetBus("bus:/Master/Music");
-        SfxBus = FMODUnity.RuntimeManager.GetBus("bus:/Master/SFX");
-
         // Events we listen
         entityHitEvent ??= GameEventLoader.Load<EntityEvent>("EntityHitEvent");
         entityDeathEvent ??= GameEventLoader.Load<EntityEvent>("EntityDeathEvent");
@@ -49,6 +46,15 @@ public class SoundManager : MonoBehaviour
         enemyAttackEvent?.AddListener(OnEnemyAttack);
         weaponFireEvent?.AddListener(OnWeaponFire);
         explosionEvent?.AddListener(OnExplosion);
+    }
+
+    private IEnumerator Start() {
+        while (!GameLoader.FMODReady())
+            yield return null;
+
+        MasterBus = FMODUnity.RuntimeManager.GetBus("bus:/Master");
+        MusicBus = FMODUnity.RuntimeManager.GetBus("bus:/Master/Music");
+        SfxBus = FMODUnity.RuntimeManager.GetBus("bus:/Master/SFX");
     }
 
     void Update()
