@@ -70,6 +70,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 18bda127ef32a954f9015b7859375915, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  MasterVolume: 1
+  MusicVolume: 1
+  SfxVolume: 1
   entityAttackSound:
     Guid:
       Data1: -1154486192
@@ -98,11 +101,27 @@ MonoBehaviour:
       Data3: 1888063410
       Data4: -1133147654
     Path: event:/SFX/Player/WeaponFire
+  pickupSound:
+    Guid:
+      Data1: 1079379677
+      Data2: 1304373345
+      Data3: -1600311653
+      Data4: -895633172
+    Path: event:/SFX/Pickup
+  gateOpenSound:
+    Guid:
+      Data1: 341273513
+      Data2: 1313394043
+      Data3: -571670388
+      Data4: 1773388147
+    Path: event:/SFX/GateOpen
   entityHitEvent: {fileID: 0}
   entityDeathEvent: {fileID: 0}
   enemyAttackEvent: {fileID: 0}
   weaponFireEvent: {fileID: 0}
   explosionEvent: {fileID: 0}
+  bazookaPickupEvent: {fileID: 0}
+  wavesDoneEvent: {fileID: 0}
 --- !u!114 &2941893303923998437
 MonoBehaviour:
   m_ObjectHideFlags: 0
