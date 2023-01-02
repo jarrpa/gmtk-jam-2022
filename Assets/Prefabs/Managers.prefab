@@ -74,7 +74,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8677417862445911832}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 697.1697, y: 390.42606, z: -6.649366}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -110,6 +110,7 @@ MonoBehaviour:
   - {fileID: 0}
   currentWave: 0
   timeBetweenWaves: 4
+  _state: 0
   waveChangeEvent: {fileID: 0}
   wavesDoneEvent: {fileID: 0}
 --- !u!1 &8677417863645099855
@@ -167,8 +168,11 @@ MonoBehaviour:
   - {fileID: 21300000, guid: 7318515e4ef5f4c1286353a579f35084, type: 3}
   healthImage: {fileID: 0}
   wavesText: {fileID: 0}
+  canvas: {fileID: 0}
+  abilityPanel: {fileID: 0}
   pausePanel: {fileID: 0}
   pauseTitle: {fileID: 0}
+  winButton: {fileID: 0}
   pauseTitleSprites:
   - {fileID: 21300000, guid: 260bfdf3d19894eb7badd784d7b374a0, type: 3}
   - {fileID: 21300000, guid: 799dfdca7f48f47e883e5a91b02155f5, type: 3}
@@ -177,6 +181,8 @@ MonoBehaviour:
   pauseEvent: {fileID: 0}
   waveChangeEvent: {fileID: 0}
   wavesDoneEvent: {fileID: 0}
+  playerVictoryEvent: {fileID: 0}
+  bazookaPickupEvent: {fileID: 0}
   entityHitEvent: {fileID: 0}
 --- !u!1 &8677417863660078791
 GameObject:
@@ -187,6 +193,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8677417863660078790}
+  - component: {fileID: 2843685591300175013}
   - component: {fileID: 8677417863660078793}
   m_Layer: 0
   m_Name: Game Manager
@@ -210,6 +217,23 @@ Transform:
   m_Father: {fileID: 8677417861949263856}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &2843685591300175013
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8677417863660078791}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0fff1c26f75054140b4fbbcb3791f15d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Banks:
+  - Master
+  - Master.strings
+  - SFX
+  nextSceneName: 
 --- !u!114 &8677417863660078793
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -223,11 +247,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   gameIsPaused: 0
+  gameState: 0
   player: {fileID: 0}
   entityDeathEvent: {fileID: 0}
   wavesDoneEvent: {fileID: 0}
   gameOverEvent: {fileID: 0}
   pauseEvent: {fileID: 0}
+  playerVictoryEvent: {fileID: 0}
 --- !u!1001 &5163250433274962385
 PrefabInstance:
   m_ObjectHideFlags: 0

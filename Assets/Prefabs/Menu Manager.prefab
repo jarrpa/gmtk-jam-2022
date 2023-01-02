@@ -45,6 +45,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4dd9cb4fd64a84c04bfc5d21dd64655e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  levelChangeEvent: {fileID: 0}
+  firstLevel: Room00
 --- !u!114 &8295557737280859935
 MonoBehaviour:
   m_ObjectHideFlags: 0

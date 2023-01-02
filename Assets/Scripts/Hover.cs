@@ -9,10 +9,11 @@ public class Hover : MonoBehaviour
     //adjust this to change how high it goes
     public float height = 0.5f;
 
-    private float phase;
+    public float phase = 0f;
+    public bool randomizePhaseShift = true;
 
     void Start() {
-        phase = Random.Range(-2, 2);
+        if (randomizePhaseShift) phase = Random.Range(-2, 2);
         transform.localPosition = new Vector3(transform.localPosition.x, transform.localPosition.y + phase, transform.localPosition.z);
     }
 

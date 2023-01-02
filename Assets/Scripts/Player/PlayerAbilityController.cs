@@ -1,9 +1,5 @@
 using System;
-using System.Collections;
-using System.Collections.Generic;
-using TMPro;
 using UnityEngine;
-using UnityEngine.UI;
 
 public class PlayerAbilityController : MonoBehaviour
 {
@@ -17,11 +13,15 @@ public class PlayerAbilityController : MonoBehaviour
 
     private int selectedWeapon;
     private int selectedAbility;
+    public GameEvent bazookaPickupEvent;
 
     public event Action<int, int> OnAbilityChange;
     private void Awake()
     {
         abilityHolder = GetComponent<AbilityHolder>();
+
+        bazookaPickupEvent ??= GameEventLoader.Load<GameEvent>("BazookaPickupEvent");
+        bazookaPickupEvent?.AddListener(ChoseAbilities);
     }
 
     public void ChoseAbilities()
@@ -39,6 +39,7 @@ public class PlayerAbilityController : MonoBehaviour
     private void ActivateWeapon(int index)
     {
         selectedWeapon = index;
+        weaponHolder.gameObject.SetActive(true);
         Destroy(weaponHolder.transform.GetChild(0).gameObject);
         Instantiate(weapons[selectedWeapon], weaponHolder.transform);
     }
@@ -49,4 +50,7 @@ public class PlayerAbilityController : MonoBehaviour
         abilityHolder.ability = abilities[selectedAbility];
     }
 
+    private void OnDestroy() {
+        bazookaPickupEvent?.RemoveListener(ChoseAbilities);
+    }
 }
