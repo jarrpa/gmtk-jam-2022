@@ -16,18 +16,19 @@
 			<value>2</value>
 		</property>
 		<property name="maximum">
-			<value>6</value>
+			<value>7</value>
 		</property>
 		<property name="enumerationLabels">
 			<value>Menu</value>
 			<value>Credits</value>
 			<value>Options</value>
+			<value>Room00</value>
 			<value>Room01</value>
 			<value>Room02</value>
 			<value>Room03</value>
 		</property>
 		<property name="initialValue">
-			<value>5</value>
+			<value>6</value>
 		</property>
 		<relationship name="automators">
 			<destination>{61360098-1dc5-46ea-b71f-663244f94cf4}</destination>
