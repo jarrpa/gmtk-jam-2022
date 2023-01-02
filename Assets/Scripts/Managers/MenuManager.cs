@@ -4,7 +4,9 @@ using UnityEngine.UI;
 
 public class MenuManager : MonoBehaviour
 {
-    private static MenuManager Instance;
+    public LevelEvent levelChangeEvent;
+    public string firstLevel = "Room00";
+    public static MenuManager Instance;
 
     // Self-initialization with no references to other GameObjects
     private void Awake()
@@ -15,6 +17,9 @@ public class MenuManager : MonoBehaviour
             return;
         }
         Instance = this;
+
+        levelChangeEvent ??= GameEventLoader.Load<LevelEvent>("LevelChangeEvent");
+        levelChangeEvent?.AddListener(NextScene);
 
         SceneManager.sceneLoaded += OnSceneLoaded;
     }
@@ -77,6 +82,13 @@ public class MenuManager : MonoBehaviour
         }
     }
 
+    public void NextScene(LevelPayload payload) {
+        var levelSettings = payload.levelSettings;
+        var musicState = levelSettings.musicState == "" ? MusicController.Instance.DefaultMusicState : levelSettings.musicState;
+        MusicController.Instance.SetMusicState(musicState);
+        SceneManager.LoadScene(levelSettings.sceneName);
+    }
+
     public void NextScene(string sceneName)
     {
         MusicController.Instance.SetMusicState(sceneName);
@@ -85,8 +97,8 @@ public class MenuManager : MonoBehaviour
 
     public void PlayGame()
     {
-        // TODO: Probably expose this somewhere...
-        NextScene("demo-level-jarrpa");
+        Singleton.Instance.GameManager.gameState = GameState.StartRoom;
+        NextScene(firstLevel);
     }
 
     public void ShowCredits()
@@ -112,5 +124,9 @@ public class MenuManager : MonoBehaviour
     public void RestartLevel()
     {
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+    }
+
+    private void OnDestroy() {
+        levelChangeEvent?.RemoveListener(NextScene);
     }
 }

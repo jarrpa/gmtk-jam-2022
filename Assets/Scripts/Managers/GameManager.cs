@@ -9,7 +9,7 @@ public class GameManager : MonoBehaviour
 
     public static event Action<GameState> OnGameStateChanged;
 
-    private GameState _gameState;
+    public GameState gameState;
 
     public GameObject player;
 
@@ -17,6 +17,7 @@ public class GameManager : MonoBehaviour
     public GameEvent wavesDoneEvent;
     public GameEvent gameOverEvent;
     public GameEvent pauseEvent;
+    public LevelEvent playerVictoryEvent;
 
     private int _prevWaveCount;
 
@@ -39,47 +40,63 @@ public class GameManager : MonoBehaviour
         // Events we listen
         entityDeathEvent ??= GameEventLoader.Load<EntityEvent>("EntityDeathEvent");
         wavesDoneEvent ??= GameEventLoader.Load<GameEvent>("WavesDoneEvent");
+        playerVictoryEvent ??= GameEventLoader.Load<LevelEvent>("PlayerVictoryLevelEvent");
         entityDeathEvent?.AddListener(OnDeath);
-        wavesDoneEvent?.AddListener(OnPlayerWin);
+        wavesDoneEvent?.AddListener(OnLevelCleared);
+        playerVictoryEvent?.AddListener(OnPlayerWin);
 
         SceneManager.sceneLoaded += OnSceneLoaded;
     }
 
     private void OnSceneLoaded(Scene scene, LoadSceneMode mode)
     {
-        var startGameState = GameState.MainMenu;
+        var levelSettings = LevelSettings.GetCurrentLevelSettings();
+        var currentGameState = gameState;
         player = GameObject.FindWithTag("Player");
-        if (player != null)
-        {
-            startGameState = GameState.LevelOne;
+
+        if (levelSettings != null) {
+            currentGameState = levelSettings.startingGameState;
+        } else {
+            if (player != null && scene.name != MenuManager.Instance.firstLevel)
+                currentGameState = GameState.LevelStart;
         }
 
         UnpauseGame();
-        UpdateGameState(startGameState);
+        UpdateGameState(currentGameState);
     }
 
     private void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Escape) && _gameState == GameState.LevelOne)
+        if (Input.GetKeyDown(KeyCode.Escape) && IsGameplayLevel())
             TogglePause();
+    }
+
+    public bool IsGameplayLevel()
+    {
+        return gameState == GameState.StartRoom || gameState == GameState.LevelStart || gameState == GameState.NextLevel;
     }
 
     private void OnDestroy()
     {
         entityDeathEvent?.RemoveListener(OnDeath);
-        wavesDoneEvent?.RemoveListener(OnPlayerWin);
+        wavesDoneEvent?.RemoveListener(OnLevelCleared);
+        playerVictoryEvent?.RemoveListener(OnPlayerWin);
 
         Time.timeScale = 1f;
     }
 
     public void UpdateGameState(GameState newState)
     {
-        _gameState = newState;
         switch (newState)
         {
             case GameState.MainMenu:
                 break;
-            case GameState.LevelOne:
+            case GameState.StartRoom:
+                break;
+            case GameState.NextLevel:
+                HandleNextLevel();
+                break;
+            case GameState.LevelStart:
                 StartCoroutine(HandleLevelOne());
                 break;
             case GameState.Victory:
@@ -91,7 +108,8 @@ public class GameManager : MonoBehaviour
             default:
                 throw new ArgumentOutOfRangeException(nameof(newState), newState, null);
         }
-        OnGameStateChanged?.Invoke(_gameState);
+        gameState = newState;
+        OnGameStateChanged?.Invoke(gameState);
     }
 
     private void TogglePause()
@@ -116,6 +134,12 @@ public class GameManager : MonoBehaviour
         Time.timeScale = 1f;
     }
 
+    private void OnLevelCleared()
+    {
+        UpdateGameState(GameState.NextLevel);
+    }
+
+
     private void HandleGameOver()
     {
         gameOverEvent?.Invoke();
@@ -127,6 +151,11 @@ public class GameManager : MonoBehaviour
     {
         if (entityPayload.entity.CompareTag("Player"))
             UpdateGameState(GameState.Death);
+    }
+
+    private void HandleNextLevel()
+    {
+        Singleton.Instance.WaveManager.StopWaves();
     }
 
     private void HandleVictory()
@@ -150,7 +179,7 @@ public class GameManager : MonoBehaviour
         player.GetComponentInChildren<Weapon>().enabled = enable;
     }
 
-    private void OnPlayerWin()
+    private void OnPlayerWin(LevelPayload payload)
     {
         UpdateGameState(GameState.Victory);
     }
@@ -164,7 +193,8 @@ public class GameManager : MonoBehaviour
 public enum GameState
 {
     MainMenu,
-    LevelOne,
+    StartRoom,
+    LevelStart,
     NextLevel,
     Victory,
     Death,

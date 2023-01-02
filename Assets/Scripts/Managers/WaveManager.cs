@@ -3,8 +3,6 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-public class WaveManager : MonoBehaviour
-{
     public enum SpawnState
     {
         Inactive,
@@ -22,6 +20,8 @@ public class WaveManager : MonoBehaviour
         public float rate;
     }
 
+public class WaveManager : MonoBehaviour
+{
     public Transform[] enemies;
     public Wave[] waves;
     public List<Transform> spawnPoints;
@@ -32,6 +32,7 @@ public class WaveManager : MonoBehaviour
 
     private float _searchTimer;
     private float _searchCountDown;
+    [SerializeField]
     private SpawnState _state = SpawnState.Inactive;
     private IEnumerator spawningCoroutine;
 
@@ -61,6 +62,12 @@ public class WaveManager : MonoBehaviour
     private void OnSceneLoaded(Scene scene, LoadSceneMode mode) {
         if (spawningCoroutine != null) StopCoroutine(spawningCoroutine);
         spawnPoints.Clear();
+
+        var levelSettings = LevelSettings.GetCurrentLevelSettings();
+        if (levelSettings != null) {
+            enemies = levelSettings.enemies;
+            waves = levelSettings.waves;
+        }
     }
 
 
@@ -85,7 +92,7 @@ public class WaveManager : MonoBehaviour
             {
                 _waveCountDown -= Time.deltaTime;
             }
-            else if (_state != SpawnState.Spawning)
+            else if (_state != SpawnState.Spawning && waves.Length != 0)
             {
                 spawningCoroutine = SpawnWave(waves[currentWave - 1]);
                 StartCoroutine(spawningCoroutine);
@@ -129,7 +136,7 @@ public class WaveManager : MonoBehaviour
         _state = SpawnState.Waiting;
     }
 
-    private void WaveCompleted()
+    public void WaveCompleted()
     {
         Debug.Log("Wave Complete, wave number was " + currentWave);
         
@@ -160,14 +167,13 @@ public class WaveManager : MonoBehaviour
     public void StartWaves()
     {
         if (spawningCoroutine != null) StopCoroutine(spawningCoroutine);
+        if (waves.Length == 0) return;
         currentWave = 1;
         spawnPoints.Clear();
 
         var spawnPointObjects = GameObject.FindGameObjectsWithTag("SpawnPoint");
-        //Debug.Log("Found points: " + spawnPointObjects.Length);
         for (int i = 0; i < spawnPointObjects.Length; i++)
         {
-            //Debug.Log("add : " + spawnPointObjects[i].name);
             spawnPoints.Add(spawnPointObjects[i].transform);
         }
 

@@ -15,14 +15,19 @@ public class SoundManager : MonoBehaviour
     public FMODUnity.EventReference entityHitSound;
     public FMODUnity.EventReference entityDeathSound;
     public FMODUnity.EventReference weaponFireSound;
+    public FMODUnity.EventReference pickupSound;
+    public FMODUnity.EventReference gateOpenSound;
 
     public EntityEvent entityHitEvent;
     public EntityEvent entityDeathEvent;
     public AttackEvent enemyAttackEvent;
     public AttackEvent weaponFireEvent;
     public GameEvent explosionEvent;
+    public GameEvent bazookaPickupEvent;
+    public GameEvent wavesDoneEvent;
 
     public static SoundManager Instance;
+
 
     // Self-initialization with no references to other GameObjects
     private void Awake()
@@ -40,12 +45,16 @@ public class SoundManager : MonoBehaviour
         enemyAttackEvent ??= GameEventLoader.Load<AttackEvent>("EnemyAttackEvent");
         weaponFireEvent ??= GameEventLoader.Load<AttackEvent>("WeaponFireEvent");
         explosionEvent ??= GameEventLoader.Load<GameEvent>("GrenadeExplosionEvent");
+        bazookaPickupEvent ??= GameEventLoader.Load<GameEvent>("BazookaPickupEvent");
+        wavesDoneEvent ??= GameEventLoader.Load<GameEvent>("WavesDoneEvent");
 
         entityHitEvent?.AddListener(OnDamageTaken);
         entityDeathEvent?.AddListener(OnDeath);
         enemyAttackEvent?.AddListener(OnEnemyAttack);
         weaponFireEvent?.AddListener(OnWeaponFire);
         explosionEvent?.AddListener(OnExplosion);
+        bazookaPickupEvent?.AddListener(OnPickup);
+        wavesDoneEvent?.AddListener(OnGateOpen);
     }
 
     private IEnumerator Start() {
@@ -76,22 +85,33 @@ public class SoundManager : MonoBehaviour
         SfxVolume = volume;
     }
 
+    private void OnPickup()
+    {
+        var instance = FMODUnity.RuntimeManager.CreateInstance(pickupSound);
+        instance.start();
+    }
+
     private void OnEnemyAttack(AttackPayload hit)
     {
-        //Debug.Log("OnDamageTaken Audio: " + hit.entity.name + " " + hit.damage);
         PlayEntitySound(entityAttackSound, Enum.GetName(typeof(EntityKind), hit.attacker.kind));
     }
 
     private void OnDamageTaken(EntityPayload hit)
     {
-        //Debug.Log("OnDamageTaken Audio: " + hit.entity.name + " " + hit.damage);
         PlayEntitySound(entityHitSound, Enum.GetName(typeof(EntityKind), hit.entity.kind));
     }
 
     private void OnDeath(EntityPayload hit)
     {
-        //Debug.Log("OnDeath Audio: " + hit.entity.name + " " + hit.damage);
         PlayEntitySound(entityDeathSound, Enum.GetName(typeof(EntityKind), hit.entity.kind));
+    }
+
+    private void OnGateOpen()
+    {
+        var instance = FMODUnity.RuntimeManager.CreateInstance(gateOpenSound);
+        instance.start();
+        instance = FMODUnity.RuntimeManager.CreateInstance(pickupSound);
+        instance.start();
     }
 
     private void PlayEntitySound(FMODUnity.EventReference sound, string kind)
